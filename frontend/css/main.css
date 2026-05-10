@@ -1,0 +1,70 @@
+/* [3.2.1]
+   Resets default browser spacing behavior.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* [3.2.2]
+   Defines global page styling.
+*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d9e5ea;
+    color: #004f71;
+    min-height: 100vh;
+}
+
+/* [3.2.3]
+   Main application layout container.
+*/
+.app-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* [3.2.4]
+   Hero section layout styling.
+*/
+.hero-section {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+/* [3.2.5]
+   Main heading styling.
+*/
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* [3.2.6]
+   Subtitle styling.
+*/
+.hero-section p {
+    font-size: 1.2rem;
+}
+
+/* [3.2.7]
+   System status section styling.
+*/
+.system-status-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* [3.2.8]
+   API status text styling.
+*/
+#api-status {
+    margin-top: 1rem;
+    font-weight: bold;
+}

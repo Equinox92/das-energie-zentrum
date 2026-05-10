@@ -1,0 +1,88 @@
+<!-- [3.6.1]
+     Interactive SVG house component container.
+-->
+<section class="interactive-house-section">
+
+    <!-- [3.6.2]
+         Section heading.
+    -->
+    <h2>Interactive Energy Analysis</h2>
+
+    <!-- [3.6.3]
+         SVG rendering container.
+    -->
+    <div class="house-svg-container">
+
+        <!-- [3.6.4]
+             SVG-based scalable interactive house.
+        -->
+        <svg
+            id="interactive-house"
+            viewBox="0 0 500 500"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <!-- [3.6.5]
+                 Main house structure.
+            -->
+            <rect
+                id="house-body"
+                x="100"
+                y="180"
+                width="300"
+                height="220"
+                fill="#ffffff"
+                stroke="#004f71"
+                stroke-width="4" />
+
+            <!-- [3.6.6]
+                 Roof interaction zone.
+            -->
+            <polygon
+                id="roof-zone"
+                class="interactive-zone"
+                points="80,180 250,60 420,180"
+                fill="#7aa6c2"
+                stroke="#004f71"
+                stroke-width="4"
+                data-zone="roof" />
+
+            <!-- [3.6.7]
+                 Wall interaction zone.
+            -->
+            <rect
+                id="wall-zone"
+                class="interactive-zone"
+                x="100"
+                y="180"
+                width="300"
+                height="220"
+                fill="transparent"
+                data-zone="walls" />
+
+            <!-- [3.6.8]
+                 Window interaction zone.
+            -->
+            <rect
+                id="window-zone"
+                class="interactive-zone"
+                x="220"
+                y="230"
+                width="60"
+                height="60"
+                fill="#d9e5ea"
+                stroke="#004f71"
+                stroke-width="2"
+                data-zone="windows" />
+
+        </svg>
+
+    </div>
+
+    <!-- [3.6.9]
+         Dynamic tooltip display container.
+    -->
+    <div id="house-tooltip">
+        Hover over a house section.
+    </div>
+
+</section>
