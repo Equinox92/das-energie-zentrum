@@ -6,6 +6,10 @@ import { checkApiHealth } from "./services/healthService.js";
 // Imports interactive SVG house loader system.
 import { loadInteractiveHouse } from "./ui/houseLoader.js";
 
+
+// next import { initializeHouseInteractions } from "./ui/houseInteractionEngine.js";
+import { initializeHouseInteractions } from "./ui/houseInteractionEngine.js";
+
 // [3.3.3]
 // Waits until full HTML document is loaded before running application logic.
 document.addEventListener("DOMContentLoaded", async () => {
@@ -13,6 +17,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     // [3.3.4]
     // Loads scalable interactive SVG house component.
     await loadInteractiveHouse();
+
+    // [3.3.10]
+// Activates scalable SVG interaction engine.
+initializeHouseInteractions();
 
     // [3.3.5]
     // Retrieves API status display element.

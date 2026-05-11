@@ -2,59 +2,141 @@
 <html lang="en">
 
 <head>
-    <!-- [3.1.1] Defines UTF-8 encoding for international text support -->
+
+    <!-- [3.1.1]
+         Defines UTF-8 encoding for international text support.
+    -->
     <meta charset="UTF-8">
 
-    <!-- [3.1.2] Enables responsive rendering on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- [3.1.2]
+         Enables responsive rendering on mobile devices.
+    -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- [3.1.3] Defines browser tab title -->
+    <!-- [3.1.3]
+         Defines browser tab title.
+    -->
     <title>Das Energie Zentrum</title>
 
-    <!-- [3.1.4] Loads global stylesheet -->
-    <link rel="stylesheet" href="./css/main.css">
+    <!-- [3.1.4]
+         Loads global application stylesheet.
+    -->
+    <link rel="stylesheet"
+          href="./css/main.css">
+
 </head>
 
 <body>
 
-    <!-- [3.1.5] Main application wrapper -->
+    <!-- [3.1.5]
+         Main application layout wrapper.
+    -->
     <div class="app-container">
 
-        <!-- [3.1.6] Main hero section -->
+        <!-- [3.1.6]
+             Main hero branding section.
+        -->
         <header class="hero-section">
 
-            <!-- [3.1.7] Primary branding title -->
+            <!-- [3.1.7]
+                 Primary company heading.
+            -->
             <h1>Das Energie Zentrum</h1>
 
-            <!-- [3.1.8] Business subtitle -->
+            <!-- [3.1.8]
+                 Business service subtitle.
+            -->
             <p>
                 Energy Efficiency Experts
             </p>
 
         </header>
 
-        <!-- [3.1.9] API system status section -->
+        <!-- [3.1.9]
+             Backend API system status section.
+        -->
         <section class="system-status-section">
 
-            <!-- [3.1.10] Section heading -->
+            <!-- [3.1.10]
+                 System status heading.
+            -->
             <h2>System Status</h2>
 
-            <!-- [3.1.11] Dynamic API connection status -->
+            <!-- [3.1.11]
+                 Dynamic backend connection status output.
+            -->
             <div id="api-status">
                 Checking backend connection...
             </div>
 
         </section>
 
+        <!-- [3.1.12]
+             Interactive energy house visualization section.
+        -->
+        <section class="interactive-house-section">
+
+            <!-- [3.1.13]
+                 Interactive house section heading.
+            -->
+            <h2>
+                Interactive Energy Analysis
+            </h2>
+
+            <!-- [3.1.14]
+                 Dynamically injected SVG house container.
+            -->
+            <div id="interactive-house-container"
+                 class="house-svg-container">
+            </div>
+
+            <!-- [3.1.15]
+                 Dynamic tooltip interaction container.
+            -->
+            <div id="house-tooltip">
+                Hover over a house section.
+            </div>
+
+        </section>
+
+        <!-- [3.1.16]
+             Dynamic energy analysis dashboard.
+        -->
+        <section class="energy-dashboard">
+
+            <!-- [3.1.17]
+                 Dashboard heading.
+            -->
+            <h2>
+                Energy Efficiency Dashboard
+            </h2>
+
+            <!-- [3.1.18]
+                 Dynamic efficiency score display.
+            -->
+            <div id="energy-score">
+                Efficiency Score: 0
+            </div>
+
+            <!-- [3.1.19]
+                 Dynamic recommendation output container.
+            -->
+            <div id="recommendation-list">
+                Recommendations will appear here.
+            </div>
+
+        </section>
+
     </div>
 
-    <!-- [3.1.12] Loads application entry point -->
-    <script type="module" src="./js/main.js"></script>
+    <!-- [3.1.20]
+         Loads modular JavaScript application entry point.
+    -->
+    <script type="module"
+            src="./js/main.js">
+    </script>
 
-    <!-- [3.1.13]
-     Loads interactive SVG house component.
--->
-<div id="interactive-house-container"></div>
 </body>
 
 </html>

@@ -68,3 +68,75 @@ body {
     margin-top: 1rem;
     font-weight: bold;
 }
+
+/* [3.2.9]
+   Interactive SVG section layout.
+*/
+.interactive-house-section {
+    margin-top: 4rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* [3.2.10]
+   SVG container alignment.
+*/
+.house-svg-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* [3.2.11]
+   Responsive SVG sizing.
+*/
+#interactive-house {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* [3.2.12]
+   Enables interactive pointer behavior.
+*/
+.interactive-zone {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+/* [3.2.13]
+   Tooltip interaction container styling.
+*/
+#house-tooltip {
+
+    margin-top: 2rem;
+
+    padding: 1.5rem;
+
+    background-color: #d9e5ea;
+
+    border-radius: 8px;
+
+    line-height: 1.6;
+
+    /* [3.2.17]
+       Prevents layout shifting during content updates.
+    */
+    min-height: 180px;
+
+    /* [3.2.18]
+       Creates smoother visual resizing behavior.
+    */
+    transition: all 0.2s ease;
+
+    /* [3.2.19]
+       Improves text readability alignment.
+    */
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}

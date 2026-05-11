@@ -1,88 +1,115 @@
-<!-- [3.6.1]
-     Interactive SVG house component container.
+<!-- [3.4.1]
+     Scalable SVG-based interactive house visualization.
 -->
-<section class="interactive-house-section">
+<svg id="interactive-house"
+     viewBox="0 0 400 400"
+     xmlns="http://www.w3.org/2000/svg">
 
-    <!-- [3.6.2]
-         Section heading.
+    <!-- [3.4.2]
+         Roof interaction zone.
     -->
-    <h2>Interactive Energy Analysis</h2>
+    <polygon
+        id="roof-zone"
+        class="interactive-zone"
+        data-zone="roof"
+        points="200,40 80,140 320,140"
+        fill="#7aa6c2"
+        stroke="#004f71"
+        stroke-width="4">
+    </polygon>
 
-    <!-- [3.6.3]
-         SVG rendering container.
+    <!-- [3.4.3]
+         Wall interaction zone.
     -->
-    <div class="house-svg-container">
+    <rect
+        id="wall-zone"
+        class="interactive-zone"
+        data-zone="walls"
+        x="100"
+        y="140"
+        width="200"
+        height="170"
+        fill="#f5f5f5"
+        stroke="#004f71"
+        stroke-width="4">
+    </rect>
 
-        <!-- [3.6.4]
-             SVG-based scalable interactive house.
-        -->
-        <svg
-            id="interactive-house"
-            viewBox="0 0 500 500"
-            xmlns="http://www.w3.org/2000/svg">
-
-            <!-- [3.6.5]
-                 Main house structure.
-            -->
-            <rect
-                id="house-body"
-                x="100"
-                y="180"
-                width="300"
-                height="220"
-                fill="#ffffff"
-                stroke="#004f71"
-                stroke-width="4" />
-
-            <!-- [3.6.6]
-                 Roof interaction zone.
-            -->
-            <polygon
-                id="roof-zone"
-                class="interactive-zone"
-                points="80,180 250,60 420,180"
-                fill="#7aa6c2"
-                stroke="#004f71"
-                stroke-width="4"
-                data-zone="roof" />
-
-            <!-- [3.6.7]
-                 Wall interaction zone.
-            -->
-            <rect
-                id="wall-zone"
-                class="interactive-zone"
-                x="100"
-                y="180"
-                width="300"
-                height="220"
-                fill="transparent"
-                data-zone="walls" />
-
-            <!-- [3.6.8]
-                 Window interaction zone.
-            -->
-            <rect
-                id="window-zone"
-                class="interactive-zone"
-                x="220"
-                y="230"
-                width="60"
-                height="60"
-                fill="#d9e5ea"
-                stroke="#004f71"
-                stroke-width="2"
-                data-zone="windows" />
-
-        </svg>
-
-    </div>
-
-    <!-- [3.6.9]
-         Dynamic tooltip display container.
+    <!-- [3.4.4]
+         Window interaction zone.
     -->
-    <div id="house-tooltip">
-        Hover over a house section.
-    </div>
+    <rect
+        id="window-zone"
+        class="interactive-zone"
+        data-zone="windows"
+        x="170"
+        y="190"
+        width="60"
+        height="60"
+        fill="#d9e5ea"
+        stroke="#004f71"
+        stroke-width="2">
+    </rect>
 
-</section>
+    <!-- [3.4.5]
+         Solar panel visualization layer.
+         Initially hidden until roof upgrades are activated.
+    -->
+    <g id="solar-panel-system"
+       visibility="hidden">
+
+        <rect x="120"
+              y="90"
+              width="45"
+              height="25"
+              fill="#1f2937"
+              stroke="#ffffff"
+              stroke-width="1">
+        </rect>
+
+        <rect x="175"
+              y="75"
+              width="45"
+              height="25"
+              fill="#1f2937"
+              stroke="#ffffff"
+              stroke-width="1">
+        </rect>
+
+        <rect x="230"
+              y="90"
+              width="45"
+              height="25"
+              fill="#1f2937"
+              stroke="#ffffff"
+              stroke-width="1">
+        </rect>
+
+    </g>
+
+    <!-- [3.4.6]
+         Efficient wall insulation visualization overlay.
+    -->
+    <rect id="wall-insulation-overlay"
+          x="100"
+          y="140"
+          width="200"
+          height="170"
+          fill="#90ee90"
+          opacity="0"
+          pointer-events="none">
+    </rect>
+
+    <!-- [3.4.7]
+         Efficient window upgrade overlay.
+    -->
+    <rect id="efficient-window-overlay"
+          x="170"
+          y="190"
+          width="60"
+          height="60"
+          fill="#87ceeb"
+          opacity="0"
+          pointer-events="none">
+    </rect>
+
+</svg>
