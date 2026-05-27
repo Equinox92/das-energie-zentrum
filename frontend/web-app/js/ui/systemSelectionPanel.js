@@ -172,6 +172,10 @@ document.getElementById(
         // [6.9.11]
         // Synchronizes dashboard intelligence.
         updateEnergyDashboard();
+
+         // [10.2.6]
+        // Synchronizes SVG engineering visualization.
+        renderInstalledSystems();
     }
 );
 }

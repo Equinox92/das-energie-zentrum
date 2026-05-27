@@ -1,20 +1,21 @@
 // [4.3.1]
 // Imports centralized runtime state.
-import { energyState } from "./energyState.js";
+import {
+    energyState
+}
+from "./energyState.js";
 
 // [5.8.6]
 // Imports environmental simulation state.
-import { environmentState }
+import {
+    environmentState
+}
 from "./environmentState.js";
 
-// [5.2.1]
-// Imports centralized engineering relationship rules.
-import {
-    relationshipRules
-} from "./relationshipRules.js";
+// =====================================================
+// ENGINEERING SCORE ENGINE
+// =====================================================
 
-// [4.3.2]
-// Calculates overall building efficiency score.
 // [5.2.2]
 // Calculates intelligent building efficiency score.
 export function calculateEnergyScore() {
@@ -24,150 +25,107 @@ export function calculateEnergyScore() {
     let score = 0;
 
     // =====================================================
-    // BASE SYSTEM SCORING
+    // ITERATES THROUGH ENGINEERING ZONES
     // =====================================================
 
     // [5.2.4]
-    // Applies roof scoring.
-    if (
-        energyState.roof?.installed
-    ) {
+    // Processes all engineering zones safely.
+    Object.values(
+        energyState
+    ).forEach(zone => {
 
-        score += 25;
-    }
-
-    // [5.2.5]
-    // Applies wall scoring.
-    if (
-        energyState.walls?.installed
-    ) {
-
-        score += 25;
-    }
-
-    // [5.2.6]
-    // Applies window scoring.
-    if (
-        energyState.windows?.installed
-    ) {
-
-        score += 25;
-    }
-
-    // =====================================================
-    // RELATIONSHIP INTELLIGENCE
-    // =====================================================
-
-    // [5.2.7]
-    // Evaluates engineering relationship rules.
-    relationshipRules.forEach(rule => {
-
-        // [5.2.8]
-        // Validates required systems.
-        const systemsInstalled =
-            rule.systems.every(system => {
-
-                return Object.values(
-                    energyState
-                ).some(state => {
-
-                    return (
-                        state?.installed &&
-                        state?.selectedSystem === system
-                    );
-                });
-            });
-
-        // [5.2.9]
-        // Applies positive relationship scoring.
+        // [5.2.5]
+        // Prevents invalid engineering zones.
         if (
-            systemsInstalled &&
-            rule.type === "positive"
+            !zone ||
+            !zone.installedSystems
         ) {
 
-            score += rule.scoreImpact;
+            return;
         }
 
-        // [5.2.10]
-        // Validates missing dependencies.
-        if (
-            systemsInstalled &&
-            rule.requires
-        ) {
+        // =====================================================
+        // SYSTEM SCORING
+        // =====================================================
 
-            const missingRequirement =
-                rule.requires.some(requirement => {
+        // [5.2.6]
+        // Processes installed engineering systems.
+        zone.installedSystems.forEach(
+            system => {
 
-                    return !Object.values(
-                        energyState
-                    ).some(state => {
-
-                        return (
-                            state?.installed &&
-                            state?.selectedSystem === requirement
-                        );
-                    });
-                });
-
-            // [5.2.11]
-            // Applies dependency penalty.
-            if (missingRequirement) {
-
-                score += rule.scoreImpact;
+                // [5.2.7]
+                // Applies engineering system score.
+                score +=
+                    system.score || 0;
             }
-        }
+        );
     });
 
-    // [5.2.12]
-    // Prevents negative scores.
-    if (score < 0) {
+    // =====================================================
+    // ENVIRONMENTAL SIMULATION
+    // =====================================================
 
-        score = 0;
+    // [5.8.7]
+    // Applies winter environmental penalties.
+    if (
+        environmentState.season ===
+        "winter"
+    ) {
+
+        // [5.8.8]
+        // Retrieves installed wall systems.
+        const wallSystems =
+            energyState.walls
+                ?.installedSystems || [];
+
+        // [5.8.9]
+        // Retrieves installed window systems.
+        const windowSystems =
+            energyState.windows
+                ?.installedSystems || [];
+
+        // [5.8.10]
+        // Penalizes missing wall insulation.
+        if (
+            wallSystems.length === 0
+        ) {
+
+            score -= 10;
+        }
+
+        // [5.8.11]
+        // Penalizes missing window upgrades.
+        if (
+            windowSystems.length === 0
+        ) {
+
+            score -= 10;
+        }
     }
 
     // =====================================================
-// ENVIRONMENTAL SIMULATION INTELLIGENCE
-// =====================================================
+    // SCORE NORMALIZATION
+    // =====================================================
 
-// [5.8.7]
-// Applies winter thermal penalties.
-if (
-    environmentState.season ===
-    "winter"
-) {
+    // [5.2.8]
+    // Prevents negative engineering scores.
+    score =
+        Math.max(score, 0);
 
-    // [5.8.8]
-    // Penalizes missing wall insulation.
-    if (
-        !energyState.walls?.installed
-    ) {
+    // [5.2.9]
+    // Prevents engineering overflow.
+    score =
+        Math.min(score, 100);
 
-        score -= 10;
-    }
-
-    // [5.8.9]
-    // Penalizes inefficient windows.
-    if (
-        !energyState.windows?.installed
-    ) {
-
-        score -= 10;
-    }
-}
-
-// [5.8.10]
-// Prevents negative score output.
-if (score < 0) {
-
-    score = 0;
-}
-
-    // [5.2.13]
-    // Returns intelligent building score.
+    // [5.2.10]
+    // Returns finalized engineering score.
     return score;
 }
-// [4.3.8]
-// Generates dynamic business recommendations.
+
+// =====================================================
+// ENGINEERING RECOMMENDATION ENGINE
+// =====================================================
+
 // [5.2.14]
 // Generates intelligent engineering recommendations.
 export function generateRecommendations() {
@@ -177,13 +135,15 @@ export function generateRecommendations() {
     const recommendations = [];
 
     // =====================================================
-    // BASE RECOMMENDATIONS
+    // ROOF RECOMMENDATIONS
     // =====================================================
 
     // [5.2.16]
-    // Validates roof system presence.
+    // Validates roof engineering systems.
     if (
-        !energyState.roof?.installed
+        energyState.roof
+            ?.installedSystems
+            .length === 0
     ) {
 
         recommendations.push(
@@ -191,10 +151,16 @@ export function generateRecommendations() {
         );
     }
 
+    // =====================================================
+    // WALL RECOMMENDATIONS
+    // =====================================================
+
     // [5.2.17]
-    // Validates wall insulation presence.
+    // Validates wall engineering systems.
     if (
-        !energyState.walls?.installed
+        energyState.walls
+            ?.installedSystems
+            .length === 0
     ) {
 
         recommendations.push(
@@ -202,10 +168,16 @@ export function generateRecommendations() {
         );
     }
 
+    // =====================================================
+    // WINDOW RECOMMENDATIONS
+    // =====================================================
+
     // [5.2.18]
-    // Validates efficient windows presence.
+    // Validates efficient window systems.
     if (
-        !energyState.windows?.installed
+        energyState.windows
+            ?.installedSystems
+            .length === 0
     ) {
 
         recommendations.push(
@@ -213,71 +185,7 @@ export function generateRecommendations() {
         );
     }
 
-    // =====================================================
-    // RELATIONSHIP INTELLIGENCE
-    // =====================================================
-
     // [5.2.19]
-    // Evaluates engineering relationships dynamically.
-    relationshipRules.forEach(rule => {
-
-        const systemsInstalled =
-            rule.systems.every(system => {
-
-                return Object.values(
-                    energyState
-                ).some(state => {
-
-                    return (
-                        state?.installed &&
-                        state?.selectedSystem === system
-                    );
-                });
-            });
-
-        // [5.2.20]
-        // Applies positive engineering insights.
-        if (
-            systemsInstalled &&
-            rule.type === "positive"
-        ) {
-
-            recommendations.push(
-                rule.message
-            );
-        }
-
-        // [5.2.21]
-        // Applies missing dependency warnings.
-        if (
-            systemsInstalled &&
-            rule.requires
-        ) {
-
-            const missingRequirement =
-                rule.requires.some(requirement => {
-
-                    return !Object.values(
-                        energyState
-                    ).some(state => {
-
-                        return (
-                            state?.installed &&
-                            state?.selectedSystem === requirement
-                        );
-                    });
-                });
-
-            if (missingRequirement) {
-
-                recommendations.push(
-                    rule.message
-                );
-            }
-        }
-    });
-
-    // [5.2.22]
     // Returns intelligent recommendations.
     return recommendations;
 }
