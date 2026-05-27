@@ -16,6 +16,12 @@ import {
     renderInstalledSystems
 } from "./visualSystemRenderer.js";
 
+// [9.1.1]
+// Imports thermal visualization synchronization.
+import {
+    updateThermalVisualization
+} from "./thermalVisualizationEngine.js";
+
 // [5.9.13]
 // Initializes environmental simulation controls.
 export function initializeEnvironmentControls() {
@@ -53,6 +59,10 @@ export function initializeEnvironmentControls() {
             // Synchronizes dashboard calculations.
             updateEnergyDashboard();
 
+            // [9.1.2]
+// Synchronizes thermal visualization states.
+updateThermalVisualization();
+
             // [5.9.19]
             // Synchronizes visualization engine.
             renderInstalledSystems();
@@ -85,9 +95,17 @@ synchronizeClimateVisuals();
             environmentState.solarIntensity =
                 Number(event.target.value);
 
-            // [5.9.23]
-            // Synchronizes visualization engine.
-            renderInstalledSystems();
+        // [9.1.3]
+        // Synchronizes dashboard intelligence.
+        updateEnergyDashboard();
+
+        // [5.9.23]
+        // Synchronizes visualization engine.
+        renderInstalledSystems();
+
+        // [9.1.4]
+        // Synchronizes thermal visualization engine.
+        updateThermalVisualization();
 
             // [5.10.13]
 // Synchronizes climate visualization engine.

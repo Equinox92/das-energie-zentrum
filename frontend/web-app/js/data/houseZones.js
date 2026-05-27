@@ -1,34 +1,55 @@
 // [3.8.1]
-// Defines scalable interactive house zone metadata.
+// Defines scalable SVG interaction metadata.
 export const houseZones = {
 
-    // [3.8.2]
-    // Roof interaction configuration.
+    // =====================================================
+    // ROOF SYSTEMS
+    // =====================================================
+
     roof: {
 
-        title: "Roof Insulation & Solar",
+        // [3.8.2]
+        // Roof zone title.
+        title:
+            "Roof Systems",
 
+        // [3.8.3]
+        // Roof engineering description.
         description:
-            "The roof is responsible for major thermal losses. Upgrading insulation and adding solar panels significantly improves energy efficiency."
+            "Solar systems, roof insulation and energy harvesting solutions."
     },
 
-    // [3.8.3]
-    // Wall interaction configuration.
+    // =====================================================
+    // WALL SYSTEMS
+    // =====================================================
+
     walls: {
 
-        title: "Wall Insulation",
+        // [3.8.4]
+        // Wall zone title.
+        title:
+            "Wall Systems",
 
+        // [3.8.5]
+        // Wall engineering description.
         description:
-            "External wall insulation reduces heating demand and stabilizes indoor temperatures throughout the year."
+            "Thermal insulation and structural energy optimization systems."
     },
 
-    // [3.8.4]
-    // Window interaction configuration.
+    // =====================================================
+    // WINDOW SYSTEMS
+    // =====================================================
+
     windows: {
 
-        title: "Efficient Windows",
+        // [3.8.6]
+        // Window zone title.
+        title:
+            "Window Systems",
 
+        // [3.8.7]
+        // Window engineering description.
         description:
-            "Modern energy-efficient glazing minimizes heat transfer while improving indoor comfort and reducing energy costs."
+            "Efficient glazing and smart environmental window technologies."
     }
 };

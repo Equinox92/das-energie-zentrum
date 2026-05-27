@@ -8,9 +8,21 @@ import {
 // ENGINEERING VISUALIZATION RENDERER
 // =====================================================
 
+
+// =====================================================
+// VISUALIZATION CLEANUP ENGINE
+// =====================================================
+
+// [10.2.2]
+// Removes previously rendered engineering overlays safely.
+
 // [7.1.2]
 // Synchronizes installed engineering systems visually.
 export function renderInstalledSystems() {
+
+    // [10.2.1]
+// Clears previous visualization overlays safely.
+
 
     // [7.1.3]
     // Retrieves SVG engineering zones safely.
@@ -29,6 +41,24 @@ export function renderInstalledSystems() {
             '[data-zone="windows"]'
         );
 
+// [8.2.1]
+// Retrieves engineering overlay layers.
+const solarOverlay =
+    document.getElementById(
+        "solar-overlay"
+    );
+
+const wallOverlay =
+    document.getElementById(
+        "wall-overlay"
+    );
+
+const windowOverlay =
+    document.getElementById(
+        "window-overlay"
+    );
+
+
     // =====================================================
     // RESET VISUAL STATES
     // =====================================================
@@ -46,6 +76,22 @@ export function renderInstalledSystems() {
         zone.style.filter = "";
         zone.style.strokeWidth = "2";
     });
+
+    // [8.2.5]
+// Resets engineering overlays safely.
+[
+    solarOverlay,
+    wallOverlay,
+    windowOverlay
+].forEach(overlay => {
+
+    if (!overlay) return;
+
+    overlay.setAttribute(
+        "opacity",
+        "0"
+    );
+});
 
     // =====================================================
     // ROOF VISUALIZATION
@@ -78,6 +124,16 @@ export function renderInstalledSystems() {
 
         roofZone.style.strokeWidth =
             "4";
+
+            // [8.2.2]
+// Activates solar engineering overlays.
+if (solarOverlay) {
+
+    solarOverlay.setAttribute(
+        "opacity",
+        "1"
+    );
+}
     }
 
     // =====================================================
@@ -111,6 +167,16 @@ export function renderInstalledSystems() {
 
         wallZone.style.strokeWidth =
             "4";
+
+           // [8.2.3]
+// Activates thermal wall overlays.
+if (wallOverlay) {
+
+    wallOverlay.setAttribute(
+        "opacity",
+        "1"
+    );
+} 
     }
 
     // =====================================================
@@ -144,6 +210,16 @@ export function renderInstalledSystems() {
 
         windowZone.style.strokeWidth =
             "4";
+
+            // [8.2.4]
+// Activates glazing overlays.
+if (windowOverlay) {
+
+    windowOverlay.setAttribute(
+        "opacity",
+        "1"
+    );
+}
     }
 
     // [7.1.14]

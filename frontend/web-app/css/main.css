@@ -84,6 +84,7 @@ body {
    SVG container alignment.
 */
 .house-svg-container {
+
     display: flex;
     justify-content: center;
     margin-top: 2rem;
@@ -1305,4 +1306,112 @@ body {
 
     background:
         #d9e5ea;
+
+        
+}
+
+/* =====================================================
+   [10.1.1]
+   ENGINEERING ANIMATION SYSTEM
+===================================================== */
+
+/* [10.1.2]
+   Solar energy pulse animation.
+*/
+@keyframes solarPulse {
+
+    0% {
+
+        filter:
+            brightness(1)
+            drop-shadow(0 0 4px rgba(255,220,0,0.2));
+    }
+
+    50% {
+
+        filter:
+            brightness(1.35)
+            drop-shadow(0 0 18px rgba(255,220,0,0.75));
+    }
+
+    100% {
+
+        filter:
+            brightness(1)
+            drop-shadow(0 0 4px rgba(255,220,0,0.2));
+    }
+}
+
+/* [10.1.3]
+   Thermal wall animation.
+*/
+@keyframes thermalPulse {
+
+    0% {
+
+        opacity: 0.25;
+    }
+
+    50% {
+
+        opacity: 0.55;
+    }
+
+    100% {
+
+        opacity: 0.25;
+    }
+}
+
+/* [10.1.4]
+   Window efficiency animation.
+*/
+@keyframes glazingPulse {
+
+    0% {
+
+        opacity: 0.35;
+    }
+
+    50% {
+
+        opacity: 0.7;
+    }
+
+    100% {
+
+        opacity: 0.35;
+    }
+}
+
+/* =====================================================
+   [10.1.5]
+   ACTIVE ENGINEERING STATES
+===================================================== */
+
+/* [10.1.6]
+   Active solar engineering systems.
+*/
+.solar-active {
+
+    animation:
+        solarPulse 3s infinite ease-in-out;
+}
+
+/* [10.1.7]
+   Active thermal engineering systems.
+*/
+.wall-active {
+
+    animation:
+        thermalPulse 4s infinite ease-in-out;
+}
+
+/* [10.1.8]
+   Active glazing engineering systems.
+*/
+.window-active {
+
+    animation:
+        glazingPulse 3.5s infinite ease-in-out;
 }
