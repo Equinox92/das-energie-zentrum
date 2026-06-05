@@ -1,115 +1,109 @@
 // =====================================================
-// [6.2.1]
-// CENTRALIZED ENGINEERING RELATIONSHIP ENGINE
+// [11.1.1]
+// ENGINEERING RELATIONSHIP INTELLIGENCE ENGINE
 // =====================================================
 
-// [6.2.2]
-// Imports centralized runtime state.
+// [11.1.2]
+// Imports centralized runtime engineering state.
 import {
     energyState
-} from "./energyState.js";
+}
+from "./energyState.js";
 
-// [6.2.3]
-// Calculates advanced engineering relationship score.
+// =====================================================
+// RELATIONSHIP EVALUATION ENGINE
+// =====================================================
+
+// [11.1.3]
+// Calculates dynamic engineering relationship bonuses.
 export function calculateRelationshipBonus() {
 
-    // [6.2.4]
-    // Prevents invalid runtime access.
+    // [11.1.4]
+    // Initializes scalable relationship accumulator.
+    let relationshipBonus = 0;
+
+    // =====================================================
+    // ROOF ENGINEERING SYSTEMS
+    // =====================================================
+
+    // [11.1.5]
+    // Retrieves installed roof systems safely.
+    const roofSystems =
+        energyState.roof
+            ?.installedSystems || [];
+
+    // [11.1.6]
+    // Retrieves installed wall systems safely.
+    const wallSystems =
+        energyState.walls
+            ?.installedSystems || [];
+
+    // [11.1.7]
+    // Retrieves installed window systems safely.
+    const windowSystems =
+        energyState.windows
+            ?.installedSystems || [];
+
+    // =====================================================
+    // SOLAR + INSULATION BONUS
+    // =====================================================
+
+    // [11.1.8]
+    // Detects installed solar systems.
+    const hasSolar =
+        roofSystems.some(
+            system =>
+                system.category ===
+                "solar"
+        );
+
+    // [11.1.9]
+    // Detects installed thermal systems.
+    const hasInsulation =
+        wallSystems.some(
+            system =>
+                system.category ===
+                "insulation"
+        );
+
+    // [11.1.10]
+    // Applies integrated energy optimization bonus.
     if (
-        !energyState.installedSystems
+        hasSolar &&
+        hasInsulation
     ) {
 
-        return 0;
-    }
-
-    // [6.2.5]
-    // Retrieves installed engineering systems.
-    const installedSystems =
-        energyState.installedSystems;
-
-    // [6.2.6]
-    // Initializes scalable relationship score.
-    let relationshipScore = 0;
-
-    // =====================================================
-    // HEAT RETENTION RELATIONSHIPS
-    // =====================================================
-
-    // [6.2.7]
-    // Detects optimized thermal envelope.
-    const optimizedEnvelope =
-
-        installedSystems.roof &&
-        installedSystems.walls &&
-        installedSystems.windows;
-
-    // [6.2.8]
-    // Applies thermal envelope bonus.
-    if (optimizedEnvelope) {
-
-        relationshipScore += 25;
+        relationshipBonus += 15;
     }
 
     // =====================================================
-    // SOLAR OPTIMIZATION RELATIONSHIPS
+    // WINDOW + INSULATION BONUS
     // =====================================================
 
-    // [6.2.9]
-    // Detects premium solar configuration.
-    const premiumSolarInstalled =
+    // [11.1.11]
+    // Detects efficient window systems.
+    const hasEfficientWindows =
+        windowSystems.some(
+            system =>
+                system.category ===
+                "windows"
+        );
 
-        installedSystems.roof?.id ===
-        "solar-premium";
+    // [11.1.12]
+    // Applies thermal envelope optimization bonus.
+    if (
+        hasEfficientWindows &&
+        hasInsulation
+    ) {
 
-    // [6.2.10]
-    // Applies premium solar bonus.
-    if (premiumSolarInstalled) {
-
-        relationshipScore += 15;
+        relationshipBonus += 10;
     }
 
     // =====================================================
-    // THERMAL LOSS PENALTIES
+    // RETURNS FINAL RELATIONSHIP BONUS
     // =====================================================
 
-    // [6.2.11]
-    // Detects poor thermal protection state.
-    const thermalLossDetected =
-
-        installedSystems.roof &&
-        !installedSystems.windows;
-
-    // [6.2.12]
-    // Applies thermal inefficiency penalty.
-    if (thermalLossDetected) {
-
-        relationshipScore -= 12;
-    }
-
-    // =====================================================
-    // FUTURE HVAC RELATIONSHIPS
-    // =====================================================
-
-    // [6.2.13]
-    // Reserved for future heat pump optimization.
-    /*
-    Example:
-
-    Heat Pump
-    +
-    Underfloor Heating
-    =
-    Relationship bonus
-    */
-
-    // [6.2.14]
-    // Outputs scalable relationship diagnostics.
-    console.log(
-        "Relationship Score:",
-        relationshipScore
-    );
-
-    // [6.2.15]
-    // Returns calculated relationship score.
-    return relationshipScore;
+    // [11.1.13]
+    // Returns scalable relationship score.
+    return relationshipBonus;
 }

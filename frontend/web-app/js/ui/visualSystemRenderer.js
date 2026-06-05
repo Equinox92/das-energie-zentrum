@@ -18,14 +18,10 @@ import {
 
 // [7.1.2]
 // Synchronizes installed engineering systems visually.
+// [7.1.2]
+// Synchronizes installed engineering systems visually.
 export function renderInstalledSystems() {
 
-    // [10.2.1]
-// Clears previous visualization overlays safely.
-
-
-    // [7.1.3]
-    // Retrieves SVG engineering zones safely.
     const roofZone =
         document.querySelector(
             '[data-zone="roof"]'
@@ -41,30 +37,22 @@ export function renderInstalledSystems() {
             '[data-zone="windows"]'
         );
 
-// [8.2.1]
-// Retrieves engineering overlay layers.
-const solarOverlay =
-    document.getElementById(
-        "solar-overlay"
-    );
+    const roofSystems =
+        energyState.roof
+            ?.installedSystems || [];
 
-const wallOverlay =
-    document.getElementById(
-        "wall-overlay"
-    );
+    const wallSystems =
+        energyState.walls
+            ?.installedSystems || [];
 
-const windowOverlay =
-    document.getElementById(
-        "window-overlay"
-    );
-
+    const windowSystems =
+        energyState.windows
+            ?.installedSystems || [];
 
     // =====================================================
     // RESET VISUAL STATES
     // =====================================================
 
-    // [7.1.4]
-    // Clears previous engineering visual states.
     [
         roofZone,
         wallZone,
@@ -77,154 +65,98 @@ const windowOverlay =
         zone.style.strokeWidth = "2";
     });
 
-    // [8.2.5]
-// Resets engineering overlays safely.
-[
-    solarOverlay,
-    wallOverlay,
-    windowOverlay
-].forEach(overlay => {
-
-    if (!overlay) return;
-
-    overlay.setAttribute(
-        "opacity",
-        "0"
-    );
-});
-
     // =====================================================
-    // ROOF VISUALIZATION
+    // ROOF HEALTH
     // =====================================================
 
-    // [7.1.5]
-    // Retrieves installed roof systems.
-    const roofSystems =
-        energyState.roof
-            ?.installedSystems || [];
+    if (roofZone) {
 
-    // [7.1.6]
-    // Detects installed solar systems.
-    const hasSolar =
-        roofSystems.some(
-            system =>
-                system.category ===
-                "solar"
-        );
+        if (roofSystems.length === 0) {
 
-    // [7.1.7]
-    // Applies solar engineering visualization.
-    if (
-        hasSolar &&
-        roofZone
-    ) {
+            roofZone.style.filter =
+                "drop-shadow(0 0 12px red)";
+        }
 
-        roofZone.style.filter =
-            "drop-shadow(0 0 12px gold)";
+        else if (
+            roofSystems.length === 1
+        ) {
+
+            roofZone.style.filter =
+                "drop-shadow(0 0 12px orange)";
+        }
+
+        else {
+
+            roofZone.style.filter =
+                "drop-shadow(0 0 12px lime)";
+        }
 
         roofZone.style.strokeWidth =
             "4";
-
-            // [8.2.2]
-// Activates solar engineering overlays.
-if (solarOverlay) {
-
-    solarOverlay.setAttribute(
-        "opacity",
-        "1"
-    );
-}
     }
 
     // =====================================================
-    // WALL VISUALIZATION
+    // WALL HEALTH
     // =====================================================
 
-    // [7.1.8]
-    // Retrieves installed wall systems.
-    const wallSystems =
-        energyState.walls
-            ?.installedSystems || [];
+    if (wallZone) {
 
-    // [7.1.9]
-    // Detects thermal wall systems.
-    const hasThermalWalls =
-        wallSystems.some(
-            system =>
-                system.category ===
-                "insulation"
-        );
+        if (wallSystems.length === 0) {
 
-    // [7.1.10]
-    // Applies thermal wall visualization.
-    if (
-        hasThermalWalls &&
-        wallZone
-    ) {
+            wallZone.style.filter =
+                "drop-shadow(0 0 12px red)";
+        }
 
-        wallZone.style.filter =
-            "drop-shadow(0 0 12px cyan)";
+        else if (
+            wallSystems.length === 1
+        ) {
+
+            wallZone.style.filter =
+                "drop-shadow(0 0 12px orange)";
+        }
+
+        else {
+
+            wallZone.style.filter =
+                "drop-shadow(0 0 12px lime)";
+        }
 
         wallZone.style.strokeWidth =
             "4";
-
-           // [8.2.3]
-// Activates thermal wall overlays.
-if (wallOverlay) {
-
-    wallOverlay.setAttribute(
-        "opacity",
-        "1"
-    );
-} 
     }
 
     // =====================================================
-    // WINDOW VISUALIZATION
+    // WINDOW HEALTH
     // =====================================================
 
-    // [7.1.11]
-    // Retrieves installed window systems.
-    const windowSystems =
-        energyState.windows
-            ?.installedSystems || [];
+    if (windowZone) {
 
-    // [7.1.12]
-    // Detects high-efficiency glazing systems.
-    const hasEfficientWindows =
-        windowSystems.some(
-            system =>
-                system.category ===
-                "windows"
-        );
+        if (windowSystems.length === 0) {
 
-    // [7.1.13]
-    // Applies glazing visualization.
-    if (
-        hasEfficientWindows &&
-        windowZone
-    ) {
+            windowZone.style.filter =
+                "drop-shadow(0 0 12px red)";
+        }
 
-        windowZone.style.filter =
-            "drop-shadow(0 0 12px white)";
+        else if (
+            windowSystems.length === 1
+        ) {
+
+            windowZone.style.filter =
+                "drop-shadow(0 0 12px orange)";
+        }
+
+        else {
+
+            windowZone.style.filter =
+                "drop-shadow(0 0 12px lime)";
+        }
 
         windowZone.style.strokeWidth =
             "4";
-
-            // [8.2.4]
-// Activates glazing overlays.
-if (windowOverlay) {
-
-    windowOverlay.setAttribute(
-        "opacity",
-        "1"
-    );
-}
     }
 
-    // [7.1.14]
-    // Outputs rendering diagnostics.
     console.log(
         "Engineering visualization synchronized."
     );
 }
+

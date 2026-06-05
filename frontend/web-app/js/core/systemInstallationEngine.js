@@ -150,6 +150,12 @@ export function removeSystem(
                     systemId
             );
 
+            console.log(
+    "After Removal:",
+    energyState[zoneKey]
+        .installedSystems
+);
+
     // [6.8.16]
     // Outputs scalable removal diagnostics.
     console.log(

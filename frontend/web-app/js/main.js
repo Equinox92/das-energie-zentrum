@@ -38,6 +38,11 @@ import {
     updateEnergyDashboard
 } from "./ui/dashboardSynchronizer.js";
 
+import {
+    initializeHotspots
+}
+from "./ui/hotspotEngine.js";
+
 
 
 // [3.3.3]
@@ -51,6 +56,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     // [3.3.10]
 // Activates scalable SVG interaction engine.
 initializeHouseInteractions();
+
+    // [3.3.11]
+    // Initializes hotspots.
+    initializeHotspots();
 
 
 // [5.9.26]

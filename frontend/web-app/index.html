@@ -3,276 +3,327 @@
 
 <head>
 
-    <!-- [3.1.1]
-         Defines UTF-8 encoding for international text support.
-    -->
     <meta charset="UTF-8">
 
-    <!-- [3.1.2]
-         Enables responsive rendering on mobile devices.
-    -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <!-- [3.1.3]
-         Defines browser tab title.
-    -->
-    <title>Dasenergiezentrum</title>
+    <title>
+        Das Energie Zentrum
+    </title>
 
-    <!-- [3.1.4]
-         Loads global application stylesheet.
-    -->
-    <link rel="stylesheet"
-          href="./css/main.css">
+    <link
+        rel="stylesheet"
+        href="./css/landing-page.css">
+
 
 </head>
 
 <body>
 
-    <!-- [3.1.5]
-         Main application layout wrapper.
-    -->
-    <div class="app-container">
-
-        <!-- [3.1.6]
-             Main hero branding section.
-        -->
-        <header class="hero-section">
-
-            <!-- [3.1.7]
-                 Primary company heading.
-            -->
-            <h1>Dasenergiezentrum</h1>
-
-            <!-- [3.1.8]
-                 Business service subtitle.
-            -->
-            <p>
-                Energy Efficiency Experts
-            </p>
-
-        </header>
-
-        <!-- [3.1.9]
-             Backend API system status section.
-        -->
-        <section class="system-status-section">
-
-            <!-- [3.1.10]
-                 System status heading.
-            -->
-            <h2>System Status</h2>
-
-            <!-- [3.1.11]
-                 Dynamic backend connection status output.
-            -->
-            <div id="api-status">
-                Checking backend connection...
-            </div>
-
-        </section>
-
-
-
-        <!-- [3.1.12]
-             Interactive energy house visualization section.
-        -->
-        <section class="interactive-house-section">
-
-            <!-- [3.1.13]
-                 Interactive house section heading.
-            -->
-            <h2>
-                Interactive Energy Analysis
-            </h2>
-
-          <!-- [4.12.1]
-     Interactive SVG wrapper system.
--->
-<div class="interactive-house-wrapper">
-
-    <!-- [4.12.2]
-         Floating configuration badge.
-    -->
-    <div id="configure-badge">
-
-        ⚡ Configure
-
-    </div>
-
-    <!-- [4.13.4]
-         Contextual engineering configuration panel.
-    -->
-    <div id="configuration-panel">
-
-        <h3>System Configuration</h3>
-
-        <!-- [4.13.8]
-             Dynamic configuration options.
-        -->
-        <ul id="configuration-options">
-
-        </ul>
-
-    </div>
-
-    <!-- [4.12.3]
-         Dynamic SVG rendering container.
-    -->
-    <div id="interactive-house-container"
-         class="house-svg-container">
-    </div>
-
-</div>
-
-            <!-- [3.1.15]
-                 Dynamic tooltip interaction container.
-            -->
-            <div id="house-tooltip">
-                Hover over a house section.
-            </div>
-
-        </section>
-
-        <!-- =====================================================
-     [5.9.1]
-     ENVIRONMENTAL SIMULATION CONTROLS
+    <!-- =====================================================
+     [10.1.1]
+     FLOATING NAVIGATION BAR
 ===================================================== -->
-<section class="environment-controls-section">
 
-    <!-- [5.9.2]
-         Simulation controls heading.
-    -->
-    <h2>
-        Environmental Simulation
-    </h2>
+<nav class="floating-navbar">
 
-    <!-- [5.9.3]
-         Season simulation controls.
-    -->
-    <div class="environment-control-group">
+    <!-- =====================================================
+         [10.1.2]
+         Brand Identity Area
+    ===================================================== -->
 
-        <label for="season-selector">
-            Active Season
-        </label>
+    <div class="navbar-brand">
 
-        <select id="season-selector">
+        <span>
 
-            <option value="winter">
-                Winter
-            </option>
+            Das Energie Zentrum
 
-            <option value="summer">
-                Summer
-            </option>
-
-        </select>
-    </div>
-
-    <!-- [5.9.4]
-         Solar intensity simulation controls.
-    -->
-    <div class="environment-control-group">
-
-        <label for="solar-intensity-slider">
-            Solar Intensity
-        </label>
-
-        <input
-            type="range"
-            id="solar-intensity-slider"
-            min="0"
-            max="100"
-            value="70"
-        >
+        </span>
 
     </div>
 
-</section>
+    <!-- =====================================================
+         [10.1.3]
+         Primary Navigation
+    ===================================================== -->
 
-              <!-- [4.5.1] -->
-<!-- Dynamic energy intelligence dashboard -->
-<section class="energy-dashboard-section">
+    <ul class="navbar-links">
 
-    <!-- [4.5.2] -->
-    <!-- Live building energy score -->
-    <h2>
-        Energy Efficiency Dashboard
-    </h2>
+        <li>
 
-    <!-- [4.5.3] -->
-    <!-- Dynamic energy score container -->
-    <div id="energy-score">
-        0%
-    </div>
+            <a href="#hero">
 
-    <!-- [4.5.4] -->
-    <!-- Recommendation heading -->
-    <h2>
-        Recommendations
-    </h2>
+                Home
 
-    <!-- [4.5.5] -->
-    <!-- Dynamic recommendation rendering container -->
-    <ul id="energy-recommendations">
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#about">
+
+                About
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#services">
+
+                Services
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#house">
+
+                Building Systems
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#contact">
+
+                Contact
+
+            </a>
+
+        </li>
 
     </ul>
 
-    <!-- [4.8.1] -->
-<!-- Intelligent consultation CTA section -->
-<div class="consultation-cta">
+</nav>
 
-    <!-- [4.8.2] -->
-    <!-- Dynamic CTA heading -->
-    <h3 id="cta-heading">
-        Improve Your Energy Efficiency
-    </h3>
+    <!-- [9.4.1] -->
+    <!-- Main website wrapper -->
+    <div class="website-container">
 
-    <!-- [4.8.3] -->
-    <!-- Dynamic CTA description -->
-    <p id="cta-description">
-        Configure your building systems to unlock efficiency insights.
-    </p>
+        <!-- ====================================== -->
+        <!-- HERO SECTION -->
+        <!-- ====================================== -->
 
-    <!-- [4.8.4] -->
-    <!-- CTA action controls -->
-    <div class="cta-buttons">
+        <section id="hero" class="hero-section">
 
-        <!-- [4.8.5] -->
-        <!-- WhatsApp consultation action -->
-        <button class="cta-button">
-            WhatsApp Consultation
-        </button>
+            <div class="hero-content">
 
-        <!-- [4.8.6] -->
-        <!-- Email consultation action -->
-        <button class="cta-button">
-            Email Assessment
-        </button>
+                <h1>
+                    Gido Peuster
+                </h1>
 
-        <!-- [FUTURE ADMIN MODULE] -->
-        <!-- Internal expert dashboard hook -->
-        <!-- Reserved for authenticated expert workflows -->
+                <p class="hero-subtitle">
 
-        <!-- [FUTURE COMPONENT MODULE] -->
-        <!-- Drag-and-drop engineering component hooks -->
+                    Energy Consulting |
+                    Energy Planning |
+                    SHK Solutions
 
-        <!-- [FUTURE GDPR MODULE] -->
-        <!-- Client document uploads intentionally disabled -->
+                </p>
 
-    </div>
+                <button
+                    class="primary-button">
 
-</div>
+                    Book Consultation
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- ABOUT SECTION -->
+        <!-- ====================================== -->
+
+        <section
+            id="about"
+            class="about-section">
+
+            <h2>
+
+                About The Expert
+
+            </h2>
+
+            <p>
+
+                Professional energy consulting
+                for homeowners,
+                developers,
+                businesses
+                and compliance projects.
+
+            </p>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- SERVICES SECTION -->
+        <!-- ====================================== -->
+
+        <section
+            id="services"
+            class="services-section">
+
+            <h2>
+
+                Services
+
+            </h2>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    Energy Audits
+
+                </div>
+
+                <div class="service-card">
+
+                    Building Efficiency
+
+                </div>
+
+                <div class="service-card">
+
+                    Renewable Systems
+
+                </div>
+
+                <div class="service-card">
+
+                    Compliance Consulting
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- INTERACTIVE HOUSE -->
+        <!-- ====================================== -->
+
+<!-- ====================================== -->
+<!-- INTERACTIVE HOUSE EXPLORER -->
+<!-- ====================================== -->
+
+<section id="house"
+    class="interactive-house-section">
+
+    <h2>
+
+        Explore Building Systems
+
+    </h2>
+
+    <!-- =====================================================
+         [9.8.1]
+         House Explorer Card
+    ===================================================== -->
+
+    <div
+        class="house-explorer">
+
+        <!-- =====================================================
+             [9.8.2]
+             Interactive House Container
+        ===================================================== -->
+
+        <div
+            id="energy-house-container"
+            class="energy-house-container">
+
+            <img
+                src="./assets/images/energy-house.png"
+                alt="Energy House"
+                class="energy-house-image">
+
+            <!-- =====================================================
+                 [9.8.3]
+                 Floating Hover Tooltip
+            ===================================================== -->
+
+            <div
+                id="hotspot-tooltip"
+                class="hotspot-tooltip">
+
+            </div>
+
+        </div>
+
+        <!-- =====================================================
+             [9.8.4]
+             Service Information Panel
+        ===================================================== -->
+
+        <div
+            id="service-information-panel"
+            class="service-information-panel">
+
+            <h3
+                id="service-panel-title">
+
+                Energy Efficiency Solutions
+
+            </h3>
+
+            <p
+                id="service-panel-description">
+
+                Explore the building systems above
+                 to discover energy-saving opportunities 
+                 and professional consultation services.
+
+            </p>
+
+            <ul
+                id="service-panel-list">
+
+            </ul>
+
+        </div>
+
 </section>
+        <!-- ====================================== -->
+        <!-- CTA SECTION -->
+        <!-- ====================================== -->
+
+        <section
+            class="cta-section">
+
+            <h2>
+
+                Ready To Improve
+                Your Building?
+
+            </h2>
+
+            <a
+                href="./assessment.html">
+
+                Start Assessment
+
+            </a>
+
+        </section>
 
     </div>
 
-    <!-- [3.1.20]
-         Loads modular JavaScript application entry point.
-    -->
-    <script type="module"
-            src="./js/main.js">
-    </script>
+    <script
+    type="module"
+    src="./js/landingMain.js">
+</script>
 
 </body>
 

@@ -15,6 +15,17 @@ import {
     energyState
 } from "../core/energyState.js";
 
+// [8.2.1]
+// Imports engineering analytics intelligence.
+import {
+
+    calculateEstimatedSavings,
+    calculateCarbonReduction,
+    calculateThermalEfficiency,
+    calculateOptimizationLevel
+
+} from "../core/engineeringAnalyticsEngine.js";
+
 
 // [4.4.1]
 // Synchronizes dashboard UI with runtime state.
@@ -30,6 +41,30 @@ export function updateEnergyDashboard() {
     const recommendations =
         generateRecommendations();
 
+        // =====================================================
+// ENGINEERING ANALYTICS
+// =====================================================
+
+// [8.2.2]
+// Retrieves projected engineering savings.
+const estimatedSavings =
+    calculateEstimatedSavings();
+
+// [8.2.3]
+// Retrieves environmental reduction metrics.
+const carbonReduction =
+    calculateCarbonReduction();
+
+// [8.2.4]
+// Retrieves interpreted thermal efficiency.
+const thermalEfficiency =
+    calculateThermalEfficiency();
+
+// [8.2.5]
+// Retrieves optimization classification.
+const optimizationLevel =
+    calculateOptimizationLevel();
+
     // [4.4.4]
     // Retrieves score container safely.
     const scoreElement =
@@ -43,6 +78,28 @@ export function updateEnergyDashboard() {
         document.getElementById(
             "energy-recommendations"
         );
+
+        // [8.2.6]
+// Retrieves engineering analytics containers.
+const savingsElement =
+    document.getElementById(
+        "estimated-savings"
+    );
+
+const carbonElement =
+    document.getElementById(
+        "carbon-reduction"
+    );
+
+const thermalElement =
+    document.getElementById(
+        "thermal-efficiency"
+    );
+
+const optimizationElement =
+    document.getElementById(
+        "optimization-level"
+    );
 
     // [4.4.6]
     // Prevents runtime UI synchronization failure.
@@ -62,6 +119,42 @@ export function updateEnergyDashboard() {
     // Updates live building efficiency score.
     scoreElement.textContent =
         `${score}%`;
+
+        // =====================================================
+// LIVE ENGINEERING ANALYTICS SYNCHRONIZATION
+// =====================================================
+
+// [8.2.7]
+// Synchronizes projected savings safely.
+if (savingsElement) {
+
+    savingsElement.textContent =
+        `R ${estimatedSavings.toLocaleString()}`;
+}
+
+// [8.2.8]
+// Synchronizes environmental reduction safely.
+if (carbonElement) {
+
+    carbonElement.textContent =
+        `${carbonReduction}%`;
+}
+
+// [8.2.9]
+// Synchronizes thermal efficiency safely.
+if (thermalElement) {
+
+    thermalElement.textContent =
+        thermalEfficiency;
+}
+
+// [8.2.10]
+// Synchronizes optimization classification safely.
+if (optimizationElement) {
+
+    optimizationElement.textContent =
+        optimizationLevel;
+}
 
     // [4.4.8]
     // Renders dynamic recommendation list.

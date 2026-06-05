@@ -1,0 +1,983 @@
+/* =====================================================
+   [9.4.1]
+   DAS ENERGIE ZENTRUM
+   LANDING PAGE STYLESHEET
+===================================================== */
+
+:root {
+
+    /* =====================================================
+       BRAND COLORS
+    ===================================================== */
+
+    /* [9.4.2] */
+    --dez-primary:
+        #004F71;
+
+    /* [9.4.3] */
+    --dez-secondary:
+        #D9E5EA;
+
+    /* [9.4.4] */
+    --dez-white:
+        #FFFFFF;
+
+    /* [9.4.5] */
+    --dez-dark:
+        #163443;
+
+    /* [9.4.6] */
+    --dez-accent:
+        #0B698F;
+
+    /* [9.4.7] */
+    --dez-light-gray:
+        #F5F7F8;
+
+    /* [9.4.8] */
+    --dez-shadow:
+        0 10px 30px rgba(
+            0,
+            79,
+            113,
+            0.12
+        );
+}
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+
+    box-sizing:
+        border-box;
+
+    margin:
+        0;
+
+    padding:
+        0;
+}
+
+html {
+
+    scroll-behavior:
+        smooth;
+}
+
+body {
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    background:
+        var(--dez-white);
+
+    color:
+        var(--dez-dark);
+
+    line-height:
+        1.6;
+}
+
+/* =====================================================
+   GLOBAL SECTION SPACING
+===================================================== */
+
+section {
+
+    padding:
+        60px 40px;
+}
+
+.website-container {
+
+    width:
+        100%;
+
+    overflow-x:
+        hidden;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--dez-secondary),
+            var(--dez-white)
+        );
+
+    min-height:
+        40vh;
+
+        padding: 
+        40px 20px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+}
+
+.hero-content {
+
+    max-width:
+        900px;
+
+            margin:
+        0 auto;
+}
+
+.hero-section h1 {
+
+    color:
+        var(--dez-primary);
+
+    font-size:
+        4rem;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        15px;
+}
+
+.hero-subtitle {
+
+    font-size:
+        1.3rem;
+
+    color:
+        var(--dez-dark);
+
+    opacity:
+        0.85;
+
+    margin-bottom:
+        40px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-button {
+
+    background:
+        var(--dez-primary);
+
+    color:
+        white;
+
+    border:
+        none;
+
+    padding:
+        16px 36px;
+
+    border-radius:
+        10px;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.3s ease;
+
+    box-shadow:
+        var(--dez-shadow);
+}
+
+.primary-button:hover {
+
+    background:
+        var(--dez-accent);
+
+    transform:
+        translateY(-3px);
+}
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+section h2 {
+
+    text-align:
+        center;
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        50px;
+
+    font-size:
+        2.5rem;
+}
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about-section {
+
+    background:
+        white;
+}
+
+.about-section p {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    text-align:
+        center;
+
+    font-size:
+        1.15rem;
+}
+
+/* =====================================================
+   SERVICES SECTION
+===================================================== */
+
+.services-section {
+
+    background:
+        var(--dez-light-gray);
+}
+
+.services-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap:
+        30px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+}
+
+.service-card {
+
+    background:
+        white;
+
+    padding:
+        40px;
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        var(--dez-shadow);
+
+    text-align:
+        center;
+
+    transition:
+        all 0.3s ease;
+
+    font-weight:
+        600;
+}
+
+.service-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+/* =====================================================
+   INTERACTIVE ENERGY HOUSE
+===================================================== */
+
+.interactive-house-section {
+
+    background:
+        white;
+}
+
+/* =====================================================
+   [9.8.5]
+   HOUSE EXPLORER MASTER CARD
+===================================================== */
+
+/* =====================================================
+   [9.8.1]
+   House Explorer Master Card
+===================================================== */
+
+.house-explorer {
+
+    max-width:
+        1400px;
+
+        width:95%;
+
+    margin:
+        0 auto;
+
+    background:
+        white;
+
+    border-radius:
+        24px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 15px 40px rgba(
+            0,
+            79,
+            113,
+            0.15
+        );
+}
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.cta-section {
+
+    background:
+        var(--dez-primary);
+
+    color:
+        white;
+
+    text-align:
+        center;
+}
+
+.cta-section h2 {
+
+    color:
+        white;
+
+    margin-bottom:
+        30px;
+}
+
+.cta-section a {
+
+    display:
+        inline-block;
+
+    background:
+        white;
+
+    color:
+        var(--dez-primary);
+
+    text-decoration:
+        none;
+
+    padding:
+        16px 36px;
+
+    border-radius:
+        10px;
+
+    font-weight:
+        700;
+
+    transition:
+        all 0.3s ease;
+}
+
+.cta-section a:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    background:
+        var(--dez-dark);
+
+    color:
+        white;
+
+    text-align:
+        center;
+
+    padding:
+        40px;
+}
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media (
+    max-width: 992px
+) {
+
+    .hero-section h1 {
+
+        font-size:
+            3rem;
+    }
+
+    section {
+
+        padding:
+            80px 30px;
+    }
+
+    #energy-house-container {
+
+        height:
+            550px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE MOBILE
+===================================================== */
+
+@media (
+    max-width: 768px
+) {
+
+    .hero-section {
+
+        min-height:
+            70vh;
+    }
+
+    .hero-section h1 {
+
+        font-size:
+            2.4rem;
+    }
+
+    .hero-subtitle {
+
+        font-size:
+            1.05rem;
+    }
+
+    section {
+
+        padding:
+            60px 20px;
+    }
+
+    section h2 {
+
+        font-size:
+            2rem;
+    }
+
+    .services-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    #energy-house-container {
+
+        height:
+            400px;
+    }
+}
+
+/* =====================================================
+   [9.5.2]
+   ENERGY HOUSE CONTAINER
+===================================================== */
+
+/* =====================================================
+   [9.8.6]
+   ENERGY HOUSE CONTAINER
+===================================================== */
+
+.energy-house-container {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    background:
+        #f7f9fb;
+}
+
+/* =====================================================
+   [9.8.7]
+   ENERGY HOUSE IMAGE
+===================================================== */
+
+.energy-house-image {
+
+    width:
+        100%;
+
+    display:
+        block;
+}
+/* =====================================================
+   HOTSPOTS
+===================================================== */
+
+.hotspot {
+
+    position: absolute;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: var(--dez-primary);
+
+    border: 3px solid white;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 15px rgba(
+            0,
+            79,
+            113,
+            0.6
+        );
+
+    transition:
+        all 0.3s ease;
+
+    z-index: 100;
+}
+
+.hotspot:hover {
+
+    box-shadow:
+        0 0 35px rgba(
+            0,
+            79,
+            113,
+            1
+        );
+}
+
+
+/* =====================================================
+   [9.6.2]
+   CUSTOM HOTSPOT TOOLTIP
+===================================================== */
+
+
+.hotspot-tooltip {
+
+    position:
+        fixed;
+
+    display:
+        none;
+
+    max-width:
+        280px;
+
+    padding:
+        15px;
+
+    border-radius:
+        12px;
+
+    background:
+        white;
+
+    color:
+        var(--dez-dark);
+
+    box-shadow:
+        var(--dez-shadow);
+
+    border:
+        2px solid
+        var(--dez-primary);
+
+    z-index:
+        10000;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform;
+
+    overflow:
+        hidden;
+}
+
+/* =====================================================
+   [9.6.3]
+   Tooltip title styling.
+===================================================== */
+
+.hotspot-tooltip h4 {
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        8px;
+}
+
+.hotspot-tooltip p {
+
+    margin:
+        0;
+
+    font-size:
+        0.95rem;
+}
+/* =====================================================
+   [9.6.4]
+   Tooltip description styling.
+===================================================== */
+/* =====================================================
+   [9.7.5]
+   SERVICE INFORMATION PANEL
+===================================================== */
+
+/* =====================================================
+   [9.8.8]
+   SERVICE INFORMATION PANEL
+===================================================== */
+
+.service-information-panel {
+
+    padding:
+        40px;
+
+    background:
+        white;
+
+    border-top:
+        1px solid #e5edf1;
+}
+
+/* =====================================================
+   [9.7.6]
+   Service panel title
+===================================================== */
+
+/* =====================================================
+   [9.8.9]
+   PANEL TITLE
+===================================================== */
+
+.service-information-panel h3 {
+
+    font-size:
+        2rem;
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        15px;
+}
+
+/* =====================================================
+   [9.7.7]
+   Service panel description
+===================================================== */
+
+/* =====================================================
+   [9.8.10]
+   PANEL DESCRIPTION
+===================================================== */
+
+.service-information-panel p {
+
+    font-size:
+        1.1rem;
+
+    margin-bottom:
+        25px;
+}
+/* =====================================================
+   [9.7.8]
+   Dynamic services list
+===================================================== */
+
+/* =====================================================
+   [9.8.11]
+   SERVICE LIST
+===================================================== */
+
+.service-information-panel ul {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap:
+        15px;
+
+    list-style:
+        none;
+
+    padding:
+        0;
+}
+
+/* =====================================================
+   [9.8.12]
+   SERVICE ITEM CARD
+===================================================== */
+
+.service-information-panel li {
+
+    background:
+        var(--dez-light-gray);
+
+    padding:
+        15px;
+
+    border-left:
+        4px solid
+        var(--dez-primary);
+
+    border-radius:
+        8px;
+}
+
+/* =====================================================
+   [9.9.7]
+   PROFESSIONAL SERVICE CARD
+===================================================== */
+
+.service-card-item {
+
+    background:
+        var(--dez-light-gray);
+
+    padding:
+        20px;
+
+    border-left:
+        5px solid
+        var(--dez-primary);
+
+    border-radius:
+        10px;
+
+    transition:
+        all 0.3s ease;
+}
+
+/* =====================================================
+   [9.9.8]
+   Hover interaction.
+===================================================== */
+
+.service-card-item:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--dez-shadow);
+}
+
+/* =====================================================
+   [9.9.9]
+   Service title.
+===================================================== */
+
+.service-card-item h4 {
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        10px;
+}
+
+/* =====================================================
+   [9.9.10]
+   Service summary.
+===================================================== */
+
+.service-card-item p {
+
+    margin:
+        0;
+
+    font-size:
+        0.95rem;
+}
+
+/* =====================================================
+   [10.1.4]
+   FLOATING NAVIGATION BAR
+===================================================== */
+
+.floating-navbar {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        5000;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding:
+        18px 40px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    backdrop-filter:
+        blur(10px);
+
+    border-bottom:
+        1px solid
+        rgba(
+            0,
+            79,
+            113,
+            0.08
+        );
+
+    box-shadow:
+        0 4px 20px rgba(
+            0,
+            0,
+            0,
+            0.04
+        );
+}
+
+/* =====================================================
+   [10.1.5]
+   NAVBAR BRAND
+===================================================== */
+
+.navbar-brand {
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        700;
+
+    color:
+        var(--dez-primary);
+}
+
+/* =====================================================
+   [10.1.6]
+   NAVIGATION LINKS
+===================================================== */
+
+.navbar-links {
+
+    display:
+        flex;
+
+    gap:
+        30px;
+
+    list-style:
+        none;
+}
+
+.navbar-links a {
+
+    text-decoration:
+        none;
+
+    color:
+        var(--dez-dark);
+
+    font-weight:
+        600;
+
+    transition:
+        color 0.3s ease;
+}
+
+.navbar-links a:hover {
+
+    color:
+        var(--dez-primary);
+}

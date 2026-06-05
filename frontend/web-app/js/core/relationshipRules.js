@@ -1,80 +1,78 @@
-// [5.1.1]
+// =====================================================
+// [7.1.1]
+// CENTRALIZED ENGINEERING RELATIONSHIP RULES
+// =====================================================
+
+// [7.1.2]
 // Defines scalable engineering relationship intelligence.
 export const relationshipRules = [
 
     // =====================================================
-    // POSITIVE RELATIONSHIPS
+    // SOLAR + INSULATION SYNERGY
     // =====================================================
 
-    // [5.1.2]
-    // Roof insulation improves heat pump efficiency.
+    // [7.1.3]
+    // Detects optimized solar thermal envelope.
     {
         systems: [
-            "roofInsulation",
-            "heatPump"
+            "solar-pv-5kw",
+            "thermal-wall-system"
         ],
 
-        type: "positive",
+        type:
+            "positive",
 
-        scoreImpact: 15,
-
-        message:
-            "Roof insulation enhances heat pump efficiency."
-    },
-
-    // [5.1.3]
-    // Efficient windows improve thermal retention.
-    {
-        systems: [
-            "efficientWindows",
-            "wallInsulation"
-        ],
-
-        type: "positive",
-
-        scoreImpact: 10,
+        scoreImpact:
+            15,
 
         message:
-            "Efficient windows and insulated walls reduce heat loss."
-    },
-
-    // [5.1.4]
-    // Solar combined with battery storage increases energy independence.
-    {
-        systems: [
-            "solarPanels",
-            "batteryStorage"
-        ],
-
-        type: "positive",
-
-        scoreImpact: 20,
-
-        message:
-            "Solar panels combined with battery storage improve energy independence."
+            "Solar and thermal insulation systems create strong energy synergy."
     },
 
     // =====================================================
-    // NEGATIVE RELATIONSHIPS
+    // WINDOW + WALL OPTIMIZATION
     // =====================================================
 
-    // [5.1.5]
-    // Heat pumps underperform in inefficient buildings.
+    // [7.1.4]
+    // Detects optimized building envelope.
     {
         systems: [
-            "heatPump"
+            "thermal-wall-system",
+            "triple-glazed-window"
+        ],
+
+        type:
+            "positive",
+
+        scoreImpact:
+            20,
+
+        message:
+            "Thermal wall insulation and efficient glazing reduce heat loss significantly."
+    },
+
+    // =====================================================
+    // MISSING WINDOW PENALTY
+    // =====================================================
+
+    // [7.1.5]
+    // Detects thermal imbalance configuration.
+    {
+        systems: [
+            "thermal-wall-system"
         ],
 
         requires: [
-            "roofInsulation",
-            "wallInsulation"
+            "triple-glazed-window"
         ],
 
-        type: "negative",
+        type:
+            "negative",
 
-        scoreImpact: -10,
+        scoreImpact:
+            -10,
 
         message:
-            "Heat pump efficiency may be reduced due to insufficient insulation."
+            "Thermal insulation without efficient windows may reduce optimization efficiency."
     }
 ];

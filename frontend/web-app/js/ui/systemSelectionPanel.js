@@ -19,7 +19,12 @@ import {
     updateEnergyDashboard
 } from "./dashboardSynchronizer.js";
 
-
+// [7.2.11]
+// Imports engineering visualization renderer.
+import {
+    renderInstalledSystems
+}
+from "./visualSystemRenderer.js";
 // [4.2.3]
 // Creates scalable floating system selection panel.
 export function openSystemSelectionPanel(
