@@ -476,6 +476,27 @@ footer {
         height:
             550px;
     }
+
+    .about-grid {
+
+    grid-template-columns:
+        1fr;
+
+    text-align:
+        center;
+}
+
+.about-content h2 {
+
+    text-align:
+        center;
+}
+
+.about-content p {
+
+    text-align:
+        center;
+}
 }
 
 /* =====================================================
@@ -980,4 +1001,187 @@ footer {
 
     color:
         var(--dez-primary);
+}
+
+/* =====================================================
+   [10.2.4]
+   PROFESSIONAL EXPERT PROFILE
+===================================================== */
+
+.about-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        350px 1fr;
+
+    gap:
+        60px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+
+    align-items:
+        center;
+}
+
+/* =====================================================
+   [10.2.5]
+   PROFILE IMAGE
+===================================================== */
+
+.about-image img {
+
+    width:
+        100%;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        var(--dez-shadow);
+}
+
+/* =====================================================
+   [10.2.6]
+   CONTENT
+===================================================== */
+
+.about-content h2 {
+
+    text-align:
+        left;
+
+    margin-bottom:
+        10px;
+}
+
+.about-content h3 {
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        20px;
+}
+
+.about-content p {
+
+    margin-bottom:
+        25px;
+
+    text-align:
+        left;
+}
+
+/* =====================================================
+   [10.2.7]
+   EXPERTISE LIST
+===================================================== */
+
+.about-content ul {
+
+    margin-bottom:
+        30px;
+
+    padding-left:
+        20px;
+}
+
+.about-content li {
+
+    margin-bottom:
+        10px;
+}
+
+/* =====================================================
+   [10.3.6]
+   PROFESSIONAL CREDIBILITY SECTION
+===================================================== */
+
+.credibility-section {
+
+    background:
+        var(--dez-light-gray);
+}
+
+/* =====================================================
+   [10.3.7]
+   CREDIBILITY GRID
+===================================================== */
+
+.credibility-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                280px,
+                1fr
+            )
+        );
+
+    gap:
+        30px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+}
+
+/* =====================================================
+   [10.3.8]
+   CREDIBILITY CARD
+===================================================== */
+
+.credibility-card {
+
+    background:
+        white;
+
+    padding:
+        35px;
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        var(--dez-shadow);
+
+    transition:
+        all 0.3s ease;
+}
+
+/* =====================================================
+   [10.3.9]
+   CARD HOVER
+===================================================== */
+
+.credibility-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+/* =====================================================
+   [10.3.10]
+   CARD TITLE
+===================================================== */
+
+.credibility-card h3 {
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        15px;
 }
