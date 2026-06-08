@@ -10,8 +10,26 @@
         content="width=device-width, initial-scale=1.0">
 
     <title>
-        Das Energie Zentrum
+        Dasenergiezentrum
     </title>
+
+<!-- =====================================================
+     [10.6.10]
+     Google Font Import
+===================================================== -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
 
     <link
         rel="stylesheet"
@@ -36,9 +54,15 @@
 
     <div class="navbar-brand">
 
+
+    <img
+        src="./assets/images/logo-placeholder.png"
+        alt="Das Energie Zentrum Logo"
+        class="navbar-logo">
+
         <span>
 
-            Das Energie Zentrum
+            Dasenergiezentrum
 
         </span>
 
@@ -48,6 +72,19 @@
          [10.1.3]
          Primary Navigation
     ===================================================== -->
+
+    <!-- =====================================================
+     [10.6.5]
+     MOBILE MENU TOGGLE BUTTON
+===================================================== -->
+
+<button
+    id="mobile-menu-button"
+    class="mobile-menu-button">
+
+    ☰
+
+</button>
 
     <ul class="navbar-links">
 
@@ -115,28 +152,52 @@
 
         <section id="hero" class="hero-section">
 
-            <div class="hero-content">
+            <!-- =====================================================
+     [10.5.7]
+     HERO GRID
+===================================================== -->
 
-                <h1>
-                    Gido Peuster
-                </h1>
+<div
+    class="hero-grid">
 
-                <p class="hero-subtitle">
+    <!-- =====================================================
+         [10.5.8]
+         Hero Content
+    ===================================================== -->
 
-                    Energy Consulting |
-                    Energy Planning |
-                    SHK Solutions
+    <div
+        class="hero-left">
 
-                </p>
+        <img
+            src="./assets/images/logo-full.png"
+            alt="Das Energie Zentrum Logo"
+            class="hero-logo">
 
-                <button
-                    class="primary-button">
+        <button
+            class="primary-button">
 
-                    Book Consultation
+            Book Consultation
 
-                </button>
+        </button>
 
-            </div>
+    </div>
+
+    <!-- =====================================================
+         [10.5.9]
+         Professional Portrait
+    ===================================================== -->
+
+    <div
+        class="hero-right">
+
+        <img
+            src="./assets/images/gido-placeholder.jpg"
+            alt="Gido Peuster"
+            class="hero-portrait">
+
+    </div>
+
+</div>
 
         </section>
 
@@ -149,93 +210,80 @@
      PROFESSIONAL EXPERT PROFILE
 ===================================================== -->
 
+<!-- =====================================================
+     [10.5.1]
+     CORE EXPERTISE SECTION
+===================================================== -->
+
 <section
-    id="about"
-    class="about-section">
+    class="expertise-section">
+
+    <h2>
+
+        Core Expertise
+
+    </h2>
 
     <div
-        class="about-grid">
+        class="expertise-grid">
 
         <!-- =====================================================
-             [10.2.2]
-             Expert Image
+             [10.5.2]
+             Expertise Card
         ===================================================== -->
 
         <div
-            class="about-image">
+            class="expertise-card">
 
-            <img
-                src="./assets/images/gido-placeholder.jpg"
-                alt="Gido Peuster">
+            Heat Pump Systems
 
         </div>
 
         <!-- =====================================================
-             [10.2.3]
-             Expert Content
+             [10.5.3]
+             Expertise Card
         ===================================================== -->
 
         <div
-            class="about-content">
+            class="expertise-card">
 
-            <h2>
+            Energy Planning
 
-                Gido Peuster
+        </div>
 
-            </h2>
+        <!-- =====================================================
+             [10.5.4]
+             Expertise Card
+        ===================================================== -->
 
-            <h3>
+        <div
+            class="expertise-card">
 
-                System Engineer for
-                System Validation & Analytics
+            Building Performance
 
-            </h3>
+        </div>
 
-            <p>
+        <!-- =====================================================
+             [10.5.5]
+             Expertise Card
+        ===================================================== -->
 
-                Experienced energy systems specialist
-                with expertise in heat pumps,
-                technical planning,
-                building performance,
-                energy optimization
-                and system validation.
+        <div
+            class="expertise-card">
 
-            </p>
+            System Validation
 
-            <ul>
+        </div>
 
-                <li>
+        <!-- =====================================================
+             [10.5.6]
+             Expertise Card
+        ===================================================== -->
 
-                    Heat Pump Expertise
+        <div
+            class="expertise-card">
 
-                </li>
-
-                <li>
-
-                    Energy System Analysis
-
-                </li>
-
-                <li>
-
-                    Technical Planning
-
-                </li>
-
-                <li>
-
-                    Building Performance Optimization
-
-                </li>
-
-            </ul>
-
-            <button
-                class="primary-button">
-
-                Request Consultation
-
-            </button>
+            Technical Consulting
 
         </div>
 

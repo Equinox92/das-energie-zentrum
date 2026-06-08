@@ -4,6 +4,34 @@
    LANDING PAGE STYLESHEET
 ===================================================== */
 
+/* =====================================================
+   [10.6.10]
+   CELESSE FONT REGISTRATION
+===================================================== */
+
+@font-face {
+
+    font-family:
+        "Celesse";
+
+    src:
+        url(
+            "../assets/fonts/Celesse-Regular.otf"
+        )
+        format(
+            "opentype"
+        );
+
+    font-weight:
+        400;
+
+    font-style:
+        normal;
+
+    font-display:
+        swap;
+}
+
 :root {
 
     /* =====================================================
@@ -42,7 +70,38 @@
             113,
             0.12
         );
+
+        /* =====================================================
+   [10.6.11]
+   TYPOGRAPHY VARIABLES
+===================================================== */
+
+            --font-heading:
+        "Celesse",
+        sans-serif;
+
+    --font-body:
+        "Lato",
+        sans-serif;
+
+        /* =====================================================
+   [10.6.12]
+   BRAND HEADING TYPOGRAPHY
+===================================================== */
+
+h1,
+h2,
+h3,
+.navbar-brand {
+
+    font-family:
+        var(--font-heading);
 }
+}
+
+
+
+
 
 /* =====================================================
    GLOBAL RESET
@@ -471,11 +530,6 @@ footer {
             80px 30px;
     }
 
-    #energy-house-container {
-
-        height:
-            550px;
-    }
 
     .about-grid {
 
@@ -543,11 +597,34 @@ footer {
             1fr;
     }
 
-    #energy-house-container {
+    /* =====================================================
+   [10.6.2]
+   MOBILE HOTSPOT SCALING
+===================================================== */
 
-        height:
-            400px;
-    }
+.hotspot {
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    border:
+        2px solid white;
+}
+
+/* =====================================================
+   [10.6.4]
+   MOBILE TOOLTIP DISABLED
+===================================================== */
+
+.hotspot-tooltip {
+
+    display:
+        none !important;
+}
+
 }
 
 /* =====================================================
@@ -567,6 +644,8 @@ footer {
 
     width:
         100%;
+
+        height: auto;
 
     background:
         #f7f9fb;
@@ -919,33 +998,36 @@ footer {
     padding:
         18px 40px;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.95
-        );
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.75
+    );
 
     backdrop-filter:
-        blur(10px);
+        blur(14px);
 
-    border-bottom:
-        1px solid
-        rgba(
-            0,
-            79,
-            113,
-            0.08
-        );
+       -webkit-backdrop-filter:
+    blur(14px); 
 
-    box-shadow:
-        0 4px 20px rgba(
-            0,
-            0,
-            0,
-            0.04
-        );
+border-bottom:
+    1px solid
+    rgba(
+        255,
+        255,
+        255,
+        0.35
+    );
+
+box-shadow:
+    0 8px 30px rgba(
+        0,
+        79,
+        113,
+        0.08
+    );
 }
 
 /* =====================================================
@@ -963,6 +1045,49 @@ footer {
 
     color:
         var(--dez-primary);
+}
+
+/* =====================================================
+   [10.5.2]
+   NAVBAR BRAND LAYOUT
+===================================================== */
+
+.navbar-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        700;
+
+    color:
+        var(--dez-primary);
+}
+
+/* =====================================================
+   [10.5.3]
+   NAVBAR LOGO
+===================================================== */
+
+.navbar-logo {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    object-fit:
+        contain;
 }
 
 /* =====================================================
@@ -1001,6 +1126,85 @@ footer {
 
     color:
         var(--dez-primary);
+}
+
+/* =====================================================
+   [10.6.6]
+   MOBILE MENU BUTTON
+===================================================== */
+
+.mobile-menu-button {
+
+    display:
+        none;
+
+    background:
+        none;
+
+    border:
+        none;
+
+    font-size:
+        2rem;
+
+    color:
+        var(--dez-primary);
+
+    cursor:
+        pointer;
+}
+
+/* =====================================================
+   [10.6.7]
+   MOBILE NAVIGATION
+===================================================== */
+
+@media (max-width:768px) {
+
+    .floating-navbar {
+
+        padding:
+            15px 20px;
+
+        flex-wrap:
+            wrap;
+    }
+
+    .mobile-menu-button {
+
+        display:
+            block;
+    }
+
+    .navbar-links {
+
+        display:
+            none;
+
+        width:
+            100%;
+
+        flex-direction:
+            column;
+
+        gap:
+            15px;
+
+        padding-top:
+            20px;
+    }
+
+    .navbar-links.active {
+
+        display:
+            flex;
+    }
+
+    .navbar-brand span {
+
+        font-size:
+            1rem;
+    }
 }
 
 /* =====================================================
@@ -1288,4 +1492,263 @@ footer {
 
     opacity:
         0.75;
+}
+
+/* =====================================================
+   [10.5.4]
+   HERO LOGO
+===================================================== */
+
+.hero-logo {
+
+    display:
+        block;
+
+    width:
+        320px;
+
+    max-width:
+        90%;
+
+    height:
+        auto;
+
+    margin:
+        0 auto 30px auto;
+}
+
+/* =====================================================
+   [10.5.5]
+   HERO TAGLINE
+===================================================== */
+
+.hero-tagline {
+
+    font-size:
+        1.25rem;
+
+    color:
+        var(--dez-dark);
+
+    margin-bottom:
+        30px;
+
+    font-weight:
+        500;
+}
+
+/* =====================================================
+   [10.5.10]
+   HERO GRID
+===================================================== */
+
+.hero-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        60px;
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto;
+}
+
+/* =====================================================
+   [10.5.11]
+   HERO LEFT
+===================================================== */
+
+.hero-left {
+
+    text-align:
+        center;
+}
+
+/* =====================================================
+   [10.5.12]
+   HERO LOGO
+===================================================== */
+
+.hero-logo {
+
+    width:
+        450px;
+
+    max-width:
+        100%;
+
+    height:
+        auto;
+
+    margin-bottom:
+        30px;
+}
+
+/* =====================================================
+   [10.5.13]
+   HERO RIGHT
+===================================================== */
+
+.hero-right {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+}
+
+/* =====================================================
+   [10.5.14]
+   HERO PORTRAIT
+===================================================== */
+
+.hero-portrait {
+
+    width:
+        420px;
+
+    max-width:
+        100%;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        var(--dez-shadow);
+}
+
+/* =====================================================
+   [10.5.15]
+   EXPERTISE SECTION
+===================================================== */
+
+.expertise-section {
+
+    background:
+        white;
+}
+
+/* =====================================================
+   [10.5.16]
+   EXPERTISE GRID
+===================================================== */
+
+.expertise-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap:
+        25px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+}
+
+/* =====================================================
+   [10.5.17]
+   EXPERTISE CARD
+===================================================== */
+
+.expertise-card {
+
+    background:
+        white;
+
+    padding:
+        30px;
+
+    text-align:
+        center;
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        var(--dez-shadow);
+
+    font-weight:
+        600;
+
+    transition:
+        all 0.3s ease;
+}
+
+/* =====================================================
+   [10.5.18]
+   EXPERTISE HOVER
+===================================================== */
+
+.expertise-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+/* =====================================================
+   [10.5.19]
+   MOBILE HERO
+===================================================== */
+
+@media (
+    max-width: 992px
+) {
+
+    .hero-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero-logo {
+
+        width:
+            320px;
+    }
+
+    .hero-portrait {
+
+        width:
+            320px;
+    }
+}
+
+/* =====================================================
+   [10.6.3]
+   SMALL DEVICE HOTSPOTS
+===================================================== */
+
+@media (max-width:480px) {
+
+    .hotspot {
+
+        width:
+            16px;
+
+        height:
+            16px;
+    }
 }
