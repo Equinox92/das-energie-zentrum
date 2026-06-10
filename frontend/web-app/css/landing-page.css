@@ -1129,6 +1129,94 @@ box-shadow:
 }
 
 /* =====================================================
+   [11.3.2]
+   LANGUAGE SWITCHER CONTAINER
+===================================================== */
+
+.language-switcher {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+}
+
+/* =====================================================
+   [11.3.3]
+   LANGUAGE BUTTON
+===================================================== */
+
+.language-button {
+
+    background:
+        transparent;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            79,
+            113,
+            0.2
+        );
+
+    color:
+        var(--dez-primary);
+
+    padding:
+        8px 12px;
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        600;
+
+    transition:
+        all 0.3s ease;
+}
+
+/* =====================================================
+   [11.3.4]
+   LANGUAGE BUTTON HOVER
+===================================================== */
+
+.language-button:hover {
+
+    background:
+        rgba(
+            0,
+            79,
+            113,
+            0.08
+        );
+}
+
+/* =====================================================
+   [11.3.5]
+   ACTIVE LANGUAGE
+===================================================== */
+
+.active-language {
+
+    background:
+        var(--dez-primary);
+
+    color:
+        white;
+}
+
+/* =====================================================
    [10.6.6]
    MOBILE MENU BUTTON
 ===================================================== */
@@ -1205,6 +1293,21 @@ box-shadow:
         font-size:
             1rem;
     }
+
+    /* =====================================================
+   [11.3.6]
+   MOBILE LANGUAGE SWITCHER
+===================================================== */
+
+.language-switcher {
+
+    margin-top:
+        20px;
+
+    justify-content:
+        center;
+}
+
 }
 
 /* =====================================================
@@ -1751,4 +1854,143 @@ box-shadow:
         height:
             16px;
     }
+}
+
+/* =====================================================
+   [11.1.11]
+   CONSULTATION SECTION
+===================================================== */
+
+.consultation-section {
+
+    background:
+        var(--dez-light-gray);
+}
+
+/* =====================================================
+   [11.1.12]
+   HEADER
+===================================================== */
+
+.consultation-header {
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto 50px auto;
+
+    text-align:
+        center;
+}
+
+/* =====================================================
+   [11.1.13]
+   FORM
+===================================================== */
+
+.consultation-form {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    gap:
+        25px;
+}
+
+/* =====================================================
+   [11.1.14]
+   FORM GROUP
+===================================================== */
+
+.form-group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+}
+
+/* =====================================================
+   [11.1.15]
+   LABELS
+===================================================== */
+
+.form-group label {
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--dez-primary);
+}
+
+/* =====================================================
+   [11.1.16]
+   INPUTS
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    padding:
+        16px;
+
+    border:
+        1px solid #d8e2e8;
+
+    border-radius:
+        10px;
+
+    font-size:
+        1rem;
+
+    font-family:
+        inherit;
+}
+
+/* =====================================================
+   [11.1.17]
+   FOCUS STATES
+===================================================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--dez-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(
+            0,
+            79,
+            113,
+            0.15
+        );
+}
+
+/* =====================================================
+   [11.1.18]
+   TEXTAREA
+===================================================== */
+
+.form-group textarea {
+
+    resize:
+        vertical;
 }
