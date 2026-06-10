@@ -1129,8 +1129,8 @@ box-shadow:
 }
 
 /* =====================================================
-   [11.3.2]
-   LANGUAGE SWITCHER CONTAINER
+   [10.8.2]
+   LANGUAGE SWITCHER
 ===================================================== */
 
 .language-switcher {
@@ -1142,78 +1142,61 @@ box-shadow:
         center;
 
     gap:
-        8px;
+        10px;
 }
 
 /* =====================================================
-   [11.3.3]
+   [10.8.3]
    LANGUAGE BUTTON
 ===================================================== */
 
-.language-button {
+.language-option {
 
     background:
         transparent;
 
     border:
-        1px solid
-        rgba(
-            0,
-            79,
-            113,
-            0.2
-        );
-
-    color:
-        var(--dez-primary);
-
-    padding:
-        8px 12px;
-
-    border-radius:
-        8px;
+        none;
 
     cursor:
         pointer;
 
     font-size:
-        0.9rem;
+        0.95rem;
 
     font-weight:
         600;
+
+    color:
+        var(--dez-dark);
 
     transition:
         all 0.3s ease;
 }
 
 /* =====================================================
-   [11.3.4]
-   LANGUAGE BUTTON HOVER
+   [10.8.4]
+   HOVER EFFECT
 ===================================================== */
 
-.language-button:hover {
+.language-option:hover {
 
-    background:
-        rgba(
-            0,
-            79,
-            113,
-            0.08
-        );
+    color:
+        var(--dez-primary);
 }
 
 /* =====================================================
-   [11.3.5]
+   [10.8.5]
    ACTIVE LANGUAGE
 ===================================================== */
 
 .active-language {
 
-    background:
+    color:
         var(--dez-primary);
 
-    color:
-        white;
+    font-weight:
+        700;
 }
 
 /* =====================================================
@@ -1302,7 +1285,7 @@ box-shadow:
 .language-switcher {
 
     margin-top:
-        20px;
+        15px;
 
     justify-content:
         center;
