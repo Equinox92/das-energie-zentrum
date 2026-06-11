@@ -1477,6 +1477,121 @@ box-shadow:
 }
 
 /* =====================================================
+   [11.5.6]
+   EXPERIENCE BANNER
+===================================================== */
+
+.experience-banner {
+
+    background:
+        var(--dez-primary);
+
+    padding:
+        70px 40px;
+}
+
+/* =====================================================
+   [11.5.7]
+   EXPERIENCE GRID
+===================================================== */
+
+.experience-grid {
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
+
+    gap:
+        30px;
+}
+
+/* =====================================================
+   [11.5.8]
+   EXPERIENCE CARD
+===================================================== */
+
+.experience-card {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    border-radius:
+        16px;
+
+    padding:
+        30px;
+
+    text-align:
+        center;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+/* =====================================================
+   [11.5.9]
+   EXPERIENCE TITLE
+===================================================== */
+
+.experience-card h3 {
+
+    color:
+        white;
+
+    font-size:
+        2rem;
+
+    margin-bottom:
+        10px;
+}
+
+/* =====================================================
+   [11.5.10]
+   EXPERIENCE DESCRIPTION
+===================================================== */
+
+.experience-card p {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    margin:
+        0;
+}
+
+/* =====================================================
    [10.4.7]
    PROFESSIONAL FOOTER
 ===================================================== */
