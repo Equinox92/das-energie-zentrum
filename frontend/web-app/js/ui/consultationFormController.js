@@ -108,9 +108,54 @@ export function initializeConsultationForm() {
             // Temporary success message.
             // =====================================================
 
-            alert(
-                "Consultation request received. Backend integration coming in Phase 13."
-            );
+// =====================================================
+// [12.2.12]
+// Validates consultation data.
+// =====================================================
+
+const validationResult =
+    validateConsultationForm(
+        consultationData
+    );
+
+// =====================================================
+// [12.2.13]
+// Prevents invalid submissions.
+// =====================================================
+
+if (
+    !validationResult.isValid
+) {
+
+    console.error(
+        "Validation Errors:",
+        validationResult.errors
+    );
+
+    alert(
+        Object.values(
+            validationResult.errors
+        )[0]
+    );
+
+    return;
+}
+
+// =====================================================
+// [12.2.14]
+// Temporary success message.
+// =====================================================
+
+alert(
+    "Consultation request validated successfully."
+);
+
+// =====================================================
+// [12.2.15]
+// Resets form.
+// =====================================================
+
+form.reset();
 
             // =====================================================
             // [12.1.11]
@@ -121,3 +166,13 @@ export function initializeConsultationForm() {
         }
     );
 }
+
+// =====================================================
+// [12.2.11]
+// Consultation validator.
+// =====================================================
+
+import {
+    validateConsultationForm
+}
+from "../validators/consultationValidator.js";

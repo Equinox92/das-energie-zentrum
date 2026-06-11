@@ -1,68 +1,121 @@
-/* =====================================================
-   [12.1.4]
-   CONSULTATION VALIDATOR
+// =====================================================
+// [12.2.1]
+// CONSULTATION FORM VALIDATOR
+// =====================================================
 
-   Validation Layer
-
-===================================================== */
-
-/* =====================================================
-   [12.1.5]
-   Validates consultation form.
-===================================================== */
+// =====================================================
+// [12.2.2]
+// Validates consultation request data.
+// =====================================================
 
 export function validateConsultationForm(
-    formData
+    consultationData
 ) {
 
-    if (
-        !formData.fullName.trim()
-    ) {
+    // =====================================================
+    // [12.2.3]
+    // Stores validation errors.
+    // =====================================================
 
-        return {
+    const errors = {};
 
-            isValid:
-                false,
-
-            message:
-                "Full name is required."
-        };
-    }
+    // =====================================================
+    // [12.2.4]
+    // Validates full name.
+    // =====================================================
 
     if (
-        !formData.email.trim()
+        !consultationData.fullName
     ) {
 
-        return {
-
-            isValid:
-                false,
-
-            message:
-                "Email is required."
-        };
+        errors.fullName =
+            "Full name is required.";
     }
+
+    // =====================================================
+    // [12.2.5]
+    // Validates email.
+    // =====================================================
 
     if (
-        !formData.message.trim()
+        !consultationData.email
     ) {
 
-        return {
-
-            isValid:
-                false,
-
-            message:
-                "Message is required."
-        };
+        errors.email =
+            "Email address is required.";
     }
+
+    // =====================================================
+    // [12.2.6]
+    // Validates email format.
+    // =====================================================
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (
+        consultationData.email &&
+        !emailPattern.test(
+            consultationData.email
+        )
+    ) {
+
+        errors.email =
+            "Please enter a valid email address.";
+    }
+
+    // =====================================================
+    // [12.2.7]
+    // Validates project type.
+    // =====================================================
+
+    if (
+        !consultationData.projectType
+    ) {
+
+        errors.projectType =
+            "Project type is required.";
+    }
+
+    // =====================================================
+    // [12.2.8]
+    // Validates message.
+    // =====================================================
+
+    if (
+        !consultationData.message
+    ) {
+
+        errors.message =
+            "Message is required.";
+    }
+
+    // =====================================================
+    // [12.2.9]
+    // Validates minimum message length.
+    // =====================================================
+
+    if (
+        consultationData.message &&
+        consultationData.message.length < 20
+    ) {
+
+        errors.message =
+            "Message must contain at least 20 characters.";
+    }
+
+    // =====================================================
+    // [12.2.10]
+    // Returns validation result.
+    // =====================================================
 
     return {
 
         isValid:
-            true,
+            Object.keys(
+                errors
+            ).length === 0,
 
-        message:
-            ""
+        errors
     };
 }
