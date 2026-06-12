@@ -123,32 +123,60 @@ const validationResult =
 // Prevents invalid submissions.
 // =====================================================
 
+// =====================================================
+// [12.3.5]
+// Retrieves feedback container.
+// =====================================================
+
+const feedbackElement =
+    document.getElementById(
+        "form-feedback"
+    );
+
+// =====================================================
+// [12.3.6]
+// Validation failed.
+// =====================================================
+
 if (
     !validationResult.isValid
 ) {
 
-    console.error(
-        "Validation Errors:",
-        validationResult.errors
-    );
+    if (
+        feedbackElement
+    ) {
 
-    alert(
-        Object.values(
-            validationResult.errors
-        )[0]
-    );
+        feedbackElement.className =
+            "form-feedback error";
+
+        feedbackElement.textContent =
+            Object.values(
+                validationResult.errors
+            )[0];
+    }
 
     return;
 }
-
 // =====================================================
 // [12.2.14]
 // Temporary success message.
 // =====================================================
 
-alert(
-    "Consultation request validated successfully."
-);
+// =====================================================
+// [12.3.7]
+// Displays success message.
+// =====================================================
+
+if (
+    feedbackElement
+) {
+
+    feedbackElement.className =
+        "form-feedback success";
+
+    feedbackElement.textContent =
+        "Consultation request validated successfully.";
+}
 
 // =====================================================
 // [12.2.15]
@@ -163,6 +191,29 @@ form.reset();
             // =====================================================
 
             form.reset();
+
+            // =====================================================
+// [12.3.8]
+// Clears success message.
+// =====================================================
+
+setTimeout(
+    () => {
+
+        if (
+            feedbackElement
+        ) {
+
+            feedbackElement.className =
+                "form-feedback";
+
+            feedbackElement.textContent =
+                "";
+        }
+
+    },
+    5000
+);
         }
     );
 }

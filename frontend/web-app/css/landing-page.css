@@ -2092,3 +2092,66 @@ box-shadow:
     resize:
         vertical;
 }
+
+/* =====================================================
+   [12.3.2]
+   FORM FEEDBACK
+===================================================== */
+
+.form-feedback {
+
+    display:
+        none;
+
+    padding:
+        16px;
+
+    border-radius:
+        10px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        20px;
+}
+
+/* =====================================================
+   [12.3.3]
+   ERROR STATE
+===================================================== */
+
+.form-feedback.error {
+
+    display:
+        block;
+
+    background:
+        #ffe8e8;
+
+    color:
+        #b10000;
+
+    border:
+        1px solid #ffb8b8;
+}
+
+/* =====================================================
+   [12.3.4]
+   SUCCESS STATE
+===================================================== */
+
+.form-feedback.success {
+
+    display:
+        block;
+
+    background:
+        #e9f8ec;
+
+    color:
+        #0f6b2c;
+
+    border:
+        1px solid #bfe6c7;
+}
