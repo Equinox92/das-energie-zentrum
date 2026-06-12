@@ -1,4 +1,26 @@
 // =====================================================
+// [12.2.11]
+// Consultation validator.
+// =====================================================
+
+import {
+    validateConsultationForm
+}
+from "../validators/consultationValidator.js";
+
+// =====================================================
+// [12.4.5]
+// Feedback message component.
+// =====================================================
+
+import {
+    showErrorMessage,
+    showSuccessMessage,
+    clearFeedbackMessage
+}
+from "./feedbackMessage.js";
+
+// =====================================================
 // [12.1.3]
 // CONSULTATION FORM CONTROLLER
 // =====================================================
@@ -104,126 +126,62 @@ export function initializeConsultationForm() {
             );
 
             // =====================================================
-            // [12.1.10]
-            // Temporary success message.
+            // [12.2.12]
+            // Validates consultation data.
             // =====================================================
 
-// =====================================================
-// [12.2.12]
-// Validates consultation data.
-// =====================================================
-
-const validationResult =
-    validateConsultationForm(
-        consultationData
-    );
-
-// =====================================================
-// [12.2.13]
-// Prevents invalid submissions.
-// =====================================================
-
-// =====================================================
-// [12.3.5]
-// Retrieves feedback container.
-// =====================================================
-
-const feedbackElement =
-    document.getElementById(
-        "form-feedback"
-    );
-
-// =====================================================
-// [12.3.6]
-// Validation failed.
-// =====================================================
-
-if (
-    !validationResult.isValid
-) {
-
-    if (
-        feedbackElement
-    ) {
-
-        feedbackElement.className =
-            "form-feedback error";
-
-        feedbackElement.textContent =
-            Object.values(
-                validationResult.errors
-            )[0];
-    }
-
-    return;
-}
-// =====================================================
-// [12.2.14]
-// Temporary success message.
-// =====================================================
-
-// =====================================================
-// [12.3.7]
-// Displays success message.
-// =====================================================
-
-if (
-    feedbackElement
-) {
-
-    feedbackElement.className =
-        "form-feedback success";
-
-    feedbackElement.textContent =
-        "Consultation request validated successfully.";
-}
-
-// =====================================================
-// [12.2.15]
-// Resets form.
-// =====================================================
-
-form.reset();
+            const validationResult =
+                validateConsultationForm(
+                    consultationData
+                );
 
             // =====================================================
-            // [12.1.11]
+            // [12.2.13]
+            // Prevents invalid submissions.
+            // =====================================================
+
+            if (
+                !validationResult.isValid
+            ) {
+
+                showErrorMessage(
+                    Object.values(
+                        validationResult.errors
+                    )[0]
+                );
+
+                return;
+            }
+
+            // =====================================================
+            // [12.3.7]
+            // Displays success message.
+            // =====================================================
+
+            showSuccessMessage(
+                "Consultation request validated successfully."
+            );
+
+            // =====================================================
+            // [12.2.15]
             // Resets form.
             // =====================================================
 
             form.reset();
 
             // =====================================================
-// [12.3.8]
-// Clears success message.
-// =====================================================
+            // [12.3.8]
+            // Clears success message.
+            // =====================================================
 
-setTimeout(
-    () => {
+            setTimeout(
+                () => {
 
-        if (
-            feedbackElement
-        ) {
+                    clearFeedbackMessage();
 
-            feedbackElement.className =
-                "form-feedback";
-
-            feedbackElement.textContent =
-                "";
-        }
-
-    },
-    5000
-);
+                },
+                5000
+            );
         }
     );
 }
-
-// =====================================================
-// [12.2.11]
-// Consultation validator.
-// =====================================================
-
-import {
-    validateConsultationForm
-}
-from "../validators/consultationValidator.js";
