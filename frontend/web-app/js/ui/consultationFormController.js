@@ -9,6 +9,16 @@ import {
 from "../validators/consultationValidator.js";
 
 // =====================================================
+// [12.7.1]
+// Consultation API import.
+// =====================================================
+
+import {
+    submitConsultation
+}
+from "../api/consultationApi.js";
+
+// =====================================================
 // [12.4.5]
 // Feedback message component.
 // =====================================================
@@ -52,6 +62,14 @@ const submitButton =
         "button[type='submit']"
     );
 
+    // =====================================================
+// [12.9.1]
+// Tracks active submission state.
+// =====================================================
+
+let isSubmitting =
+    false;
+
     if (!form) {
 
         console.warn(
@@ -78,6 +96,26 @@ const submitButton =
             event.preventDefault();
 
             // =====================================================
+// [12.9.2]
+// Prevents duplicate submissions.
+// =====================================================
+
+if (
+    isSubmitting
+) {
+
+    return;
+}
+
+// =====================================================
+// [12.9.3]
+// Locks form submission.
+// =====================================================
+
+isSubmitting =
+    true;
+
+            // =====================================================
 // [12.5.2]
 // Activates loading state.
 // =====================================================
@@ -94,7 +132,7 @@ submitButton.textContent =
 // =====================================================
 
 setTimeout(
-    () => {
+   async () => {
 
                     const validationResult =
                 validateConsultationForm(
@@ -117,6 +155,14 @@ showErrorMessage(
 );
 
 // =====================================================
+// [12.9.4]
+// Unlocks form submission.
+// =====================================================
+
+isSubmitting =
+    false;
+
+// =====================================================
 // [12.5.3]
 // Restores button after validation failure.
 // =====================================================
@@ -134,14 +180,128 @@ return;
             // [12.3.7]
             // Displays success message.
             // =====================================================
+// =====================================================
+// [12.7.2]
+// Sends consultation through API layer.
+// =====================================================
 
-            showSuccessMessage(
-                "Consultation request validated successfully."
-            );
+console.log(
+    "Submitting consultation via API layer..."
+);
 
-            setTimeout(
+// =====================================================
+// [12.8.5]
+// Handles API communication safely.
+// =====================================================
+
+try {
+
+    const response =
+
+        await submitConsultation(
+            consultationData
+        );
+
+    // =====================================================
+    // [12.8.6]
+    // Validates API response.
+    // =====================================================
+
+    if (
+        !response.ok
+    ) {
+
+        throw new Error(
+            "Consultation submission failed."
+        );
+    }
+
+}
+catch (error) {
+
+    // =====================================================
+    // [12.8.7]
+    // Displays friendly error message.
+    // =====================================================
+
+    console.error(
+        "API Error:",
+        error
+    );
+
+    showErrorMessage(
+        "Unable to submit consultation. Please try again."
+    );
+
+    setTimeout(
     () => {
 
+        clearFeedbackMessage();
+
+    },
+    5000
+);
+
+// =====================================================
+// [12.9.5]
+// Unlocks failed submission.
+// =====================================================
+
+isSubmitting =
+    false;
+
+    // =====================================================
+    // [12.8.8]
+    // Restores submit button.
+    // =====================================================
+
+    submitButton.disabled =
+        false;
+
+    submitButton.textContent =
+        "Request Consultation";
+
+    // =====================================================
+    // [12.8.9]
+    // Scrolls user to feedback.
+    // =====================================================
+
+    document
+        .getElementById(
+            "form-feedback"
+        )
+        ?.scrollIntoView({
+            behavior:
+                "smooth",
+            block:
+                "center"
+        });
+
+    return;
+}
+
+// =====================================================
+// [12.7.3]
+// Temporary success message.
+// =====================================================
+
+showSuccessMessage(
+    "Consultation request validated successfully."
+);
+
+form.reset();
+
+// =====================================================
+// [12.9.6]
+// Unlocks successful submission.
+// =====================================================
+
+isSubmitting =
+    false;
+
+
+setTimeout(
+    async () => {
         document
             .getElementById(
                 "form-feedback"
@@ -162,7 +322,7 @@ return;
             // Resets form.
             // =====================================================
 
-            form.reset();
+           //form.reset();
 
             // =====================================================
 // [12.5.4]
@@ -191,7 +351,7 @@ submitButton.textContent =
 
         },
 
-        1000
+        5000
     );
 
             // =====================================================
