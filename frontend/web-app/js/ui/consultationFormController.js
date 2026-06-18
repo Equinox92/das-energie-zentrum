@@ -30,6 +30,11 @@ import {
 }
 from "./feedbackMessage.js";
 
+import {
+    displayConsultationSummary
+}
+from "./consultationSummary.js";
+
 // =====================================================
 // [12.1.3]
 // CONSULTATION FORM CONTROLLER
@@ -289,6 +294,10 @@ showSuccessMessage(
     "Consultation request validated successfully."
 );
 
+displayConsultationSummary(
+    consultationData
+);
+
 form.reset();
 
 // =====================================================
@@ -351,7 +360,7 @@ submitButton.textContent =
 
         },
 
-        5000
+        1000
     );
 
             // =====================================================

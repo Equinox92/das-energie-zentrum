@@ -2156,3 +2156,40 @@ box-shadow:
         1px solid #bfe6c7;
 }
 
+/* =====================================================
+   [12.9.3]
+   CONSULTATION SUMMARY
+===================================================== */
+
+.consultation-summary {
+
+    margin-top:
+        40px;
+
+    padding:
+        30px;
+
+    background:
+        white;
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 10px 30px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    display:
+        none;
+
+      .consultation-summary strong {
+
+    color:
+        var(--dez-primary);
+}  
+}
+
