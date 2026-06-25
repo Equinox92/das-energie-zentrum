@@ -74,7 +74,7 @@ configurationOptions.innerHTML = `
         Configure ${zoneKey}
     </h3>
 
-    <select id="system-selector">
+    <select "system-selector">
 
         ${options.map(option => `
 
@@ -88,11 +88,11 @@ configurationOptions.innerHTML = `
 
     <div class="configuration-actions">
 
-        <button id="apply-system-button">
+        <button "apply-system-button">
             Apply System
         </button>
 
-        <button id="remove-system-button">
+        <button "remove-system-button">
             Remove System
         </button>
 

@@ -36,6 +36,16 @@ import {
 from "./consultationSummary.js";
 
 // =====================================================
+// [12.11.9]
+// Consultation summary component.
+// =====================================================
+
+import {
+    renderConsultationSummary
+}
+from "./consultationSummary.js";
+
+// =====================================================
 // [12.1.3]
 // CONSULTATION FORM CONTROLLER
 // =====================================================
@@ -99,6 +109,56 @@ let isSubmitting =
             // =====================================================
 
             event.preventDefault();
+
+            
+            // =====================================================
+            // [12.1.8]
+            // Collects form values.
+            // =====================================================
+
+            const consultationData = {
+
+                fullName:
+                    document.getElementById(
+                        "full-name"
+                    )?.value.trim(),
+
+                email:
+                    document.getElementById(
+                        "email"
+                    )?.value.trim(),
+
+                propertyType:
+                    document.getElementById(
+                        "property-type"
+                    )?.value,
+
+                projectType:
+                    document.getElementById(
+                        "project-type"
+                    )?.value.trim(),
+
+                consultationCategory:
+                    document.getElementById(
+                        "consultation-category"
+                    )?.value,
+
+                projectScale:
+                    document.getElementById(
+                        "project-scale"
+                    )?.value,
+
+                consultationDate:
+                    document.getElementById(
+                        "consultation-date"
+                    )?.value,
+
+                message:
+                    document.getElementById(
+                        "message"
+                    )?.value.trim()
+            };
+
 
             // =====================================================
 // [12.9.2]
@@ -199,9 +259,16 @@ console.log(
 // Handles API communication safely.
 // =====================================================
 
+// =====================================================
+// [12.9.7]
+// Stores API response for later processing.
+// =====================================================
+
+let response;
+
 try {
 
-    const response =
+    response =
 
         await submitConsultation(
             consultationData
@@ -213,7 +280,7 @@ try {
     // =====================================================
 
     if (
-        !response.ok
+        !response.success
     ) {
 
         throw new Error(
@@ -291,7 +358,24 @@ isSubmitting =
 // =====================================================
 
 showSuccessMessage(
-    "Consultation request validated successfully."
+    response.message    
+);
+
+console.log(
+
+    "Reference ID:",
+
+    response.referenceId
+
+);
+
+// =====================================================
+// [12.11.10]
+// Displays consultation summary.
+// =====================================================
+
+renderConsultationSummary(
+    consultationData
 );
 
 displayConsultationSummary(
@@ -310,7 +394,7 @@ isSubmitting =
 
 
 setTimeout(
-    async () => {
+     () => {
         document
             .getElementById(
                 "form-feedback"
@@ -363,53 +447,6 @@ submitButton.textContent =
         1000
     );
 
-            // =====================================================
-            // [12.1.8]
-            // Collects form values.
-            // =====================================================
-
-            const consultationData = {
-
-                fullName:
-                    document.getElementById(
-                        "full-name"
-                    )?.value.trim(),
-
-                email:
-                    document.getElementById(
-                        "email"
-                    )?.value.trim(),
-
-                propertyType:
-                    document.getElementById(
-                        "property-type"
-                    )?.value,
-
-                projectType:
-                    document.getElementById(
-                        "project-type"
-                    )?.value.trim(),
-
-                consultationCategory:
-                    document.getElementById(
-                        "consultation-category"
-                    )?.value,
-
-                projectScale:
-                    document.getElementById(
-                        "project-scale"
-                    )?.value,
-
-                consultationDate:
-                    document.getElementById(
-                        "consultation-date"
-                    )?.value,
-
-                message:
-                    document.getElementById(
-                        "message"
-                    )?.value.trim()
-            };
 
             // =====================================================
             // [12.1.9]

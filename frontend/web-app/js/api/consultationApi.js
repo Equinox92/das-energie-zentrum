@@ -17,6 +17,13 @@ import {
 }
 from "./apiClient.js";
 
+import {
+
+    createConsultationResponse
+
+}
+from "../models/consultationResponse.js";
+
 // =====================================================
 // [12.6.7]
 // Sends consultation request.
@@ -63,14 +70,16 @@ if (
     successfulRequest
 ) {
 
-    return {
+return createConsultationResponse(
 
-        ok:
-            true,
+    true,
 
-        status:
-            200
-    };
+    "Consultation request submitted successfully.",
+
+    "DEZ-" +
+    Date.now()
+
+);
 }
 
 // =====================================================
@@ -78,7 +87,12 @@ if (
 // Mock failure response.
 // =====================================================
 
-throw new Error(
-    "Mock API failure."
+return createConsultationResponse(
+
+    false,
+
+    "Unable to process request."
+
 );
+
 }
