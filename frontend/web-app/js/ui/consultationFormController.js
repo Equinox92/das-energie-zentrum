@@ -46,6 +46,28 @@ import {
 from "./consultationSummary.js";
 
 // =====================================================
+// [12.10.9]
+// Consultation history service.
+// =====================================================
+
+// =====================================================
+// [12.11.8]
+// Consultation history services.
+// =====================================================
+
+import {
+
+    saveConsultationRecord,
+
+    getConsultationCount,
+
+    getLatestConsultation
+
+}
+
+from "../services/consultationHistoryService.js";
+
+// =====================================================
 // [12.1.3]
 // CONSULTATION FORM CONTROLLER
 // =====================================================
@@ -359,6 +381,36 @@ isSubmitting =
 
 showSuccessMessage(
     response.message    
+);
+
+// =====================================================
+// [12.10.10]
+// Saves successful consultation.
+// =====================================================
+
+saveConsultationRecord(
+    consultationData
+);
+
+// =====================================================
+// [12.11.9]
+// Displays consultation statistics.
+// =====================================================
+
+console.log(
+
+    "Total Consultations:",
+
+    getConsultationCount()
+
+);
+
+console.log(
+
+    "Latest Consultation:",
+
+    getLatestConsultation()
+
 );
 
 console.log(
