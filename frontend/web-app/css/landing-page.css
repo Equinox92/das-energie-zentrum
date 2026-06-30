@@ -38,31 +38,13 @@
        BRAND COLORS
     ===================================================== */
 
-    /* [9.4.2] */
-    --dez-primary:
-        #004F71;
+    --dez-primary: #004F71;
+    --dez-secondary: #D9E5EA;
+    --dez-white: #FFFFFF;
+    --dez-dark: #163443;
+    --dez-accent: #0B698F;
+    --dez-light-gray: #F5F7F8;
 
-    /* [9.4.3] */
-    --dez-secondary:
-        #D9E5EA;
-
-    /* [9.4.4] */
-    --dez-white:
-        #FFFFFF;
-
-    /* [9.4.5] */
-    --dez-dark:
-        #163443;
-
-    /* [9.4.6] */
-    --dez-accent:
-        #0B698F;
-
-    /* [9.4.7] */
-    --dez-light-gray:
-        #F5F7F8;
-
-    /* [9.4.8] */
     --dez-shadow:
         0 10px 30px rgba(
             0,
@@ -71,12 +53,11 @@
             0.12
         );
 
-        /* =====================================================
-   [10.6.11]
-   TYPOGRAPHY VARIABLES
-===================================================== */
+    /* =====================================================
+       TYPOGRAPHY
+    ===================================================== */
 
-            --font-heading:
+    --font-heading:
         "Celesse",
         sans-serif;
 
@@ -84,20 +65,35 @@
         "Lato",
         sans-serif;
 
-        /* =====================================================
-   [10.6.12]
-   BRAND HEADING TYPOGRAPHY
+}
+
+/* =====================================================
+   GLOBAL TYPOGRAPHY
 ===================================================== */
 
 h1,
 h2,
-h3,
-.navbar-brand {
+h3 {
+
+    font-family:
+        var(--font-heading);
+
+}
+
+body,
+p,
+li,
+input,
+textarea,
+select,
+button,
+a {
 
     font-family:
         var(--font-body);
+
 }
-}
+
 
 
 
@@ -1045,16 +1041,13 @@ box-shadow:
 
     color:
         var(--dez-primary);
-}
 
-/* =====================================================
-   [10.5.2]
-   NAVBAR BRAND LAYOUT
-===================================================== */
+        .navbar-brand {
 
-.navbar-brand {
+    font-family:
+        var(--font-heading);
 
-    display:
+            display:
         flex;
 
     align-items:
@@ -1071,7 +1064,16 @@ box-shadow:
 
     color:
         var(--dez-primary);
+
 }
+
+}
+
+/* =====================================================
+   [10.5.2]
+   NAVBAR BRAND LAYOUT
+===================================================== */
+
 
 /* =====================================================
    [10.5.3]
@@ -1700,23 +1702,7 @@ box-shadow:
    HERO LOGO
 ===================================================== */
 
-.hero-logo {
 
-    display:
-        block;
-
-    width:
-        320px;
-
-    max-width:
-        90%;
-
-    height:
-        auto;
-
-    margin:
-        0 auto 30px auto;
-}
 
 /* =====================================================
    [10.5.5]
@@ -2161,32 +2147,6 @@ box-shadow:
    CONSULTATION SUMMARY
 ===================================================== */
 
-.consultation-summary {
-
-    margin-top:
-        40px;
-
-    padding:
-        30px;
-
-    background:
-        white;
-
-    border-radius:
-        16px;
-
-    box-shadow:
-        0 10px 30px rgba(
-            0,
-            0,
-            0,
-            0.08
-        );
-
-    display:
-        none;
-
-}
 
       .consultation-summary strong {
 
