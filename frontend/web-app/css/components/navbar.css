@@ -1,0 +1,400 @@
+/* =====================================================
+   [10.1.4]
+   FLOATING NAVIGATION BAR
+===================================================== */
+
+.floating-navbar {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        5000;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding:
+        18px 40px;
+
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.75
+    );
+
+    backdrop-filter:
+        blur(14px);
+
+       -webkit-backdrop-filter:
+    blur(14px); 
+
+border-bottom:
+    1px solid
+    rgba(
+        255,
+        255,
+        255,
+        0.35
+    );
+
+box-shadow:
+    0 8px 30px rgba(
+        0,
+        79,
+        113,
+        0.08
+    );
+
+    transition:
+    all 0.3s ease;
+}
+
+
+/* =====================================================
+   [13.3.1]
+   NAVBAR CONTAINER
+===================================================== */
+
+.navbar-container {
+
+    width:
+        min(1400px, 100%);
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+}
+
+/* =====================================================
+   [12.1.1]
+   NAVBAR BRAND
+===================================================== */
+
+.navbar-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        700;
+
+    color:
+        var(--dez-primary);
+
+}
+
+
+/* =====================================================
+   [10.1.5]
+   NAVBAR BRAND
+===================================================== */
+
+
+
+
+/* =====================================================
+   [10.5.2]
+   NAVBAR BRAND LAYOUT
+===================================================== */
+
+
+/* =====================================================
+   [10.5.3]
+   NAVBAR LOGO
+===================================================== */
+
+.navbar-logo {
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    object-fit:
+        contain;
+}
+
+/* =====================================================
+   [10.1.6]
+   NAVIGATION LINKS
+===================================================== */
+
+.navbar-links {
+
+    display:
+        flex;
+
+    gap:
+        30px;
+
+    list-style:
+        none;
+}
+
+.navbar-links a {
+
+    text-decoration:
+        none;
+
+    color:
+        var(--dez-dark);
+
+    font-weight:
+        600;
+
+transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+
+        position:
+    relative;
+
+    padding:
+    8px 0;
+
+    user-select: none;
+}
+
+.navbar-links a::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        -6px;
+
+    width:
+        0;
+
+    height:
+        2px;
+
+    background:
+        var(--dez-primary);
+
+    transition:
+        width 0.3s ease;
+
+}
+
+.navbar-links a:hover {
+
+    color:
+        var(--dez-primary);
+
+    opacity:
+    0.85;
+
+}
+
+.navbar-links a:hover::after {
+
+    width:
+        100%;
+
+}
+
+/* =====================================================
+   [10.8.2]
+   LANGUAGE SWITCHER
+===================================================== */
+
+.language-switcher {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+}
+
+/* =====================================================
+   [10.8.3]
+   LANGUAGE BUTTON
+===================================================== */
+
+.language-option {
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        600;
+
+    color:
+        var(--dez-dark);
+
+    transition:
+        all 0.3s ease;
+}
+
+/* =====================================================
+   [10.8.4]
+   HOVER EFFECT
+===================================================== */
+
+.language-option:hover {
+
+    color:
+        var(--dez-primary);
+}
+
+/* =====================================================
+   [10.8.5]
+   ACTIVE LANGUAGE
+===================================================== */
+
+.active-language {
+
+    color:
+        var(--dez-primary);
+
+    font-weight:
+        700;
+}
+
+/* =====================================================
+   [10.6.6]
+   MOBILE MENU BUTTON
+===================================================== */
+
+.mobile-menu-button {
+
+    display:
+        none;
+
+    background:
+        none;
+
+    border:
+        none;
+
+    font-size:
+        2rem;
+
+    color:
+        var(--dez-primary);
+
+    cursor:
+        pointer;
+}
+
+/* =====================================================
+   [10.6.7]
+   MOBILE NAVIGATION
+===================================================== */
+
+@media (max-width:768px) {
+
+    .floating-navbar {
+
+        padding:
+            15px 20px;
+
+        flex-wrap:
+            wrap;
+    }
+
+    .mobile-menu-button {
+
+        display:
+            block;
+    }
+
+    .navbar-links {
+
+        display:
+            none;
+
+        width:
+            100%;
+
+        flex-direction:
+            column;
+
+        gap:
+            15px;
+
+        padding-top:
+            20px;
+    }
+
+    .navbar-links.active {
+
+        display:
+            flex;
+    }
+
+    .navbar-brand span {
+
+        font-size:
+            1rem;
+    }
+
+    /* =====================================================
+   [11.3.6]
+   MOBILE LANGUAGE SWITCHER
+===================================================== */
+
+.language-switcher {
+
+    margin-top:
+        15px;
+
+    justify-content:
+        center;
+}
+
+}

@@ -1,3 +1,5 @@
+<?php require_once "./includes/session.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +38,9 @@
         href="./css/landing-page.css">
 
 
+        <link rel="stylesheet" href="css/components/animations.css">
+
+
 </head>
 
 <body>
@@ -46,6 +51,8 @@
 ===================================================== -->
 
 <nav class="floating-navbar">
+
+    <div class="navbar-container">
 
     <!-- =====================================================
          [10.1.2]
@@ -149,18 +156,20 @@
     class="language-switcher">
 
     <button
-        class="language-button active-language">
+        class="language-option active-language">
 
         🇩🇪 DE
 
     </button>
 
     <button
-        class="language-button">
+        class="language-option">
 
          🇬🇧 EN
 
     </button>
+
+</div>
 
 </div>
 
@@ -197,18 +206,18 @@
             alt="Das Energie Zentrum Logo"
             class="hero-logo">
 
-        <button
-            class="primary-button">
+<!-- =====================================================
+     [12.3.1]
+     PRIMARY CONSULTATION BUTTON
+===================================================== -->
 
-            <a
+<a
     href="#contact"
     class="primary-button">
 
     Book Consultation
 
 </a>
-
-        </button>
 
     </div>
 
@@ -670,6 +679,8 @@ id="about"
 
         </div>
 
+        </div>
+
 </section>
         <!-- ====================================== -->
         <!-- CTA SECTION -->
@@ -686,7 +697,7 @@ id="about"
             </h2>
 
             <a
-                href="./assessment.html">
+                href="./assessment.php">
 
                 Start Assessment
 
@@ -1062,16 +1073,6 @@ id="about"
 
 </div>
 
-    <!-- =====================================================
-     [12.9.2]
-     Consultation Summary
-===================================================== -->
-
-<div
-    id="consultation-summary"
-    class="consultation-summary">
-
-</div>
 
 </section>
 <!-- =====================================================
@@ -1243,10 +1244,17 @@ id="about"
 
 </footer>
     </div>
+<!--
+    <script
+    type="module"
+    src="./js/core/previewGuard.js">
+</script>
+-->
 
     <script
     type="module"
     src="./js/landingMain.js">
+
 </script>
 
 </body>

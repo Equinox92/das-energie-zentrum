@@ -1,4 +1,11 @@
-
+/* [3.2.1]
+   Resets default browser spacing behavior.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* [3.2.2]
    Defines global page styling.
@@ -15,10 +22,10 @@ body {
         sans-serif;
 
     background:
-        var(--color-background);
+        #ffffff;
 
     color:
-        var(--color-text);
+        #163443;
 
     line-height:
         1.6;
@@ -52,10 +59,76 @@ body {
    Premium Hero Section
 ===================================================== */
 
+/* =====================================================
+   [13.1.3]
+   Assessment Hero
+===================================================== */
 
+.hero-section {
 
+    background:
+        linear-gradient(
+            180deg,
+            #d9e5ea,
+            #ffffff
+        );
 
+    min-height:
+        80vh;
 
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        60px 20px;
+}
+/* [3.2.5]
+   Main heading styling.
+*/
+.hero-section h1 {
+
+    color:
+        #004f71;
+
+    font-size:
+        4rem;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        15px;
+}
+
+/* [3.2.6]
+   Subtitle styling.
+*/
+.hero-section p {
+
+    font-size:
+        1.3rem;
+
+    color:
+        #163443;
+
+    opacity:
+        .85;
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+}
 
 /* [3.2.7]
    System status section styling.
@@ -68,7 +141,7 @@ body {
 .system-status-section {
 
     background:
-        var(--color-background);
+        #ffffff;
 
     padding:
         70px 40px;
@@ -97,7 +170,7 @@ body {
 .interactive-house-section {
 
     background:
-        var(--color-surface);
+        #f5f7f8;
 
     padding:
         70px 40px;
@@ -231,8 +304,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            var(--color-primary),
-           var(--color-primary-light)
+            #004f71,
+            #0b6b94
         );
 
     color: white;
@@ -363,7 +436,7 @@ body {
 
     margin-bottom: 15px;
 
-    color: var(--color-primary);
+    color: #004f71;
 
     font-size: 1rem;
 }
@@ -391,7 +464,7 @@ body {
 
     background: white;
 
-    color: var(--color-primary);
+    color: #004f71;
 }
 
 /* [4.13.8]
@@ -422,8 +495,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            var(--color-primary),
-            var(--color-primary-light)
+            #004f71,
+            #0b6b94
         );
 
     color: white;
@@ -997,7 +1070,7 @@ body {
 
     padding: 1.5rem;
 
-    background-color: var(--color-secondary);
+    background-color: #d9e5ea;
 
     border-radius: 8px;
 
@@ -1105,7 +1178,7 @@ body {
 .energy-dashboard-section {
 
     background:
-        var(--color-background);
+        #ffffff;
 
     padding:
         70px 40px;
@@ -1120,7 +1193,7 @@ body {
 */
 .energy-dashboard-section h2 {
 
-    color: var(--color-primary);
+    color: #004f71;
 
     margin-bottom: 15px;
 }
@@ -1134,7 +1207,7 @@ body {
 
     font-weight: bold;
 
-    color: var(--color-primary);
+    color: #004f71;
 
     margin-bottom: 25px;
 
@@ -1230,7 +1303,7 @@ body {
     border-radius: 12px;
 
     border-left:
-        4px solid var(--color-primary);
+        4px solid #004f71;
 
     transition:
         transform 0.2s ease;
@@ -1279,8 +1352,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            var(--color-primary),
-            var(--color-primary-light)
+            #004f71,
+            #0b6b94
         );
 
     border-radius: 0;
@@ -1474,7 +1547,7 @@ body {
 
     background: white;
 
-    color: var(--color-primary);
+    color: #004f71;
 
     font-weight: bold;
 
@@ -1510,7 +1583,7 @@ body {
 
     background:
 
-        var(--color-background);
+        #ffffff;
 
     box-shadow:
 
@@ -1836,29 +1909,50 @@ body {
 
 }
 
+/* =========================================================
+   [13.3.2]
+   Assessment Section Rhythm
+========================================================= */
 
+.hero-section{
+
+    background:linear-gradient(
+        180deg,
+        #d9e5ea 0%,
+        #ffffff 100%
+    );
+
+    min-height:55vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
 
 .system-status-section{
 
-    background:var(--color-background);
+    background:#ffffff;
 
 }
 
 .interactive-house-section{
 
-    background:var(--color-secondary);
+    background:#d9e5ea;
 
 }
 
 .environment-controls-section{
 
-    background:var(--color-background);
+    background:#ffffff;
 
 }
 
 .energy-dashboard-section{
 
-    background:var(--color-secondary);
+    background:#d9e5ea;
 
 }
 
@@ -1866,8 +1960,8 @@ body {
 
     background:linear-gradient(
         135deg,
-        var(--color-primary),
-            
+        #004f71,
+        #0b6b94
     );
 
 }
@@ -1902,7 +1996,7 @@ body {
 
 .building-analysis-card{
 
-    background:var(--color-background);
+    background:#ffffff;
 
     border-radius:18px;
 
@@ -1926,7 +2020,7 @@ body {
 
 h2{
 
-    color:var(--color-primary);
+    color:#004f71;
 
     margin-bottom:24px;
 
@@ -1970,11 +2064,38 @@ h2{
 
 }
 
+.hero-logo{
 
+    width:130px;
 
+    margin-bottom:25px;
 
+}
 
+.floating-navbar{
 
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:#ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.hero-section{
+
+    padding-top:140px;
+
+}
 
 .system-status-section,
 .interactive-house-section,

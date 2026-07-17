@@ -1,0 +1,7 @@
+AuthType Basic
+
+AuthName "Das Energie Zentrum Development Preview"
+
+AuthUserFile /absolute/server/path/to/.htpasswd
+
+Require valid-user
