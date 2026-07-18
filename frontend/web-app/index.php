@@ -49,6 +49,12 @@
     rel="stylesheet"
     href="./css/components/forms.css">
 
+
+
+    <link
+    rel="stylesheet"
+    href="./css/components/cards.css">
+
     <link
     rel="stylesheet"
     href="./css/components/footer.css">
