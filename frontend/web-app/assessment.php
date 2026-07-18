@@ -35,6 +35,10 @@ href="./css/components/hero.css">
     rel="stylesheet"
     href="./css/components/navbar.css">
 
+    <link
+    rel="stylesheet"
+    href="./css/components/buttons.css">
+
 <link
     rel="stylesheet"
     href="./css/components/footer.css">

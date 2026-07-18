@@ -43,6 +43,14 @@
 
     <link
     rel="stylesheet"
+    href="./css/components/buttons.css">
+
+    <link
+    rel="stylesheet"
+    href="./css/components/forms.css">
+
+    <link
+    rel="stylesheet"
     href="./css/components/footer.css">
 
 
