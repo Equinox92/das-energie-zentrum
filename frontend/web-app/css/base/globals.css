@@ -1,0 +1,105 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+
+    box-sizing:
+        border-box;
+
+    margin:
+        0;
+
+    padding:
+        0;
+}
+
+html {
+
+    scroll-behavior:
+        smooth;
+}
+
+body {
+
+    background:
+        var(--color-background);
+
+    color:
+        var(--dez-dark);
+
+    line-height:
+        1.6;
+
+}
+
+/* =====================================================
+   GLOBAL SECTION SPACING
+===================================================== */
+
+section {
+
+    padding:
+        60px 40px;
+}
+
+/* =====================================================
+   [13.2.1]
+   CUSTOM SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+
+    width:
+        12px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background:
+        var(--dez-light-gray);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        var(--dez-primary);
+
+    border-radius:
+        20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--dez-accent);
+
+}
+
+section h2::after {
+
+    content:
+        "";
+
+    display:
+        block;
+
+    width:
+        70px;
+
+    height:
+        4px;
+
+    margin:
+        12px auto 0;
+
+    border-radius:
+        4px;
+
+    background:
+        var(--dez-primary);
+
+}

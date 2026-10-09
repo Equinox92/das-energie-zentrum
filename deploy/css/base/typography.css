@@ -1,0 +1,158 @@
+/* =====================================================
+   GLOBAL TYPOGRAPHY
+===================================================== */
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        var(--font-heading);
+
+}
+
+body,
+p,
+li,
+input,
+textarea,
+select,
+button,
+a {
+
+    font-family:
+        var(--font-body);
+
+}
+
+
+.service-information-panel h3 {
+
+    font-size:
+        2rem;
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        15px;
+
+}
+
+.service-information-panel p {
+
+    font-size:
+        1.1rem;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.hero-section h1 {
+
+    color:
+        var(--dez-primary);
+
+    font-size:
+        4rem;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        15px;
+}
+
+
+.hero-subtitle {
+
+    font-size:
+        1.3rem;
+
+    color:
+        var(--dez-dark);
+
+    opacity:
+        0.85;
+
+    margin-bottom:
+        40px;
+}
+
+
+/* =====================================================
+   [10.5.5]
+   HERO TAGLINE
+===================================================== */
+
+.hero-tagline {
+
+    font-size:
+        1.25rem;
+
+    color:
+        var(--dez-dark);
+
+    margin-bottom:
+        30px;
+
+    font-weight:
+        500;
+
+      line-height:
+    1.7;
+
+max-width:
+    650px;  
+}
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+section h2 {
+
+    text-align:
+        center;
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        50px;
+
+    font-size:
+        2.5rem;
+
+        
+}
+
+/* =====================================================
+   ABOUT CONTENT
+===================================================== */
+
+.about-content h3 {
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        20px;
+}
+
+.about-content p {
+
+    margin-bottom:
+        25px;
+
+    text-align:
+        left;
+}
+
+.about-content li {
+
+    margin:
+        0;
+}

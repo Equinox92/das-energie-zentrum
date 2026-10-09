@@ -77,3 +77,106 @@
         4px;
 
 }
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+/* =====================================================
+   [12.3.2]
+   PRIMARY BUTTON
+===================================================== */
+
+.primary-button {
+
+    display:
+        inline-block;
+
+    text-decoration:
+        none;
+
+    background:
+        var(--dez-primary);
+
+    color:
+        white;
+
+    border:
+        none;
+
+    padding:
+        16px 36px;
+
+    border-radius:
+        10px;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.3s ease;
+
+    box-shadow:
+        var(--dez-shadow);
+
+}
+
+.primary-button:hover {
+
+    background:
+        var(--dez-accent);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--dez-shadow-lg);
+
+}
+
+/* =====================================================
+   [13.4.1]
+   KEYBOARD ACCESSIBILITY
+===================================================== */
+
+.primary-button:focus-visible,
+.language-option:focus-visible,
+.navbar-links a:focus-visible {
+
+    outline:
+        3px solid var(--dez-accent);
+
+    outline-offset:
+        4px;
+
+    border-radius:
+        8px;
+
+}
+
+/* =====================================================
+   [13.4.1]
+   PRIMARY BUTTON KEYBOARD FOCUS
+===================================================== */
+
+.primary-button:focus-visible {
+
+    outline:
+        3px solid
+        rgba(
+            28,
+            163,
+            214,
+            0.45
+        );
+
+    outline-offset:
+        4px;
+
+}

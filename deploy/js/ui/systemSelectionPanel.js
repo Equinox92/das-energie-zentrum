@@ -147,6 +147,35 @@ document.getElementById(
         // [6.9.7]
         // Synchronizes dashboard intelligence.
         updateEnergyDashboard();
+
+        // [10.3.1]
+// Close configuration panel after installation.
+
+const configurationPanel =
+    document.getElementById(
+        "configuration-panel"
+    );
+
+if (configurationPanel) {
+
+    configurationPanel.classList.remove(
+        "active"
+    );
+
+}
+
+const wrapper =
+    document.querySelector(
+        ".interactive-house-wrapper"
+    );
+
+if (wrapper) {
+
+    wrapper.classList.remove(
+        "active"
+    );
+
+}
     }
 );
 
@@ -181,6 +210,75 @@ document.getElementById(
          // [10.2.6]
         // Synchronizes SVG engineering visualization.
         renderInstalledSystems();
+
+        // [10.3.1]
+// Close configuration panel after installation.
+
+const configurationPanel =
+    document.getElementById(
+        "configuration-panel"
+    );
+
+if (configurationPanel) {
+
+    configurationPanel.classList.remove(
+        "active"
+    );
+
+}
+
+const wrapper =
+    document.querySelector(
+        ".interactive-house-wrapper"
+    );
+
+if (wrapper) {
+
+    wrapper.classList.remove(
+        "active"
+    );
+
+}
+    }
+);
+
+// [10.3.2]
+// Close configuration panel when clicking outside it.
+
+document.addEventListener(
+    "click",
+    function closeConfigurationPanel(event) {
+
+        const panel =
+            document.getElementById(
+                "configuration-panel"
+            );
+
+        const wrapper =
+            document.querySelector(
+                ".interactive-house-wrapper"
+            );
+
+        if (
+            panel &&
+            !panel.contains(event.target) &&
+            !event.target.closest(".interactive-zone")
+        ) {
+
+            panel.classList.remove(
+                "active"
+            );
+
+            wrapper?.classList.remove(
+                "active"
+            );
+
+            document.removeEventListener(
+                "click",
+                closeConfigurationPanel
+            );
+        }
+
     }
 );
 }

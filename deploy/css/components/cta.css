@@ -1,0 +1,57 @@
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.cta-section {
+
+    background:
+        var(--dez-primary);
+
+    color:
+        white;
+
+    text-align:
+        center;
+}
+
+.cta-section h2 {
+
+    color:
+        white;
+
+    margin-bottom:
+        30px;
+}
+
+.cta-section a {
+
+    display:
+        inline-block;
+
+    background:
+        white;
+
+    color:
+        var(--dez-primary);
+
+    text-decoration:
+        none;
+
+    padding:
+        16px 36px;
+
+    border-radius:
+        10px;
+
+    font-weight:
+        700;
+
+    transition:
+        all 0.3s ease;
+}
+
+.cta-section a:hover {
+
+    transform:
+        translateY(-3px);
+}

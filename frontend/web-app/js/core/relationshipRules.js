@@ -2,9 +2,38 @@
 // [7.1.1]
 // CENTRALIZED ENGINEERING RELATIONSHIP RULES
 // =====================================================
+//
+// This module contains the centralized engineering
+// relationship definitions used by:
+//
+// - Energy scoring
+// - Recommendation generation
+// - Building-context applicability
+//
+// IMPORTANT:
+//
+// Relationship rules describe relationships between
+// installed systems.
+//
+// Positive relationships:
+//      Required systems installed
+//      ↓
+//      Apply benefit
+//
+// Negative relationships:
+//      Trigger systems installed
+//      +
+//      Required supporting system missing
+//      ↓
+//      Apply penalty / recommendation
+// =====================================================
 
+
+// =====================================================
 // [7.1.2]
-// Defines scalable engineering relationship intelligence.
+// ENGINEERING RELATIONSHIP COLLECTION
+// =====================================================
+
 export const relationshipRules = [
 
     // =====================================================
@@ -12,7 +41,8 @@ export const relationshipRules = [
     // =====================================================
 
     // [7.1.3]
-    // Detects optimized solar thermal envelope.
+    // Detects beneficial interaction between solar
+    // generation and thermal wall insulation.
     {
         systems: [
             "solar-pv-5kw",
@@ -29,12 +59,15 @@ export const relationshipRules = [
             "Solar and thermal insulation systems create strong energy synergy."
     },
 
+
     // =====================================================
     // WINDOW + WALL OPTIMIZATION
     // =====================================================
 
     // [7.1.4]
-    // Detects optimized building envelope.
+    // Detects optimized thermal-envelope configuration
+    // when both wall insulation and efficient glazing
+    // are installed.
     {
         systems: [
             "thermal-wall-system",
@@ -51,12 +84,32 @@ export const relationshipRules = [
             "Thermal wall insulation and efficient glazing reduce heat loss significantly."
     },
 
+
     // =====================================================
-    // MISSING WINDOW PENALTY
+    // WALL INSULATION WITHOUT EFFICIENT WINDOWS
     // =====================================================
 
     // [7.1.5]
-    // Detects thermal imbalance configuration.
+    // Detects a partially optimized thermal envelope.
+    //
+    // The wall system is the trigger.
+    //
+    // The efficient window system is the required
+    // supporting system.
+    //
+    // Therefore this relationship becomes active ONLY
+    // when:
+    //
+    // thermal-wall-system
+    //      = installed
+    //
+    // AND
+    //
+    // triple-glazed-window
+    //      = NOT installed
+    //
+    // This prevents the recommendation from appearing
+    // when efficient windows are already installed.
     {
         systems: [
             "thermal-wall-system"
@@ -73,6 +126,7 @@ export const relationshipRules = [
             -10,
 
         message:
-            "Thermal insulation without efficient windows may reduce optimization efficiency."
+            "Consider upgrading to energy efficient windows to complement the existing wall insulation."
     }
+
 ];

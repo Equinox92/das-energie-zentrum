@@ -223,60 +223,20 @@ flex-direction:
 }
 
 /* =====================================================
-   [11.5.8]
-   EXPERIENCE CARD
+   [10.3.10]
+   CARD TITLE
 ===================================================== */
 
-.experience-card {
+.credibility-card h3 {
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.08
-        );
+    color:
+        var(--dez-primary);
 
-    border:
-        1px solid rgba(
-            255,
-            255,
-            255,
-            0.15
-        );
-
-    border-radius:
-        16px;
-
-    padding:
-        30px;
-
-    display:
-    flex;
-
-flex-direction:
-    column;
-
-justify-content:
-    center;
-
-    text-align:
-        center;
-
-    backdrop-filter:
-        blur(10px);
-
-        transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    box-shadow 0.35s ease;
-
-cursor:
-    default;
-
-    user-select:
-    none;
+    margin-bottom:
+        15px;
 }
+
+
 
 .experience-card:hover {
 
@@ -410,4 +370,21 @@ user-select:
 
     font-size:
         0.95rem;
+}
+
+/* =====================================================
+   [13.1.1]
+   GLOBAL CARD TRANSITIONS
+===================================================== */
+
+.service-card,
+.expertise-card,
+.credibility-card,
+.experience-card,
+.service-card-item {
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
 }

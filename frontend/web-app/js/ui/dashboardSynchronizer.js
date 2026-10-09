@@ -26,15 +26,61 @@ import {
 
 } from "../core/engineeringAnalyticsEngine.js";
 
+// [16.9.10]
+// Imports centralized calculator assessment state.
+import {
+    energyAssessmentState
+} from "../core/energyAssessmentState.js";
+
 
 // [4.4.1]
 // Synchronizes dashboard UI with runtime state.
 export function updateEnergyDashboard() {
 
+        // =====================================================
+    // [16.9.11]
+    // CALCULATOR ASSESSMENT STATE
+    // =====================================================
+
+    // Retrieves the latest calculator assessment.
+    const calculatorAssessment =
+        energyAssessmentState.assessment;
+
+        // [16.9.12]
+// Outputs the centralized assessment structure
+// for development verification.
+console.log(
+    "[16.9 DEBUG] Complete calculator assessment:",
+    JSON.stringify(
+    calculatorAssessment,
+    null,
+    4
+    )
+);
+
+
+
+    // [16.9.13]
+    // Retrieves the calculator assessment score.
+    const calculatorScore =
+        calculatorAssessment?.metrics?.score ??
+        calculatorAssessment?.score ??
+        null;
+
     // [4.4.2]
     // Calculates live building score.
     const score =
         calculateEnergyScore();
+
+        console.log(
+    "[DASHBOARD DEBUG] Interactive House Score:",
+    score
+);
+
+console.log(
+    "[DASHBOARD DEBUG] Calculator Assessment Score:",
+    calculatorScore
+);
 
     // [4.4.3]
     // Generates live recommendations.
@@ -42,35 +88,73 @@ export function updateEnergyDashboard() {
         generateRecommendations();
 
         // =====================================================
+// [16.9.10]
+// Retrieve latest calculator assessment.
+// =====================================================
+
+
+        // =====================================================
 // ENGINEERING ANALYTICS
 // =====================================================
 
+// =====================================================
 // [8.2.2]
-// Retrieves projected engineering savings.
-const estimatedSavings =
-    calculateEstimatedSavings();
+// ENGINEERING ANALYTICS AVAILABILITY
+// =====================================================
 
 // [8.2.3]
-// Retrieves environmental reduction metrics.
-const carbonReduction =
-    calculateCarbonReduction();
+// Determines whether the interactive house contains
+// any configured engineering systems.
+const hasConfiguredSystems =
+    Object.values(
+        energyState
+    ).some(
+        zone =>
+            zone &&
+            Array.isArray(
+                zone.installedSystems
+            ) &&
+            zone.installedSystems.length > 0
+    );
 
+
+// =====================================================
 // [8.2.4]
-// Retrieves interpreted thermal efficiency.
+// ENGINEERING ANALYTICS
+// =====================================================
+
+// These metrics belong exclusively to the
+// interactive engineering configuration system.
+//
+// They must NOT manufacture values when no
+// engineering systems have been configured.
+
+const estimatedSavings =
+    hasConfiguredSystems
+        ? calculateEstimatedSavings()
+        : null;
+
+const carbonReduction =
+    hasConfiguredSystems
+        ? calculateCarbonReduction()
+        : null;
+
 const thermalEfficiency =
-    calculateThermalEfficiency();
+    hasConfiguredSystems
+        ? calculateThermalEfficiency()
+        : null;
 
-// [8.2.5]
-// Retrieves optimization classification.
 const optimizationLevel =
-    calculateOptimizationLevel();
+    hasConfiguredSystems
+        ? calculateOptimizationLevel()
+        : null;
 
-    // [4.4.4]
-    // Retrieves score container safely.
-    const scoreElement =
-        document.getElementById(
-            "energy-score"
-        );
+        // [4.4.4]
+// Retrieves live energy score container safely.
+const scoreElement =
+    document.getElementById(
+        "energy-score"
+    );
 
     // [4.4.5]
     // Retrieves recommendation container safely.
@@ -78,6 +162,22 @@ const optimizationLevel =
         document.getElementById(
             "energy-recommendations"
         );
+
+
+        // =====================================================
+// [16.9.11]
+// Retrieve calculator intelligence dashboard elements.
+// =====================================================
+
+const calculatorScoreElement =
+    document.getElementById(
+        "calculator-energy-score"
+    );
+
+const calculatorClassificationElement =
+    document.getElementById(
+        "calculator-classification"
+    );
 
         // [8.2.6]
 // Retrieves engineering analytics containers.
@@ -115,6 +215,37 @@ const optimizationElement =
         return;
     }
 
+// =====================================================
+// [16.9.14]
+// Render calculator intelligence assessment.
+// =====================================================
+
+if (calculatorAssessment) {
+
+    if (calculatorScoreElement) {
+
+        calculatorScoreElement.textContent =
+            calculatorScore !== null
+                ? `${calculatorScore}%`
+                : "Awaiting Assessment";
+
+    }
+
+
+    if (calculatorClassificationElement) {
+
+        const calculatorClassification =
+            calculatorAssessment?.metrics?.classification ??
+            calculatorAssessment?.classification ??
+            "Assessment Available";
+
+        calculatorClassificationElement.textContent =
+            calculatorClassification;
+
+    }
+
+}
+
     // [4.4.7]
     // Updates live building efficiency score.
     scoreElement.textContent =
@@ -124,36 +255,56 @@ const optimizationElement =
 // LIVE ENGINEERING ANALYTICS SYNCHRONIZATION
 // =====================================================
 
+// =====================================================
 // [8.2.7]
-// Synchronizes projected savings safely.
+// RENDER ENGINEERING ANALYTICS
+// =====================================================
+
+// [8.2.8]
+// Displays engineering savings only when
+// engineering systems actually exist.
 if (savingsElement) {
 
     savingsElement.textContent =
-        `R ${estimatedSavings.toLocaleString()}`;
+        hasConfiguredSystems
+            ? `R ${estimatedSavings.toLocaleString()}`
+            : "R 0";
 }
 
-// [8.2.8]
-// Synchronizes environmental reduction safely.
+
+// [8.2.9]
+// Displays carbon reduction only when
+// engineering systems actually exist.
 if (carbonElement) {
 
     carbonElement.textContent =
-        `${carbonReduction}%`;
+        hasConfiguredSystems
+            ? `${carbonReduction}%`
+            : "0%";
 }
 
-// [8.2.9]
-// Synchronizes thermal efficiency safely.
+
+// [8.2.10]
+// Displays thermal efficiency only when
+// engineering systems actually exist.
 if (thermalElement) {
 
     thermalElement.textContent =
-        thermalEfficiency;
+        hasConfiguredSystems
+            ? thermalEfficiency
+            : "Awaiting Configuration";
 }
 
-// [8.2.10]
-// Synchronizes optimization classification safely.
+
+// [8.2.11]
+// Displays optimization classification only
+// when engineering systems actually exist.
 if (optimizationElement) {
 
     optimizationElement.textContent =
-        optimizationLevel;
+        hasConfiguredSystems
+            ? optimizationLevel
+            : "Awaiting Configuration";
 }
 
     // [4.4.8]

@@ -1,3 +1,4 @@
+
 /* =====================================================
    [9.4.1]
    DAS ENERGIE ZENTRUM
@@ -32,400 +33,22 @@
         swap;
 } */
 
-:root {
-
-    /* =====================================================
-       BRAND COLORS
-    ===================================================== */
-
-    --dez-primary: #004F71;
-    --dez-secondary: #D9E5EA;
-    --dez-white: #FFFFFF;
-    --dez-dark: #163443;
-    --dez-accent: #0B698F;
-    --dez-light-gray: #F5F7F8;
-
-    --dez-shadow:
-        0 10px 30px rgba(
-            0,
-            79,
-            113,
-            0.12
-        );
-
-        --dez-shadow-lg:
-    0 18px 45px rgba(
-        0,
-        79,
-        113,
-        0.22
-    );
-
-    /* =====================================================
-       TYPOGRAPHY
-    ===================================================== */
-
-    --font-heading:
-        "Lato",
-        sans-serif;
-
-    --font-body:
-        "Lato",
-        sans-serif;
-
-        --dez-radius:
-    16px;
-
-}
-
 /* =====================================================
-   GLOBAL TYPOGRAPHY
+   TEMPORARY
+   These design tokens are being migrated into
+   css/base/variables.css.
+
+   Do not add new variables here.
 ===================================================== */
 
-h1,
-h2,
-h3 {
 
-    font-family:
-        var(--font-heading);
 
-}
 
-body,
-p,
-li,
-input,
-textarea,
-select,
-button,
-a {
 
-    font-family:
-        var(--font-body);
 
-}
 
 
 
-
-
-
-/* =====================================================
-   GLOBAL RESET
-===================================================== */
-
-* {
-
-    box-sizing:
-        border-box;
-
-    margin:
-        0;
-
-    padding:
-        0;
-}
-
-html {
-
-    scroll-behavior:
-        smooth;
-}
-
-body {
-
-    font-family:
-        "Lato",
-        sans-serif;
-
-    background:
-        var(--dez-white);
-
-    color:
-        var(--dez-dark);
-
-    line-height:
-        1.6;
-}
-
-/* =====================================================
-   GLOBAL SECTION SPACING
-===================================================== */
-
-section {
-
-    padding:
-        60px 40px;
-}
-
-.website-container {
-
-    width:
-        100%;
-
-    overflow-x:
-        hidden;
-
-        position:
-    relative;
-}
-
-/* =====================================================
-   HERO SECTION
-===================================================== */
-
-.hero-section {
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--dez-secondary),
-            var(--dez-white)
-        );
-
-    min-height:
-        100vh;
-
-padding:
-    100px 30px 80px;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    text-align:
-        center;
-}
-
-.hero-content {
-
-    width:
-        100%;
-
-    max-width:
-        1400px;
-
-    margin:
-        0 auto;
-
-    padding:
-    0 20px;
-
-    position:
-    relative;
-
-}
-
-
-
-.hero-section h1 {
-
-    color:
-        var(--dez-primary);
-
-    font-size:
-        4rem;
-
-    font-weight:
-        700;
-
-    margin-bottom:
-        15px;
-}
-
-.hero-subtitle {
-
-    font-size:
-        1.3rem;
-
-    color:
-        var(--dez-dark);
-
-    opacity:
-        0.85;
-
-    margin-bottom:
-        40px;
-}
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-/* =====================================================
-   [12.3.2]
-   PRIMARY BUTTON
-===================================================== */
-
-.primary-button {
-
-    display:
-        inline-block;
-
-    text-decoration:
-        none;
-
-    background:
-        var(--dez-primary);
-
-    color:
-        white;
-
-    border:
-        none;
-
-    padding:
-        16px 36px;
-
-    border-radius:
-        10px;
-
-    font-size:
-        1rem;
-
-    font-weight:
-        600;
-
-    cursor:
-        pointer;
-
-    transition:
-        all 0.3s ease;
-
-    box-shadow:
-        var(--dez-shadow);
-
-}
-
-.primary-button:hover {
-
-    background:
-        var(--dez-accent);
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        var(--dez-shadow-lg);
-
-}
-
-/* =====================================================
-   [13.4.1]
-   KEYBOARD ACCESSIBILITY
-===================================================== */
-
-.primary-button:focus-visible,
-.language-option:focus-visible,
-.navbar-links a:focus-visible {
-
-    outline:
-        3px solid var(--dez-accent);
-
-    outline-offset:
-        4px;
-
-    border-radius:
-        8px;
-
-}
-
-/* =====================================================
-   [13.4.1]
-   PRIMARY BUTTON KEYBOARD FOCUS
-===================================================== */
-
-.primary-button:focus-visible {
-
-    outline:
-        3px solid
-        rgba(
-            28,
-            163,
-            214,
-            0.45
-        );
-
-    outline-offset:
-        4px;
-
-}
-
-/* =====================================================
-   SECTION HEADINGS
-===================================================== */
-
-section h2 {
-
-    text-align:
-        center;
-
-    color:
-        var(--dez-primary);
-
-    margin-bottom:
-        50px;
-
-    font-size:
-        2.5rem;
-
-        
-}
-
-section h2::after {
-
-    content:
-        "";
-
-    display:
-        block;
-
-    width:
-        70px;
-
-    height:
-        4px;
-
-    margin:
-        12px auto 0;
-
-    border-radius:
-        4px;
-
-    background:
-        var(--dez-primary);
-
-}
-
-/* =====================================================
-   ABOUT SECTION
-===================================================== */
-
-.about-section {
-
-    background:
-        white;
-}
-
-.about-section p {
-
-    max-width:
-        900px;
-
-    margin:
-        0 auto;
-
-    text-align:
-        center;
-
-    font-size:
-        1.15rem;
-}
 
 /* =====================================================
    SERVICES SECTION
@@ -437,102 +60,6 @@ section h2::after {
         var(--dez-light-gray);
 }
 
-.services-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                250px,
-                1fr
-            )
-        );
-
-    gap:
-        30px;
-
-    max-width:
-        1200px;
-
-    margin:
-        0 auto;
-}
-
-.service-card {
-
-    background:
-        white;
-
-    padding:
-        40px;
-
-    border-radius:
-        16px;
-
-    box-shadow:
-        var(--dez-shadow);
-
-    text-align:
-        center;
-
-    transition:
-        all 0.3s ease;
-
-    font-weight:
-        600;
-
-        cursor:
-    pointer;
-
-    user-select:
-    none;
-
-    display:
-    flex;
-
-flex-direction:
-    column;
-
-justify-content:
-    center;
-
-min-height:
-    180px;
-
-    border:
-    1px solid rgba(
-        0,
-        79,
-        113,
-        0.08
-    );
-}
-
-.service-card:hover {
-
-transform:
-    translateY(-8px)
-    scale(1.02);
-
-border-color:
-    rgba(
-        0,
-        79,
-        113,
-        0.20
-    );
-
-    box-shadow:
-        0 20px 45px rgba(
-            0,
-            79,
-            113,
-            0.18
-        );
-}
 
 /* =====================================================
    INTERACTIVE ENERGY HOUSE
@@ -549,116 +76,10 @@ border-color:
    HOUSE EXPLORER MASTER CARD
 ===================================================== */
 
-/* =====================================================
-   [9.8.1]
-   House Explorer Master Card
-===================================================== */
 
-.house-explorer {
 
-    max-width:
-        1400px;
 
-width:
-    min(95%, 1400px);
 
-    margin:
-        0 auto;
-
-    background:
-        white;
-
-    border-radius:
-        24px;
-
-    overflow:
-        hidden;
-
-    box-shadow:
-        0 15px 40px rgba(
-            0,
-            79,
-            113,
-            0.15
-        );
-}
-
-/* =====================================================
-   CTA SECTION
-===================================================== */
-
-.cta-section {
-
-    background:
-        var(--dez-primary);
-
-    color:
-        white;
-
-    text-align:
-        center;
-}
-
-.cta-section h2 {
-
-    color:
-        white;
-
-    margin-bottom:
-        30px;
-}
-
-.cta-section a {
-
-    display:
-        inline-block;
-
-    background:
-        white;
-
-    color:
-        var(--dez-primary);
-
-    text-decoration:
-        none;
-
-    padding:
-        16px 36px;
-
-    border-radius:
-        10px;
-
-    font-weight:
-        700;
-
-    transition:
-        all 0.3s ease;
-}
-
-.cta-section a:hover {
-
-    transform:
-        translateY(-3px);
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    background:
-        var(--dez-dark);
-
-    color:
-        white;
-
-    text-align:
-        center;
-
-    padding:
-        40px;
-}
 
 /* =====================================================
    RESPONSIVE TABLET
@@ -748,6 +169,60 @@ footer {
     }
 
     /* =====================================================
+   [13.5.1]
+   MOBILE HOUSE EXPLORER
+===================================================== */
+
+.house-explorer {
+
+    width:
+        100%;
+
+    max-width:
+        none;
+
+    border-radius:
+        var(--radius-medium);
+
+
+
+}
+
+
+/* =====================================================
+   [13.5.2]
+   MOBILE HOUSE SCALING
+===================================================== */
+
+/* =====================================================
+   [13.5.2]
+   MOBILE HOUSE SCROLLING
+===================================================== */
+
+.energy-house-container {
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+/* =====================================================
+   [13.5.3]
+   MOBILE HOUSE IMAGE
+===================================================== */
+
+.energy-house-image {
+
+    width: 650px;
+
+    max-width: none;
+
+}
+
+    /* =====================================================
    [10.6.2]
    MOBILE HOTSPOT SCALING
 ===================================================== */
@@ -755,13 +230,40 @@ footer {
 .hotspot {
 
     width:
-        20px;
+        28px;
 
     height:
-        20px;
+        28px;
 
     border:
         2px solid white;
+}
+
+/* =====================================================
+   [10.6.2A]
+   MOBILE HOTSPOT TOUCH TARGET
+===================================================== */
+
+.hotspot::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -18px;
+
+    right:
+        -18px;
+
+    bottom:
+        -18px;
+
+    left:
+        -18px;
+
 }
 
 /* =====================================================
@@ -781,9 +283,8 @@ footer {
    [9.5.2]
    ENERGY HOUSE CONTAINER
 ===================================================== */
-
 /* =====================================================
-   [9.8.6]
+   [9.5.2]
    ENERGY HOUSE CONTAINER
 ===================================================== */
 
@@ -792,1256 +293,62 @@ footer {
     position:
         relative;
 
-    width:
-        100%;
-
-        height: auto;
-
-    background:
-        #f7f9fb;
 }
 
-/* =====================================================
-   [9.8.7]
-   ENERGY HOUSE IMAGE
-===================================================== */
-
-.energy-house-image {
-
-    width:
-        100%;
-
-    display:
-        block;
-
-        user-select:
-    none;
-
-pointer-events:
-    none;
-
--webkit-user-drag:
-    none;
-}
-/* =====================================================
-   HOTSPOTS
-===================================================== */
-
-.hotspot {
-
-    position: absolute;
-
-    width: 32px;
-
-    height: 32px;
-
-    border-radius: 50%;
-
-    background: var(--dez-primary);
-
-    border: 3px solid white;
-
-    cursor: pointer;
-
-    transform: translate(-50%, -50%);
-
-    box-shadow:
-        0 0 15px rgba(
-            0,
-            79,
-            113,
-            0.6
-        );
-
-    transition:
-        all 0.3s ease;
-
-    z-index: 100;
-}
-
-.hotspot:hover {
-
-    box-shadow:
-        0 0 35px rgba(
-            0,
-            79,
-            113,
-            1
-        );
-}
-
-
-/* =====================================================
-   [9.6.2]
-   CUSTOM HOTSPOT TOOLTIP
-===================================================== */
-
-
-.hotspot-tooltip {
-
-    position:
-        fixed;
-
-    display:
-        none;
-
-    max-width:
-        280px;
-
-    padding:
-        15px;
-
-    border-radius:
-        12px;
-
-    background:
-        white;
-
-    color:
-        var(--dez-dark);
-
-    box-shadow:
-        var(--dez-shadow);
-
-    border:
-        2px solid
-        var(--dez-primary);
-
-    z-index:
-        10000;
-
-    pointer-events:
-        none;
-
-    will-change:
-        transform;
-
-    overflow:
-        hidden;
-}
-
-/* =====================================================
-   [9.6.3]
-   Tooltip title styling.
-===================================================== */
-
-.hotspot-tooltip h4 {
-
-    color:
-        var(--dez-primary);
-
-    margin-bottom:
-        8px;
-}
-
-.hotspot-tooltip p {
-
-    margin:
-        0;
-
-    font-size:
-        0.95rem;
-}
 /* =====================================================
    [9.6.4]
    Tooltip description styling.
 ===================================================== */
+
+.hotspot-tooltip {
+
+    position:
+        absolute;
+
+    z-index:
+        1000;
+
+    pointer-events:
+        none;
+
+}
 /* =====================================================
    [9.7.5]
    SERVICE INFORMATION PANEL
 ===================================================== */
 
+
 /* =====================================================
-   [9.8.8]
-   SERVICE INFORMATION PANEL
+   FOOTER
 ===================================================== */
 
-.service-information-panel {
+footer {
+
+    background:
+        var(--dez-dark);
+
+    color:
+        white;
+
+    text-align:
+        center;
 
     padding:
         40px;
-
-    background:
-        white;
-
-    border-top:
-        1px solid #e5edf1;
-
-    min-height:
-    320px;
-}
-
-/* =====================================================
-   [9.7.6]
-   Service panel title
-===================================================== */
-
-/* =====================================================
-   [9.8.9]
-   PANEL TITLE
-===================================================== */
-
-.service-information-panel h3 {
-
-    font-size:
-        2rem;
-
-    color:
-        var(--dez-primary);
-
-    margin-bottom:
-        15px;
-}
-
-/* =====================================================
-   [9.7.7]
-   Service panel description
-===================================================== */
-
-/* =====================================================
-   [9.8.10]
-   PANEL DESCRIPTION
-===================================================== */
-
-.service-information-panel p {
-
-    font-size:
-        1.1rem;
-
-    margin-bottom:
-        25px;
-}
-/* =====================================================
-   [9.7.8]
-   Dynamic services list
-===================================================== */
-
-/* =====================================================
-   [9.8.11]
-   SERVICE LIST
-===================================================== */
-
-.service-information-panel ul {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                250px,
-                1fr
-            )
-        );
-
-    gap:
-        15px;
-
-    list-style:
-        none;
-
-    padding:
-        0;
-
-    margin:
-    0;
-}
-
-/* =====================================================
-   [9.8.12]
-   SERVICE ITEM CARD
-===================================================== */
-
-.service-information-panel li {
-
-    background:
-        var(--dez-light-gray);
-
-    padding:
-        15px;
-
-    border-left:
-        4px solid
-        var(--dez-primary);
-
-    border-radius:
-        8px;
-}
-
-/* =====================================================
-   [9.9.7]
-   PROFESSIONAL SERVICE CARD
-===================================================== */
-
-.service-card-item {
-
-    background:
-        var(--dez-light-gray);
-
-        cursor:
-    default;
-
-user-select:
-    none;
-
-    padding:
-        20px;
-
-    border-left:
-        5px solid
-        var(--dez-primary);
-
-    border-radius:
-        10px;
-
-    transition:
-        all 0.3s ease;
-}
-
-/* =====================================================
-   [9.9.8]
-   Hover interaction.
-===================================================== */
-
-.service-card-item:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        var(--dez-shadow);
-}
-
-/* =====================================================
-   [9.9.9]
-   Service title.
-===================================================== */
-
-.service-card-item h4 {
-
-    color:
-        var(--dez-primary);
-
-    margin-bottom:
-        10px;
-}
-
-/* =====================================================
-   [9.9.10]
-   Service summary.
-===================================================== */
-
-.service-card-item p {
-
-    margin:
-        0;
-
-    font-size:
-        0.95rem;
-}
-
-/* =====================================================
-   [10.1.4]
-   FLOATING NAVIGATION BAR
-===================================================== */
-
-.floating-navbar {
-
-    position:
-        sticky;
-
-    top:
-        0;
-
-    z-index:
-        5000;
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    padding:
-        18px 40px;
-
-background:
-    rgba(
-        255,
-        255,
-        255,
-        0.75
-    );
-
-    backdrop-filter:
-        blur(14px);
-
-       -webkit-backdrop-filter:
-    blur(14px); 
-
-border-bottom:
-    1px solid
-    rgba(
-        255,
-        255,
-        255,
-        0.35
-    );
-
-box-shadow:
-    0 8px 30px rgba(
-        0,
-        79,
-        113,
-        0.08
-    );
-
-    transition:
-    all 0.3s ease;
-}
-
-/* =====================================================
-   [10.1.5]
-   NAVBAR BRAND
-===================================================== */
-
-/* =====================================================
-   [12.1.1]
-   NAVBAR BRAND
-===================================================== */
-
-.navbar-brand {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        12px;
-
-    font-family:
-        var(--font-heading);
-
-    font-size:
-        1.2rem;
-
-    font-weight:
-        700;
-
-    color:
-        var(--dez-primary);
-
 }
 
 
-/* =====================================================
-   [10.5.2]
-   NAVBAR BRAND LAYOUT
-===================================================== */
 
 
-/* =====================================================
-   [10.5.3]
-   NAVBAR LOGO
-===================================================== */
 
-.navbar-logo {
 
-    width:
-        42px;
 
-    height:
-        42px;
 
-    object-fit:
-        contain;
-}
 
-/* =====================================================
-   [10.1.6]
-   NAVIGATION LINKS
-===================================================== */
 
-.navbar-links {
 
-    display:
-        flex;
 
-    gap:
-        30px;
 
-    list-style:
-        none;
-}
-
-.navbar-links a {
-
-    text-decoration:
-        none;
-
-    color:
-        var(--dez-dark);
-
-    font-weight:
-        600;
-
-transition:
-    color 0.3s ease,
-    opacity 0.3s ease;
-
-        position:
-    relative;
-
-    padding:
-    8px 0;
-}
-
-.navbar-links a::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    left:
-        0;
-
-    bottom:
-        -6px;
-
-    width:
-        0;
-
-    height:
-        2px;
-
-    background:
-        var(--dez-primary);
-
-    transition:
-        width 0.3s ease;
-
-}
-
-.navbar-links a:hover {
-
-    color:
-        var(--dez-primary);
-
-    opacity:
-    0.85;
-
-}
-
-.navbar-links a:hover::after {
-
-    width:
-        100%;
-
-}
-
-/* =====================================================
-   [10.8.2]
-   LANGUAGE SWITCHER
-===================================================== */
-
-.language-switcher {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-}
-
-/* =====================================================
-   [10.8.3]
-   LANGUAGE BUTTON
-===================================================== */
-
-.language-option {
-
-    background:
-        transparent;
-
-    border:
-        none;
-
-    cursor:
-        pointer;
-
-    font-size:
-        0.95rem;
-
-    font-weight:
-        600;
-
-    color:
-        var(--dez-dark);
-
-    transition:
-        all 0.3s ease;
-}
-
-/* =====================================================
-   [10.8.4]
-   HOVER EFFECT
-===================================================== */
-
-.language-option:hover {
-
-    color:
-        var(--dez-primary);
-}
-
-/* =====================================================
-   [10.8.5]
-   ACTIVE LANGUAGE
-===================================================== */
-
-.active-language {
-
-    color:
-        var(--dez-primary);
-
-    font-weight:
-        700;
-}
-
-/* =====================================================
-   [10.6.6]
-   MOBILE MENU BUTTON
-===================================================== */
-
-.mobile-menu-button {
-
-    display:
-        none;
-
-    background:
-        none;
-
-    border:
-        none;
-
-    font-size:
-        2rem;
-
-    color:
-        var(--dez-primary);
-
-    cursor:
-        pointer;
-}
-
-/* =====================================================
-   [10.6.7]
-   MOBILE NAVIGATION
-===================================================== */
-
-@media (max-width:768px) {
-
-    .floating-navbar {
-
-        padding:
-            15px 20px;
-
-        flex-wrap:
-            wrap;
-    }
-
-    .mobile-menu-button {
-
-        display:
-            block;
-    }
-
-    .navbar-links {
-
-        display:
-            none;
-
-        width:
-            100%;
-
-        flex-direction:
-            column;
-
-        gap:
-            15px;
-
-        padding-top:
-            20px;
-    }
-
-    .navbar-links.active {
-
-        display:
-            flex;
-    }
-
-    .navbar-brand span {
-
-        font-size:
-            1rem;
-    }
-
-    /* =====================================================
-   [11.3.6]
-   MOBILE LANGUAGE SWITCHER
-===================================================== */
-
-.language-switcher {
-
-    margin-top:
-        15px;
-
-    justify-content:
-        center;
-}
-
-}
-
-/* =====================================================
-   [10.2.4]
-   PROFESSIONAL EXPERT PROFILE
-===================================================== */
-
-.about-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        350px 1fr;
-
-    gap:
-        60px;
-
-    max-width:
-        1200px;
-
-    margin:
-        0 auto;
-
-    align-items:
-        center;
-}
-
-/* =====================================================
-   [10.2.5]
-   PROFILE IMAGE
-===================================================== */
-
-.about-image img {
-
-    width:
-        100%;
-
-    border-radius:
-        20px;
-
-    box-shadow:
-        var(--dez-shadow);
-
-    transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-/* =====================================================
-   [13.5.1]
-   ABOUT IMAGE HOVER
-===================================================== */
-
-.about-image img:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.015);
-
-    box-shadow:
-        var(--dez-shadow-lg);
-
-}
-
-/* =====================================================
-   [10.2.6]
-   CONTENT
-===================================================== */
-
-.about-content h2 {
-
-    text-align:
-        left;
-
-    margin-bottom:
-        10px;
-}
-
-.about-content h3 {
-
-    color:
-        var(--dez-primary);
-
-    margin-bottom:
-        20px;
-}
-
-.about-content p {
-
-    margin-bottom:
-        25px;
-
-    text-align:
-        left;
-}
-
-/* =====================================================
-   [10.2.7]
-   EXPERTISE LIST
-===================================================== */
-
-.about-content ul {
-
-    margin-bottom:
-        30px;
-
-    padding-left:
-        20px;
-
-    display:
-    grid;
-
-gap:
-    12px;
-}
-
-.about-content li {
-
-    margin:
-        0;
-}
-
-/* =====================================================
-   [10.3.6]
-   PROFESSIONAL CREDIBILITY SECTION
-===================================================== */
-
-.credibility-section {
-
-    background:
-        var(--dez-light-gray);
-}
-
-/* =====================================================
-   [10.3.7]
-   CREDIBILITY GRID
-===================================================== */
-
-.credibility-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                280px,
-                1fr
-            )
-        );
-
-    gap:
-        30px;
-
-    max-width:
-        1200px;
-
-    margin:
-        0 auto;
-}
-
-/* =====================================================
-   [10.3.8]
-   CREDIBILITY CARD
-===================================================== */
-
-.credibility-card {
-
-    background:
-        white;
-
-    cursor:
-    default;
-
-user-select:
-    none;
-
-    padding:
-        35px;
-
-    display:
-    flex;
-
-flex-direction:
-    column;
-
-    border-radius:
-        16px;
-
-    box-shadow:
-        var(--dez-shadow);
-
-    transition:
-        all 0.3s ease;
-
-        border:
-    1px solid rgba(
-        0,
-        79,
-        113,
-        0.08
-    );
-}
-
-/* =====================================================
-   [10.3.9]
-   CARD HOVER
-===================================================== */
-
-.credibility-card:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-    rgba(
-        0,
-        79,
-        113,
-        0.20
-    );
-
-    box-shadow:
-        0 20px 45px rgba(
-            0,
-            79,
-            113,
-            0.18
-        );
-
-}
-/* =====================================================
-   [10.3.10]
-   CARD TITLE
-===================================================== */
-
-.credibility-card h3 {
-
-    color:
-        var(--dez-primary);
-
-    margin-bottom:
-        15px;
-}
-
-/* =====================================================
-   [11.5.6]
-   EXPERIENCE BANNER
-===================================================== */
-
-.experience-banner {
-
-    background:
-        var(--dez-primary);
-
-    padding:
-        70px 40px;
-}
-
-/* =====================================================
-   [11.5.7]
-   EXPERIENCE GRID
-===================================================== */
-
-.experience-grid {
-
-    max-width:
-        1400px;
-
-    margin:
-        0 auto;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                220px,
-                1fr
-            )
-        );
-
-    gap:
-        30px;
-}
-
-/* =====================================================
-   [11.5.8]
-   EXPERIENCE CARD
-===================================================== */
-
-.experience-card {
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.08
-        );
-
-    border:
-        1px solid rgba(
-            255,
-            255,
-            255,
-            0.15
-        );
-
-    border-radius:
-        16px;
-
-    padding:
-        30px;
-
-    display:
-    flex;
-
-flex-direction:
-    column;
-
-justify-content:
-    center;
-
-    text-align:
-        center;
-
-    backdrop-filter:
-        blur(10px);
-
-        transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    box-shadow 0.35s ease;
-
-cursor:
-    default;
-
-    user-select:
-    none;
-}
-
-.experience-card:hover {
-
-    transform:
-        translateY(-8px);
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.12
-        );
-
-        border-color:
-    rgba(
-        255,
-        255,
-        255,
-        0.25
-    );
-
-    box-shadow:
-        var(--dez-shadow-lg);
-
-}
-
-/* =====================================================
-   [11.5.9]
-   EXPERIENCE TITLE
-===================================================== */
-
-.experience-card h3 {
-
-    color:
-        white;
-
-    font-size:
-        2rem;
-
-    margin-bottom:
-        10px;
-}
-
-/* =====================================================
-   [11.5.10]
-   EXPERIENCE DESCRIPTION
-===================================================== */
-
-.experience-card p {
-
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.9
-        );
-
-    margin:
-        0;
-}
-
-/* =====================================================
-   [10.4.7]
-   PROFESSIONAL FOOTER
-===================================================== */
-
-.site-footer {
-
-    background:
-        var(--dez-dark);
-
-    color:
-        white;
-
-    padding:
-        80px 40px;
-
-      border-top:
-    5px solid var(--dez-primary); 
-    
-    overflow:
-    hidden;
-}
-
-/* =====================================================
-   [10.4.8]
-   FOOTER GRID
-===================================================== */
-
-.footer-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                250px,
-                1fr
-            )
-        );
-
-    gap:
-        40px;
-
-    max-width:
-        1400px;
-
-    margin:
-        0 auto;
-
-        align-items:
-    start;
-}
-
-/* =====================================================
-   [10.4.9]
-   FOOTER COLUMN
-===================================================== */
-
-.footer-column h3 {
-
-    margin-bottom:
-        20px;
-
-    color:
-        var(--dez-secondary);
-
-        font-size:
-    1.25rem;
-}
-
-.footer-column p {
-
-    margin-bottom:
-        12px;
-
-        line-height:
-    1.8;
-}
-
-/* =====================================================
-   [10.4.10]
-   FOOTER LINKS
-===================================================== */
-
-.footer-column ul {
-
-    list-style:
-        none;
-
-    padding:
-        0;
-}
-
-.footer-column li {
-
-    margin-bottom:
-        12px;
-}
-
-.footer-column a {
-
-    color:
-        white;
-
-    display:
-    inline-block;
-
-    text-decoration:
-        none;
-
-    transition:
-        opacity 0.3s ease;
-}
-
-.footer-column a:hover {
-
-opacity:
-    0.8;
-
-text-decoration:
-    underline;
-}
 
 /* =====================================================
    [10.5.4]
@@ -2050,186 +357,12 @@ text-decoration:
 
 
 
-/* =====================================================
-   [10.5.5]
-   HERO TAGLINE
-===================================================== */
 
-.hero-tagline {
 
-    font-size:
-        1.25rem;
 
-    color:
-        var(--dez-dark);
 
-    margin-bottom:
-        30px;
 
-    font-weight:
-        500;
 
-      line-height:
-    1.7;
-
-max-width:
-    650px;  
-}
-
-/* =====================================================
-   [10.5.10]
-   HERO GRID
-===================================================== */
-
-.hero-grid {
-
-    padding:
-    40px 0;
-
-    display:
-        grid;
-
-    justify-items:
-        center;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    align-items:
-        center;
-
-    gap:
-        60px;
-
-    row-gap:
-    80px;
-
-    max-width:
-        1400px;
-
-    margin:
-        0 auto;
-}
-
-/* =====================================================
-   [10.5.11]
-   HERO LEFT
-===================================================== */
-
-.hero-left {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    gap:
-        1.5rem;
-
-}
-
-/* =====================================================
-   [10.5.12]
-   HERO LOGO
-===================================================== */
-
-.hero-logo {
-
-    width:
-        450px;
-
-    max-width:
-        100%;
-
-    height:
-        auto;
-
-    object-fit:
-    contain;
-
-    margin-bottom:
-        30px;
-
-        transition:
-    transform 0.4s ease;
-}
-
-.hero-logo:hover {
-
-    transform:
-        translateY(-3px)
-        scale(1.03);
-
-}
-
-/* =====================================================
-   [10.5.13]
-   HERO RIGHT
-===================================================== */
-
-.hero-right {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-}
-
-/* =====================================================
-   [10.5.14]
-   HERO PORTRAIT
-===================================================== */
-
-.hero-portrait {
-
-    width:
-        420px;
-
-    max-width:
-        100%;
-
-    border-radius:
-        20px;
-
-    box-shadow:
-        var(--dez-shadow);
-
-        transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-
-    border:
-    4px solid white;
-
-    display:
-    block;
-}
-
-.hero-portrait:hover {
-
-transform:
-    translateY(-4px)
-    scale(1.02);
-
-    box-shadow:
-        var(--dez-shadow-lg);
-
-}
 
 /* =====================================================
    [10.5.15]
@@ -2242,110 +375,8 @@ transform:
         white;
 }
 
-/* =====================================================
-   [10.5.16]
-   EXPERTISE GRID
-===================================================== */
 
-.expertise-grid {
 
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                250px,
-                1fr
-            )
-        );
-
-    gap:
-        25px;
-
-    max-width:
-        1200px;
-
-    margin:
-        0 auto;
-}
-
-/* =====================================================
-   [10.5.17]
-   EXPERTISE CARD
-===================================================== */
-
-.expertise-card {
-
-    background:
-        white;
-
-    cursor:
-    default;
-
-user-select:
-    none;
-
-    padding:
-        30px;
-
-    display:
-    flex;
-
-flex-direction:
-    column;
-
-    text-align:
-        center;
-
-    border-radius:
-        16px;
-
-    box-shadow:
-        var(--dez-shadow);
-
-    font-weight:
-        600;
-
-    transition:
-        all 0.3s ease;
-
-        border:
-    1px solid rgba(
-        0,
-        79,
-        113,
-        0.08
-    );
-}
-
-/* =====================================================
-   [10.5.18]
-   EXPERTISE HOVER
-===================================================== */
-
-.expertise-card:hover {
-
-transform:
-    translateY(-8px);
-
-   border-color:
-    rgba(
-        0,
-        79,
-        113,
-        0.20
-    ); 
-
-box-shadow:
-    0 20px 45px rgba(
-        0,
-        79,
-        113,
-        0.18
-    );
-}
 
 /* =====================================================
    [10.5.19]
@@ -2385,295 +416,26 @@ box-shadow:
     .hotspot {
 
         width:
-            16px;
+            24px;
 
         height:
-            16px;
+            24px;
     }
 }
 
-/* =====================================================
-   [11.1.11]
-   CONSULTATION SECTION
-===================================================== */
+.hotspot::before {
 
-.consultation-section {
+    top:
+        -16px;
 
-    background:
-        var(--dez-light-gray);
-}
+    right:
+        -16px;
 
-/* =====================================================
-   [11.1.12]
-   HEADER
-===================================================== */
+    bottom:
+        -16px;
 
-.consultation-header {
-
-    max-width:
-        800px;
-
-    margin:
-        0 auto 50px auto;
-
-    text-align:
-        center;
-}
-
-/* =====================================================
-   [11.1.13]
-   FORM
-===================================================== */
-
-.consultation-form {
-
-    width:
-    100%;
-
-    max-width:
-        900px;
-
-    margin:
-        0 auto;
-
-    display:
-        grid;
-
-    gap:
-        25px;
-}
-
-/* =====================================================
-   [11.1.14]
-   FORM GROUP
-===================================================== */
-
-.form-group {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-    8px;
-
-    
-}
-
-/* =====================================================
-   [11.1.15]
-   LABELS
-===================================================== */
-
-.form-group label {
-
-    font-weight:
-        600;
-
-    margin-bottom:
-        8px;
-
-    color:
-        var(--dez-primary);
-}
-
-/* =====================================================
-   [11.1.16]
-   INPUTS
-===================================================== */
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-
-    padding:
-        16px;
-
-    border:
-        1px solid #d8e2e8;
-
-    border-radius:
-        10px;
-
-    font-size:
-        1rem;
-
-    font-family:
-        inherit;
-
-        transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-
-    background:
-    white;
-}
-
-/* =====================================================
-   [11.1.17]
-   FOCUS STATES
-===================================================== */
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-
-    outline:
-        none;
-
-    border-color:
-        var(--dez-primary);
-
-    box-shadow:
-        0 0 0 3px rgba(
-            0,
-            79,
-            113,
-            0.15
-        );
-
-        transform:
-    translateY(-2px);
-}
-
-/* =====================================================
-   [11.1.18]
-   TEXTAREA
-===================================================== */
-
-.form-group textarea {
-
-    resize:
-        vertical;
-
-    min-height:
-        160px;
-
-}
-
-/* =====================================================
-   [12.3.2]
-   FORM FEEDBACK
-===================================================== */
-
-.form-feedback {
-
-    display:
-        none;
-
-    padding:
-        16px;
-
-    border-radius:
-        10px;
-
-    font-weight:
-        600;
-
-    margin-bottom:
-        20px;
-}
-
-/* =====================================================
-   [12.3.3]
-   ERROR STATE
-===================================================== */
-
-.form-feedback.error {
-
-    display:
-        block;
-
-    background:
-        #ffe8e8;
-
-    color:
-        #b10000;
-
-    border:
-        1px solid #ffb8b8;
-}
-
-/* =====================================================
-   [12.3.4]
-   SUCCESS STATE
-===================================================== */
-
-.form-feedback.success {
-
-    display:
-        block;
-
-    background:
-        #e9f8ec;
-
-    color:
-        #0f6b2c;
-
-    border:
-        1px solid #bfe6c7;
-}
-
-/* =====================================================
-   [12.9.3]
-   CONSULTATION SUMMARY
-===================================================== */
-
-
-      .consultation-summary strong {
-
-    color:
-        var(--dez-primary);
-}  
-
-/* =====================================================
-   [12.11.2]
-   CONSULTATION SUMMARY CARD
-===================================================== */
-
-.consultation-summary {
-
-    display: none;
-
-    opacity: 0;
-
-    transform: translateY(30px);
-
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
-
-    margin-top: 40px;
-
-    padding: 30px;
-
-    background: white;
-
-   border-radius:
-    var(--dez-radius);
-
-    box-shadow:
-        0 10px 30px rgba(
-            0,
-            0,
-            0,
-            0.08
-        );
-}
-
-/* =====================================================
-   [12.12.2]
-   SUMMARY ACTIVE STATE
-===================================================== */
-
-.consultation-summary.active {
-
-    opacity: 1;
-
-    transform: translateY(0);
+    left:
+        -16px;
 
 }
 
@@ -2704,79 +466,7 @@ box-shadow:
         var(--dez-primary);
 }
 
-/* =====================================================
-   [13.1.1]
-   GLOBAL CARD TRANSITIONS
-===================================================== */
 
-.service-card,
-.expertise-card,
-.credibility-card,
-.experience-card,
-.service-card-item {
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
 
-}
 
-/* =====================================================
-   [13.2.1]
-   CUSTOM SCROLLBAR
-===================================================== */
-
-::-webkit-scrollbar {
-
-    width:
-        12px;
-
-}
-
-::-webkit-scrollbar-track {
-
-    background:
-        var(--dez-light-gray);
-
-}
-
-::-webkit-scrollbar-thumb {
-
-    background:
-        var(--dez-primary);
-
-    border-radius:
-        20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover {
-
-    background:
-        var(--dez-accent);
-
-}
-
-/* =====================================================
-   [13.3.1]
-   NAVBAR CONTAINER
-===================================================== */
-
-.navbar-container {
-
-    width:
-        min(1400px, 100%);
-
-    margin:
-        0 auto;
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-}

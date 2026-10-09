@@ -1,0 +1,8 @@
+/* [3.2.1]
+   Resets default browser spacing behavior.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

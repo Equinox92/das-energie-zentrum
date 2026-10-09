@@ -22,4 +22,4 @@ Write-Host ""
 Write-Host "Starting PHP Development Server..."
 Write-Host ""
 
-php -S localhost:8080
+php -S 0.0.0.0:8080

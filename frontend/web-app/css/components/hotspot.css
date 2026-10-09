@@ -1,0 +1,121 @@
+/* =====================================================
+   HOTSPOTS
+===================================================== */
+
+.hotspot {
+
+    position: absolute;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: var(--dez-primary);
+
+    border: 3px solid white;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 15px rgba(
+            0,
+            79,
+            113,
+            0.6
+        );
+
+    transition:
+        all 0.3s ease;
+
+    z-index: 100;
+}
+
+
+
+.hotspot:hover {
+
+    box-shadow:
+        0 0 35px rgba(
+            0,
+            79,
+            113,
+            1
+        );
+}
+
+
+/* =====================================================
+   [9.6.2]
+   CUSTOM HOTSPOT TOOLTIP
+===================================================== */
+
+
+.hotspot-tooltip {
+
+    position:
+        fixed;
+
+    display:
+        none;
+
+    max-width:
+        280px;
+
+    padding:
+        15px;
+
+    border-radius:
+        12px;
+
+    background:
+        white;
+
+    color:
+        var(--dez-dark);
+
+    box-shadow:
+        var(--dez-shadow);
+
+    border:
+        2px solid
+        var(--dez-primary);
+
+    z-index:
+        10000;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform;
+
+    overflow:
+        hidden;
+}
+
+/* =====================================================
+   [9.6.3]
+   Tooltip title styling.
+===================================================== */
+
+.hotspot-tooltip h4 {
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        8px;
+}
+
+.hotspot-tooltip p {
+
+    margin:
+        0;
+
+    font-size:
+        0.95rem;
+}

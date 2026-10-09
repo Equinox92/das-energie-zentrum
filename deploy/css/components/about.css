@@ -1,0 +1,101 @@
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about-section {
+
+    background:
+        white;
+}
+
+
+
+
+
+/* =====================================================
+   [10.2.5]
+   PROFILE IMAGE
+===================================================== */
+
+.about-image img {
+
+    width:
+        100%;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        var(--dez-shadow);
+
+    transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* =====================================================
+   [13.5.1]
+   ABOUT IMAGE HOVER
+===================================================== */
+
+.about-image img:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.015);
+
+    box-shadow:
+        var(--dez-shadow-lg);
+
+}
+
+/* =====================================================
+   [10.2.6]
+   CONTENT
+===================================================== */
+
+.about-content h2 {
+
+    text-align:
+        left;
+
+    margin-bottom:
+        10px;
+}
+
+
+/* =====================================================
+   [10.2.7]
+   EXPERTISE LIST
+===================================================== */
+
+.about-content ul {
+
+    margin-bottom:
+        30px;
+
+    padding-left:
+        20px;
+
+    display:
+    grid;
+
+gap:
+    12px;
+}
+
+.about-section p {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    text-align:
+        center;
+
+    font-size:
+        1.15rem;
+}
+

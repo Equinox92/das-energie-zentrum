@@ -1,0 +1,284 @@
+/* =====================================================
+   [11.1.11]
+   CONSULTATION SECTION
+===================================================== */
+
+.consultation-section {
+
+    background:
+        var(--dez-light-gray);
+}
+
+/* =====================================================
+   [11.1.12]
+   HEADER
+===================================================== */
+
+.consultation-header {
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto 50px auto;
+
+    text-align:
+        center;
+}
+
+/* =====================================================
+   [11.1.13]
+   FORM
+===================================================== */
+
+.consultation-form {
+
+    width:
+    100%;
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    gap:
+        25px;
+}
+
+/* =====================================================
+   [11.1.14]
+   FORM GROUP
+===================================================== */
+
+.form-group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+    8px;
+
+    
+}
+
+/* =====================================================
+   [11.1.15]
+   LABELS
+===================================================== */
+
+.form-group label {
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--dez-primary);
+}
+
+/* =====================================================
+   [11.1.16]
+   INPUTS
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    padding:
+        16px;
+
+    border:
+        1px solid #d8e2e8;
+
+    border-radius:
+        10px;
+
+    font-size:
+        1rem;
+
+    font-family:
+        inherit;
+
+        transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+    background:
+    white;
+}
+
+/* =====================================================
+   [11.1.17]
+   FOCUS STATES
+===================================================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--dez-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(
+            0,
+            79,
+            113,
+            0.15
+        );
+
+        transform:
+    translateY(-2px);
+}
+
+/* =====================================================
+   [11.1.18]
+   TEXTAREA
+===================================================== */
+
+.form-group textarea {
+
+    resize:
+        vertical;
+
+    min-height:
+        160px;
+
+}
+
+/* =====================================================
+   [12.3.2]
+   FORM FEEDBACK
+===================================================== */
+
+.form-feedback {
+
+    display:
+        none;
+
+    padding:
+        16px;
+
+    border-radius:
+        10px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        20px;
+}
+
+/* =====================================================
+   [12.3.3]
+   ERROR STATE
+===================================================== */
+
+.form-feedback.error {
+
+    display:
+        block;
+
+    background:
+        #ffe8e8;
+
+    color:
+        #b10000;
+
+    border:
+        1px solid #ffb8b8;
+}
+
+/* =====================================================
+   [12.3.4]
+   SUCCESS STATE
+===================================================== */
+
+.form-feedback.success {
+
+    display:
+        block;
+
+    background:
+        #e9f8ec;
+
+    color:
+        #0f6b2c;
+
+    border:
+        1px solid #bfe6c7;
+}
+
+/* =====================================================
+   [12.9.3]
+   CONSULTATION SUMMARY
+===================================================== */
+
+
+      .consultation-summary strong {
+
+    color:
+        var(--dez-primary);
+}  
+
+/* =====================================================
+   [12.11.2]
+   CONSULTATION SUMMARY CARD
+===================================================== */
+
+.consultation-summary {
+
+    display: none;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+
+    margin-top: 40px;
+
+    padding: 30px;
+
+    background: white;
+
+   border-radius:
+    var(--dez-radius);
+
+    box-shadow:
+        0 10px 30px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+/* =====================================================
+   [12.12.2]
+   SUMMARY ACTIVE STATE
+===================================================== */
+
+.consultation-summary.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}

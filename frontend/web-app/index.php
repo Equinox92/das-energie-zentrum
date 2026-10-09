@@ -3,199 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Dasenergiezentrum
-    </title>
-
-<!-- =====================================================
-     [10.6.10]
-     Google Font Import
-===================================================== -->
+<?php require_once "./includes/head.php"; ?>
 
 <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com">
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-    rel="stylesheet">
-
-    <link
-        rel="stylesheet"
-        href="./css/landing-page.css">
-
-        <link
     rel="stylesheet"
-    href="./css/components/navbar.css">
-
-    <link
-    rel="stylesheet"
-    href="./css/components/buttons.css">
-
-    <link
-    rel="stylesheet"
-    href="./css/components/forms.css">
-
-
-
-    <link
-    rel="stylesheet"
-    href="./css/components/cards.css">
-
-    <link
-    rel="stylesheet"
-    href="./css/components/footer.css">
-
-
-        <link rel="stylesheet" href="css/components/animations.css">
-
-
-</head>
+    href="./css/pages/landing-page.css">
 
 <body>
 
-    <!-- =====================================================
-     [10.1.1]
-     FLOATING NAVIGATION BAR
-===================================================== -->
-
-<nav class="floating-navbar">
-
-    <div class="navbar-container">
-
-    <!-- =====================================================
-         [10.1.2]
-         Brand Identity Area
-    ===================================================== -->
-
-    <div class="navbar-brand">
-
-
-    <img
-        src="./assets/images/logo-placeholder.png"
-        alt="Das Energie Zentrum Logo"
-        class="navbar-logo">
-
-        <span>
-
-            Dasenergiezentrum
-
-        </span>
-
-    </div>
-
-    <!-- =====================================================
-         [10.1.3]
-         Primary Navigation
-    ===================================================== -->
-
-    <!-- =====================================================
-     [10.6.5]
-     MOBILE MENU TOGGLE BUTTON
-===================================================== -->
-
-<button
-    id="mobile-menu-button"
-    class="mobile-menu-button">
-
-    ☰
-
-</button>
-
-    <ul class="navbar-links">
-
-        <li>
-
-            <a href="#hero">
-
-                Home
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#about">
-
-                About
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#services">
-
-                Services
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#house">
-
-                Building Systems
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#contact">
-
-                Contact
-
-            </a>
-
-        </li>
-
-    </ul>
-
-<!-- =====================================================
-     [11.3.1]
-     Language Switcher
-===================================================== -->
-
-<div
-    class="language-switcher">
-
-    <button
-        class="language-option active-language">
-
-        🇩🇪 DE
-
-    </button>
-
-    <button
-        class="language-option">
-
-         🇬🇧 EN
-
-    </button>
-
-</div>
-
-</div>
-
-</nav>
+    <?php require "./includes/navbar.php"; ?>
 
     <!-- [9.4.1] -->
     <!-- Main website wrapper -->
@@ -207,7 +23,7 @@
 
         <section id="hero" class="hero-section">
 
-            <!-- =====================================================
+<!-- =====================================================
      [10.5.7]
      HERO GRID
 ===================================================== -->
@@ -363,7 +179,7 @@ id="about"
 
     <h2>
 
-        Why Work With Das Energie Zentrum
+        Why Work With Das Energiezentrum
 
     </h2>
 
@@ -514,7 +330,7 @@ id="about"
 
             <h3>
 
-                Vaillant Group
+                Systems Engineer
 
             </h3>
 
@@ -647,27 +463,26 @@ id="about"
              Interactive House Container
         ===================================================== -->
 
+<div
+    id="energy-house-container"
+    class="energy-house-container">
+
+    <div
+        id="energy-house-canvas"
+        class="energy-house-canvas">
+
+        <img
+            src="./assets/images/energy-house.png"
+            class="energy-house-image">
+
         <div
-            id="energy-house-container"
-            class="energy-house-container">
-
-            <img
-                src="./assets/images/energy-house.png"
-                alt="Energy House"
-                class="energy-house-image">
-
-            <!-- =====================================================
-                 [9.8.3]
-                 Floating Hover Tooltip
-            ===================================================== -->
-
-            <div
-                id="hotspot-tooltip"
-                class="hotspot-tooltip">
-
-            </div>
-
+            id="hotspot-tooltip"
+            class="hotspot-tooltip">
         </div>
+
+    </div>
+
+</div>
 
         <!-- =====================================================
              [9.8.4]
@@ -1097,174 +912,14 @@ id="about"
 
 
 </section>
+
 <!-- =====================================================
      [10.4.1]
      PROFESSIONAL FOOTER
 ===================================================== -->
 
-<footer
-    class="site-footer">
+<?php require_once "./includes/footer.php"; ?>
 
-    <!-- =====================================================
-         [10.4.2]
-         Footer Grid
-    ===================================================== -->
-
-    <div
-        class="footer-grid">
-
-        <!-- =====================================================
-             [10.4.3]
-             Company Information
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Das Energie Zentrum
-
-            </h3>
-
-            <p>
-
-                Professional energy consulting,
-                technical planning,
-                building performance
-                and energy optimization.
-
-            </p>
-
-        </div>
-
-        <!-- =====================================================
-             [10.4.4]
-             Navigation
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Navigation
-
-            </h3>
-
-            <ul>
-
-                <li>
-
-                    <a href="#hero">
-
-                        Home
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#about">
-
-                        About
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#services">
-
-                        Services
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#house">
-
-                        Building Systems
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-        <!-- =====================================================
-             [10.4.5]
-             Contact
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Contact
-
-            </h3>
-
-            <p>
-
-                info@dasenergiezentrum.de
-
-            </p>
-
-            <p>
-
-<a
-    href="https://www.linkedin.com/in/gidopeuster-0159661b3"
-    target="_blank">
-
-    LinkedIn Profile
-
-</a>
-
-            </p>
-
-        </div>
-
-        <!-- =====================================================
-             [10.4.6]
-             Legal Placeholder
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Legal
-
-            </h3>
-
-            <p>
-
-                Impressum
-                (Coming Soon)
-
-            </p>
-
-            <p>
-
-                Privacy Policy
-                (Coming Soon)
-
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
     </div>
 <!--
     <script

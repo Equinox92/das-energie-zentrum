@@ -1,0 +1,275 @@
+/* =====================================================
+   GLOBAL SECTION SPACING
+===================================================== */
+
+.website-container {
+
+    width:
+        100%;
+
+    overflow-x:
+        hidden;
+
+        position:
+    relative;
+}
+
+/* =====================================================
+   [10.5.10]
+   HERO GRID
+===================================================== */
+
+.hero-grid {
+
+    padding:
+    40px 0;
+
+    display:
+        grid;
+
+    justify-items:
+        center;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        60px;
+
+    row-gap:
+    80px;
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto;
+}
+
+/* =====================================================
+   [10.5.11]
+   HERO LEFT
+===================================================== */
+
+.hero-left {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    gap:
+        1.5rem;
+
+}
+
+
+/* =====================================================
+   [10.5.13]
+   HERO RIGHT
+===================================================== */
+
+.hero-right {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+}
+
+/* =====================================================
+   [10.2.4]
+   PROFESSIONAL EXPERT PROFILE
+===================================================== */
+
+.about-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        350px 1fr;
+
+    gap:
+        60px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+
+    align-items:
+        center;
+}
+
+/* =====================================================
+   SERVICES SECTION
+===================================================== */
+
+.services-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap:
+        30px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+}
+
+.expertise-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap:
+        25px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+}
+
+/* =====================================================
+   [10.3.7]
+   CREDIBILITY GRID
+===================================================== */
+
+.credibility-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                280px,
+                1fr
+            )
+        );
+
+    gap:
+        30px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+}
+
+/* =====================================================
+   [11.5.7]
+   EXPERIENCE GRID
+===================================================== */
+
+.experience-grid {
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
+
+    gap:
+        30px;
+}
+
+/* =====================================================
+   [10.4.8]
+   FOOTER GRID
+===================================================== */
+
+.footer-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap:
+        40px;
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto;
+
+        align-items:
+    start;
+}
+
+
+
+/* =====================================================
+   [9.8.12]
+   SERVICE ITEM CARD
+===================================================== */
+
+
+
+

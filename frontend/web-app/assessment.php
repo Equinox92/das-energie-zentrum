@@ -3,56 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<?php require_once "./includes/head.php"; ?>
 
-    <!-- [3.1.1]
-         Defines UTF-8 encoding for international text support.
-    -->
-    <meta charset="UTF-8">
-
-    <!-- [3.1.2]
-         Enables responsive rendering on mobile devices.
-    -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <!-- [3.1.3]
-         Defines browser tab title.
-    -->
-    <title>Dasenergiezentrum</title>
-
-    <!-- [3.1.4]
-         Loads global application stylesheet.
-    -->
-    <link rel="stylesheet" href="./css/base/reset.css">
-
-<link rel="stylesheet" href="./css/base/variables.css">
-
-<link rel="stylesheet"
-href="./css/components/hero.css">
-
-<link
-    rel="stylesheet"
-    href="./css/components/navbar.css">
-
-    <link
-    rel="stylesheet"
-    href="./css/components/buttons.css">
-
-<link
-    rel="stylesheet"
-    href="./css/components/footer.css">
-
-
-<link rel="stylesheet" href="./css/main.css">
-
-
-
-    
-
-          <link rel="stylesheet" href="css/components/animations.css">
-
-</head>
 
 <body>
 
@@ -61,130 +13,7 @@ href="./css/components/hero.css">
      FLOATING NAVIGATION BAR
 ===================================================== -->
 
-<nav class="floating-navbar">
-
-    <div class="navbar-container">
-
-    <!-- =====================================================
-         [10.1.2]
-         Brand Identity Area
-    ===================================================== -->
-
-    <div class="navbar-brand">
-
-
-    <img
-        src="./assets/images/logo-placeholder.png"
-        alt="Das Energie Zentrum Logo"
-        class="navbar-logo">
-
-        <span>
-
-            Dasenergiezentrum
-
-        </span>
-
-    </div>
-
-    <!-- =====================================================
-         [10.1.3]
-         Primary Navigation
-    ===================================================== -->
-
-    <!-- =====================================================
-     [10.6.5]
-     MOBILE MENU TOGGLE BUTTON
-===================================================== -->
-
-<button
-    id="mobile-menu-button"
-    class="mobile-menu-button">
-
-    ☰
-
-</button>
-
-    <ul class="navbar-links">
-
-        <li>
-
-            <a href="#hero">
-
-                Home
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#about">
-
-                About
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#services">
-
-                Services
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#house">
-
-                Building Systems
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#contact">
-
-                Contact
-
-            </a>
-
-        </li>
-
-    </ul>
-
-<!-- =====================================================
-     [11.3.1]
-     Language Switcher
-===================================================== -->
-
-<div
-    class="language-switcher">
-
-    <button
-        class="language-option active-language">
-
-        🇩🇪 DE
-
-    </button>
-
-    <button
-        class="language-option">
-
-         🇬🇧 EN
-
-    </button>
-
-</div>
-
-</div>
-
-</nav>
+<?php require_once "./includes/navbar.php"; ?>
 
     <!-- [3.1.5]
          Main application layout wrapper.
@@ -196,29 +25,72 @@ href="./css/components/hero.css">
         -->
 <header class="hero-section">
 
-    <div class="container hero-content">
+<div class="container hero-content">
 
-        <img
-            src="./assets/images/logo-full.png"
-            alt="Das Energie Zentrum Logo"
-            class="hero-logo">
+    <img
+        src="./assets/images/logo-full.png"
+        alt="Das Energie Zentrum Logo"
+        class="hero-logo">
 
-        <h1>
-            Building Energy Assessment
-        </h1>
+    <span class="hero-badge">
 
-        <p>
-            Professional Energy Efficiency Analysis
-        </p>
+        PROFESSIONAL BUILDING PERFORMANCE PLATFORM
+
+    </span>
+
+    <h1>
+
+        Building Energy Assessment
+
+    </h1>
+
+    <p class="hero-subtitle">
+
+        Analyze, simulate and optimize building energy performance
+        using an interactive engineering platform.
+
+    </p>
+
+    <div class="hero-features">
+
+        <div class="hero-feature">
+
+            ✓ Interactive Building Analysis
+
+        </div>
+
+        <div class="hero-feature">
+
+            ✓ Live Environmental Simulation
+
+        </div>
+
+        <div class="hero-feature">
+
+            ✓ Professional Energy Recommendations
+
+        </div>
 
     </div>
+
+    <a
+        href="#building-analysis"
+        class="primary-button">
+
+        Start Building Assessment
+
+    </a>
+
+</div>
 
 </header>
 
         <!-- [3.1.9]
              Backend API system status section.
         -->
-        <section class="system-status-section reveal-section">
+        <section 
+        id="system-status"
+        class="system-status-section reveal-section">
             <div class="container">
 
             <!-- [3.1.10]
@@ -229,11 +101,74 @@ href="./css/components/hero.css">
             <!-- [3.1.11]
                  Dynamic backend connection status output.
             -->
-            <div id="api-status">
-                Checking backend connection...
-            </div>
-        </div>
+          <div class="platform-status-grid">
 
+    <div class="platform-status-card">
+
+        <h3>
+
+            Backend API
+
+        </h3>
+
+        <span
+            id="api-status">
+
+            Checking...
+
+        </span>
+
+    </div>
+
+    <div class="platform-status-card">
+
+        <h3>
+
+            SVG Engine
+
+        </h3>
+
+        <span>
+
+            Ready
+
+        </span>
+
+    </div>
+
+    <div class="platform-status-card">
+
+        <h3>
+
+            Calculation Engine
+
+        </h3>
+
+        <span>
+
+            Ready
+
+        </span>
+
+    </div>
+
+    <div class="platform-status-card">
+
+        <h3>
+
+            Session
+
+        </h3>
+
+        <span>
+
+            Active
+
+        </span>
+
+    </div>
+
+</div>
         </section>
 
 
@@ -241,12 +176,510 @@ href="./css/components/hero.css">
         <!-- [3.1.12]
              Interactive energy house visualization section.
         -->
+
+     <!-- =====================================================
+     [16.6.1]
+     ENERGY ASSESSMENT CALCULATOR
+===================================================== -->
+
+<section
+    id="energy-calculator"
+    class="energy-calculator-section reveal-section">
+
+    <div class="container">
+
+        <!-- [16.6.2]
+             Calculator section heading.
+        -->
+        <div class="energy-calculator-header">
+
+            <h2>
+                Energy Assessment Calculator
+            </h2>
+
+            <p>
+                Enter the property's basic information to
+                generate an initial energy performance assessment.
+            </p>
+
+        </div>
+
+
+        <!-- [16.6.3]
+             Calculator form.
+        -->
+        <form
+            id="energy-calculator-form"
+            class="energy-calculator-form"
+            novalidate>
+
+<!-- =================================================
+     [16.6.4]
+     HOUSE TYPE
+================================================== -->
+
+<div class="calculator-field">
+
+    <label for="house-type">
+
+        Type of House
+
+    </label>
+
+    <select
+        id="house-type"
+        name="houseType"
+        required>
+
+        <option
+            value=""
+            selected
+            disabled>
+
+            Select house type
+
+        </option>
+
+        <option value="detached">
+
+            Detached House
+
+        </option>
+
+        <option value="semi-detached">
+
+            Semi-Detached House
+
+        </option>
+
+        <option value="apartment">
+
+            Apartment
+
+        </option>
+
+    </select>
+
+    <small>
+
+        Select the type of property being assessed.
+
+    </small>
+
+</div>
+
+<!-- =================================================
+     [19.3.1]
+     BUILDING CONFIGURATION SELECTION
+================================================== -->
+
+<div
+    class="calculator-field building-configuration-group">
+
+    <label for="attic-configuration-selector">
+
+        Attic Configuration
+
+    </label>
+
+    <select
+        id="attic-configuration-selector"
+        name="atticConfiguration">
+
+        <option value="none">
+
+            No Attic
+
+        </option>
+
+        <option value="unheated">
+
+            Unheated Attic
+
+        </option>
+
+        <option value="heated">
+
+            Heated Attic
+
+        </option>
+
+    </select>
+
+    <small>
+
+        Select the attic configuration of the building.
+
+    </small>
+
+</div>
+            <!-- =================================================
+                 [16.6.4]
+                 HOUSE SIZE
+            ================================================== -->
+
+            <div class="calculator-field">
+
+                <label for="house-size">
+
+                    House Size (m²)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="house-size"
+                    name="houseSizeM2"
+                    min="20"
+                    max="2000"
+                    step="1"
+                    required>
+
+                <small>
+                    Enter a value between 20 and 2000 m².
+                </small>
+
+            </div>
+
+
+            <!-- =================================================
+                 [16.6.5]
+                 OCCUPANTS
+            ================================================== -->
+
+            <div class="calculator-field">
+
+                <label for="occupants">
+
+                    Number of Occupants
+
+                </label>
+
+                <input
+                    type="number"
+                    id="occupants"
+                    name="occupants"
+                    min="1"
+                    max="20"
+                    step="1"
+                    required>
+
+                <small>
+                    Enter the number of people living in the property.
+                </small>
+
+            </div>
+
+
+            <!-- =================================================
+                 [16.6.6]
+                 HEATING TYPE
+            ================================================== -->
+
+            <div class="calculator-field">
+
+                <label for="heating-type">
+
+                    Primary Heating System
+
+                </label>
+
+                <select
+                    id="heating-type"
+                    name="heatingType"
+                    required>
+
+                    <option
+                        value=""
+                        selected
+                        disabled>
+
+                        Select heating system
+
+                    </option>
+
+                    <option value="gas">
+                        Natural Gas
+                    </option>
+
+                    <option value="oil">
+                        Heating Oil
+                    </option>
+
+                    <option value="electric">
+                        Electric Heating
+                    </option>
+
+                    <option value="heat-pump">
+                        Heat Pump
+                    </option>
+
+                    <option value="district-heating">
+                        District Heating
+                    </option>
+
+                    <option value="wood-pellet">
+                        Wood Pellet
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 [16.6.7]
+                 ANNUAL ENERGY CONSUMPTION
+            ================================================== -->
+
+            <div class="calculator-field">
+
+                <label for="annual-consumption">
+
+                    Annual Energy Consumption (kWh/year)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="annual-consumption"
+                    name="annualConsumptionKwh"
+                    min="500"
+                    max="200000"
+                    step="1"
+                    required>
+
+                <small>
+                    Enter annual energy consumption between
+                    500 and 200,000 kWh.
+                </small>
+
+            </div>
+
+
+            <!-- =================================================
+                 [16.6.8]
+                 CONSTRUCTION YEAR
+            ================================================== -->
+
+            <div class="calculator-field">
+
+                <label for="year-built">
+
+                    Construction Year
+
+                </label>
+
+                <input
+                    type="number"
+                    id="year-built"
+                    name="yearBuilt"
+                    min="1800"
+                    max="2026"
+                    step="1"
+                    required>
+
+                <small>
+                    Enter the approximate construction year.
+                </small>
+
+            </div>
+
+
+            <!-- =================================================
+                 [16.6.9]
+                 VALIDATION ERROR CONTAINER
+            ================================================== -->
+
+            <div
+                id="energy-calculator-errors"
+                class="energy-calculator-errors"
+                role="alert"
+                aria-live="polite"
+                hidden>
+            </div>
+
+
+            <!-- =================================================
+                 [16.6.10]
+                 CALCULATOR SUBMISSION
+            ================================================= -->
+
+            <div class="energy-calculator-actions">
+
+                <button
+                    type="submit"
+                    class="primary-button">
+
+                    Calculate Energy Assessment
+
+                </button>
+
+                <br>
+
+                <button
+                    id="downloadAssessmentReportButton"
+                    type="button">
+
+                    Download Assessment Report
+
+                </button>
+
+
+            </div>
+
+        </form>
+
+
+        <!-- =================================================
+             [16.6.11]
+             CALCULATOR RESULT PLACEHOLDER
+        ================================================== -->
+
+        <div
+            id="energy-calculator-result"
+            class="energy-calculator-result"
+            aria-live="polite">
+
+        </div>
+
+    </div>
+
+</section> 
+
+        <!-- =====================================================
+     [5.9.1]
+     ENVIRONMENTAL SIMULATION CONTROLS
+===================================================== -->
+<section 
+    id="simulation"
+    class="environment-controls-section reveal-section">
+    <div class="container">
+
+    <!-- [5.9.2]
+         Simulation controls heading.
+    -->
+    <h2>
+        Environmental Simulation
+    </h2>
+
+    <!-- [5.9.3]
+         Season simulation controls.
+    -->
+    <div class="environment-control-group">
+
+        <label for="season-selector">
+            Active Season
+        </label>
+
+        <select id="season-selector">
+
+            <option value="winter">
+                Winter
+            </option>
+
+            <option value="summer">
+                Summer
+            </option>
+
+        </select>
+    </div>
+
+    <!-- [5.9.4]
+         Solar intensity simulation controls.
+    -->
+    <div class="environment-control-group">
+
+        <label for="solar-intensity-slider">
+            Solar Intensity
+        </label>
+
+        <input
+            type="range"
+            id= "solar-intensity-slider"
+            min="0"
+            max="100"
+            value="70"
+        >
+
+    </div>
+
+    <!-- =================================================
+     [18.12.4.1]
+     SOLAR GEOGRAPHIC POSITION CONTROL
+================================================== -->
+
+<div class="environment-control-group">
+
+    <label for="solar-geographic-position-slider">
+
+        Solar Geographic Position
+
+    </label>
+
+    <input
+        type="range"
+        id="solar-geographic-position-slider"
+        min="0"
+        max="100"
+        value="50"
+    >
+
+    <div
+        class="solar-geographic-scale"
+        aria-hidden="true">
+
+        <span>
+            Northern Germany
+        </span>
+
+        <span>
+            Central Germany
+        </span>
+
+        <span>
+            Southern Germany
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =================================================
+     [18.12.7.1]
+     SOLAR RESOURCE OUTPUT
+================================================== -->
+
+<div
+    class="environment-control-group solar-resource-output">
+
+    <span class="solar-resource-label">
+        Estimated Solar Resource
+    </span>
+
+    <strong
+        id="solar-resource-output">
+        -- kWh/m²
+    </strong>
+
+</div>
+
+</div>
+
+</section>
+
       <!-- =====================================================
 [12.4.1]
 Premium Building Analysis Card
 ===================================================== -->
 
-<section class="interactive-house-section reveal-section">
+<section 
+    id="building-analysis"
+    class="interactive-house-section reveal-section">
 
     <div class="container">
 
@@ -303,11 +736,29 @@ Premium Building Analysis Card
 
                 </div>
 
-                <div
-                    id="interactive-house-container"
-                    class="house-svg-container">
+<div
+    class="house-interaction-wrapper">
 
-                </div>
+    <!-- =====================================================
+         [15.1.1]
+         TOUCH GUIDANCE OVERLAY
+    ====================================================== -->
+
+    <div
+        id="touch-guidance"
+        class="touch-guidance hidden">
+
+        👆 Tap a building system to configure it
+
+    </div>
+
+    <div
+        id="interactive-house-container"
+        class="house-svg-container">
+
+    </div>
+
+</div>
 
             </div>
 
@@ -320,11 +771,79 @@ Premium Building Analysis Card
 
         <div class="building-analysis-footer">
 
-            <div id="house-tooltip">
+<div class="building-system-status">
 
-                Hover over a house section.
+    <div class="system-status-item">
 
-            </div>
+        <strong>
+
+            Roof
+
+        </strong>
+
+        <span>
+
+            Ready
+
+        </span>
+
+    </div>
+
+    <div class="system-status-item">
+
+        <strong>
+
+            Walls
+
+        </strong>
+
+        <span>
+
+            Ready
+
+        </span>
+
+    </div>
+
+    <div class="system-status-item">
+
+        <strong>
+
+            Heating
+
+        </strong>
+
+        <span>
+
+            Ready
+
+        </span>
+
+    </div>
+
+    <div class="system-status-item">
+
+        <strong>
+
+            Solar
+
+        </strong>
+
+        <span>
+
+            Available
+
+        </span>
+
+    </div>
+
+</div>
+
+<div id="house-tooltip">
+
+    Hover over a building system to inspect it.
+
+</div>
 
         </div>
 
@@ -333,69 +852,11 @@ Premium Building Analysis Card
 
 </section>
 
-      
-
-        <!-- =====================================================
-     [5.9.1]
-     ENVIRONMENTAL SIMULATION CONTROLS
-===================================================== -->
-<section class="environment-controls-section reveal-section">
-    <div class="container">
-
-    <!-- [5.9.2]
-         Simulation controls heading.
-    -->
-    <h2>
-        Environmental Simulation
-    </h2>
-
-    <!-- [5.9.3]
-         Season simulation controls.
-    -->
-    <div class="environment-control-group">
-
-        <label for="season-selector">
-            Active Season
-        </label>
-
-        <select id="season-selector">
-
-            <option value="winter">
-                Winter
-            </option>
-
-            <option value="summer">
-                Summer
-            </option>
-
-        </select>
-    </div>
-
-    <!-- [5.9.4]
-         Solar intensity simulation controls.
-    -->
-    <div class="environment-control-group">
-
-        <label for="solar-intensity-slider">
-            Solar Intensity
-        </label>
-
-        <input
-            type="range"
-            id= "solar-intensity-slider"
-            min="0"
-            max="100"
-            value="70"
-        >
-
-    </div>
-</div>
-
-</section>
-
               <!-- [4.5.1] -->
 <!-- Dynamic energy intelligence dashboard -->
-<section class="energy-dashboard-section reveal-section">
+<section 
+    id="dashboard"
+    class="energy-dashboard-section reveal-section">
     <div class="container">
 
     <!-- [4.5.2] -->
@@ -409,6 +870,27 @@ Premium Building Analysis Card
     <div id="energy-score">
         0%
     </div>
+
+    <!-- =====================================================
+     [16.9.12]
+     CALCULATOR INTELLIGENCE SCORE
+===================================================== -->
+
+<div class="calculator-intelligence-card">
+
+    <h3>
+        Building Assessment Score
+    </h3>
+
+    <div id="calculator-energy-score">
+        0%
+    </div>
+
+    <span id="calculator-classification">
+        Awaiting Assessment
+    </span>
+
+</div>
 
     <!-- =====================================================
      [8.2.11]
@@ -495,7 +977,9 @@ Premium Building Analysis Card
 
     <!-- [4.8.1] -->
 <!-- Intelligent consultation CTA section -->
-<div class="consultation-cta">
+<div 
+    id="consultation"
+    class="consultation-cta">
 
     <!-- [4.8.2] -->
     <!-- Dynamic CTA heading -->
@@ -506,7 +990,7 @@ Premium Building Analysis Card
     <!-- [4.8.3] -->
     <!-- Dynamic CTA description -->
     <p id="cta-description">
-        Book a consultation with Das Energie Zentrum and receive a professional building efficiency assessment.
+        Book a consultation with Das Energiezentrum and receive a professional building efficiency assessment.
     </p>
 
     <!-- [4.8.4] -->
@@ -538,7 +1022,9 @@ Premium Building Analysis Card
     </div>
 
 </div>
+
 </div>
+
 </section>
 
     
@@ -552,175 +1038,20 @@ Premium Building Analysis Card
      PROFESSIONAL FOOTER
 ===================================================== -->
 
-<footer
-    class="site-footer">
 
-    <!-- =====================================================
-         [10.4.2]
-         Footer Grid
-    ===================================================== -->
+<?php require_once "./includes/footer.php"; ?>
 
-    <div
-        class="footer-grid">
-
-        <!-- =====================================================
-             [10.4.3]
-             Company Information
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Das Energie Zentrum
-
-            </h3>
-
-            <p>
-
-                Professional energy consulting,
-                technical planning,
-                building performance
-                and energy optimization.
-
-            </p>
-
-        </div>
-
-        <!-- =====================================================
-             [10.4.4]
-             Navigation
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Navigation
-
-            </h3>
-
-            <ul>
-
-                <li>
-
-                    <a href="#hero">
-
-                        Home
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#about">
-
-                        About
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#services">
-
-                        Services
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#house">
-
-                        Building Systems
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-        <!-- =====================================================
-             [10.4.5]
-             Contact
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Contact
-
-            </h3>
-
-            <p>
-
-                info@dasenergiezentrum.de
-
-            </p>
-
-            <p>
-
-<a
-    href="https://www.linkedin.com/in/gidopeuster-0159661b3"
-    target="_blank">
-
-    LinkedIn Profile
-
-</a>
-
-            </p>
-
-        </div>
-
-        <!-- =====================================================
-             [10.4.6]
-             Legal Placeholder
-        ===================================================== -->
-
-        <div
-            class="footer-column">
-
-            <h3>
-
-                Legal
-
-            </h3>
-
-            <p>
-
-                Impressum
-                (Coming Soon)
-
-            </p>
-
-            <p>
-
-                Privacy Policy
-                (Coming Soon)
-
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
-
+<script src="assets/vendor/jspdf/jspdf.umd.min.js"></script>
 
 
     <script type="module"
             src="./js/main.js">
     </script>
+
+    <script
+    type="module"
+    src="/js/controllers/assessmentReportController.js"
+></script>
 
 </body>
 

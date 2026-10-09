@@ -1,0 +1,151 @@
+/* =====================================================
+   [14.1.1]
+   DAS ENERGIE ZENTRUM DESIGN TOKENS
+===================================================== */
+
+:root{
+
+    /* ==========================================
+       Primary Brand Colours
+    ========================================== */
+
+    --color-primary:
+        #004f71;
+
+    --color-primary-light:
+        #0b6b94;
+
+    --color-secondary:
+        #d9e5ea;
+
+    --color-background:
+        #ffffff;
+
+    --color-surface:
+        #f5f7f8;
+
+    --color-text:
+        #163443;
+
+/* ==========================================
+       These colours are for temporary compatibility with the old
+        --dez-* naming convention. Remove after migration is complete.
+    ========================================== */    
+
+    --dez-primary: #004F71;
+    --dez-secondary: #D9E5EA;
+    --dez-white: #FFFFFF;
+    --dez-dark: #163443;
+    --dez-accent: #0B698F;
+    --dez-light-gray: #F5F7F8;
+
+    /* ==========================================
+       Shadows
+    ========================================== */
+
+    --shadow-small:
+        0 8px 18px rgba(
+            0,
+            79,
+            113,
+            .10
+        );
+
+    --shadow-medium:
+        0 15px 40px rgba(
+            0,
+            79,
+            113,
+            .12
+        );
+
+    --shadow-large:
+        0 25px 60px rgba(
+            0,
+            79,
+            113,
+            .18
+        );
+
+    /* ==========================================
+       Radius
+    ========================================== */
+
+    --radius-small:
+        8px;
+
+    --radius-medium:
+        18px;
+
+    --radius-large:
+        24px;
+
+    /* ==========================================
+       Transition
+    ========================================== */
+
+    --transition-default:
+        .30s ease;
+
+    /* =====================================================
+   [14.2.1]
+   Temporary Compatibility Variables
+
+   These aliases allow the Landing Page to continue
+   functioning while we migrate from the old
+   --dez-* naming convention to the new
+   --color-* design system.
+
+   Remove after migration is complete.
+===================================================== */
+
+--dez-primary:
+    var(--color-primary);
+
+--dez-secondary:
+    var(--color-secondary);
+
+--dez-white:
+    var(--color-background);
+
+--dez-dark:
+    var(--color-text);
+
+--dez-light-gray:
+    var(--color-surface);
+
+--dez-accent:
+    var(--color-primary-light);
+
+     /* =====================================================
+       TYPOGRAPHY
+    ===================================================== */
+
+    --font-heading:
+        "Lato",
+        sans-serif;
+
+    --font-body:
+        "Lato",
+        sans-serif;
+
+        --dez-radius:
+    16px;
+
+        --dez-shadow:
+        0 10px 30px rgba(
+            0,
+            79,
+            113,
+            0.12
+        );
+
+        --dez-shadow-lg:
+    0 18px 45px rgba(
+        0,
+        79,
+        113,
+        0.22
+    );
+
+}

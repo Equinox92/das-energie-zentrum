@@ -12,7 +12,7 @@
 
     <title>
 
-        Das Energie Zentrum | Development Preview
+        Das Energiezentrum | Development Preview
 
     </title>
 
@@ -110,7 +110,7 @@ name="password"
 
             <small>
 
-                Das Energie Zentrum Development Environment
+                Das Energiezentrum Development Environment
 
             </small>
 

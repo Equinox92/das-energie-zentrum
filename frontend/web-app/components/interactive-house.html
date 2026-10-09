@@ -1,15 +1,29 @@
-<!-- [3.4.1]
-     Scalable SVG-based interactive house visualization.
--->
-<svg "interactive-house"
-     viewBox="0 0 400 400"
-     xmlns="http://www.w3.org/2000/svg">
+<!-- =====================================================
+     [3.4.1] Interactive SVG house root. The SVG acts as the visual interface for the building-energy interaction system.
+===================================================== -->
 
-    <!-- [3.4.2]
+<svg
+    id="interactive-house"
+    viewBox="60 20 280 310"
+    xmlns="http://www.w3.org/2000/svg">
+
+
+    <!-- =================================================
+         [3.4.2]
          Roof interaction zone.
-    -->
+         
+         id:
+         Unique DOM reference.
+         
+         class:
+         Shared interaction styling.
+         
+         data-zone:
+         Application-level identity.
+    ================================================= -->
+
     <polygon
-        "roof-zone"
+        id="roof-zone"
         class="interactive-zone"
         data-zone="roof"
         points="200,40 80,140 320,140"
@@ -18,11 +32,14 @@
         stroke-width="4">
     </polygon>
 
-    <!-- [3.4.3]
+
+    <!-- =================================================
+         [3.4.3]
          Wall interaction zone.
-    -->
+    ================================================= -->
+
     <rect
-        "wall-zone"
+        id="wall-zone"
         class="interactive-zone"
         data-zone="walls"
         x="100"
@@ -34,11 +51,14 @@
         stroke-width="4">
     </rect>
 
-    <!-- [3.4.4]
+
+    <!-- =================================================
+         [3.4.4]
          Window interaction zone.
-    -->
+    ================================================= -->
+
     <rect
-        "window-zone"
+        id="window-zone"
         class="interactive-zone"
         data-zone="windows"
         x="170"
@@ -50,69 +70,87 @@
         stroke-width="2">
     </rect>
 
-    <!-- [3.4.5]
+
+    <!-- =================================================
+         [3.4.5]
          Solar panel visualization layer.
-         Initially hidden until roof upgrades are activated.
-    -->
-    <g "solar-panel-system"
-       visibility="hidden">
+         
+         This layer is visual only.
+         The energy state will determine when it becomes
+         visible.
+    ================================================= -->
 
-        <rect x="120"
-              y="90"
-              width="45"
-              height="25"
-              fill="#1f2937"
-              stroke="#ffffff"
-              stroke-width="1">
+    <g
+        id="solar-panel-system"
+        visibility="hidden">
+
+        <rect
+            x="120"
+            y="90"
+            width="45"
+            height="25"
+            fill="#1f2937"
+            stroke="#ffffff"
+            stroke-width="1">
         </rect>
 
-        <rect x="175"
-              y="75"
-              width="45"
-              height="25"
-              fill="#1f2937"
-              stroke="#ffffff"
-              stroke-width="1">
+        <rect
+            x="175"
+            y="75"
+            width="45"
+            height="25"
+            fill="#1f2937"
+            stroke="#ffffff"
+            stroke-width="1">
         </rect>
 
-        <rect x="230"
-              y="90"
-              width="45"
-              height="25"
-              fill="#1f2937"
-              stroke="#ffffff"
-              stroke-width="1">
+        <rect
+            x="230"
+            y="90"
+            width="45"
+            height="25"
+            fill="#1f2937"
+            stroke="#ffffff"
+            stroke-width="1">
         </rect>
 
     </g>
 
-    <!-- [3.4.6]
+
+    <!-- =================================================
+         [3.4.6]
          Efficient wall insulation visualization overlay.
-    -->
-    <rect "wall-insulation-overlay"
-          x="100"
-          y="140"
-          width="200"
-          height="170"
-          fill="#90ee90"
-          opacity="0"
-          pointer-events="none">
+    ================================================= -->
+
+    <rect
+        id="wall-insulation-overlay"
+        x="100"
+        y="140"
+        width="200"
+        height="170"
+        fill="#90ee90"
+        opacity="0"
+        pointer-events="none">
     </rect>
 
-    <!-- [3.4.7]
-         Efficient window upgrade overlay.
-    -->
-    <rect "efficient-window-overlay"
-          x="170"
-          y="190"
-          width="60"
-          height="60"
-          fill="#87ceeb"
-          opacity="0"
-          pointer-events="none">
+
+    <!-- =================================================
+         [3.4.7]
+         Efficient window upgrade visualization overlay.
+    ================================================= -->
+
+    <rect
+        id="efficient-window-overlay"
+        x="170"
+        y="190"
+        width="60"
+        height="60"
+        fill="#87ceeb"
+        opacity="0"
+        pointer-events="none">
     </rect>
 
-    <!-- =====================================================
+<!-- =====================================================
      [5.11.1]
      ENERGY FLOW VISUALIZATION LAYER
 ===================================================== -->

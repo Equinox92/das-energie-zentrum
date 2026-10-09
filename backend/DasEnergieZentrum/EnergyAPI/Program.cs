@@ -23,7 +23,8 @@ builder.Services.AddCors(options =>
         // Allows local frontend development server access.
         policy.WithOrigins(
                 "http://127.0.0.1:5500",
-                "http://localhost:5500"
+                "http://localhost:5500",
+                "http://192.168.1.56:8080"
             )
 
             // [3.5.4]

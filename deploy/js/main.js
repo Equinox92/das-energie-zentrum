@@ -10,6 +10,11 @@ import { loadInteractiveHouse } from "./ui/houseLoader.js";
 // next import { initializeHouseInteractions } from "./ui/houseInteractionEngine.js";
 import { initializeHouseInteractions } from "./ui/houseInteractionEngine.js";
 
+import {
+    initializeNavbar
+}
+from "./ui/navbarController.js";
+
 
 
 // [5.9.25]
@@ -38,6 +43,12 @@ import {
     updateEnergyDashboard
 } from "./ui/dashboardSynchronizer.js";
 
+// [16.4.27]
+// Imports Energy Calculator controller.
+import {
+    initializeEnergyCalculator
+} from "./modules/energyCalculatorController.js";
+
 import {
     initializeHotspots
 }
@@ -47,19 +58,21 @@ import {
     initializeSectionReveal
 } from "./ui/sectionReveal.js";
 
+// [16.11.1]
+// Imports centralized building context layer.
+import {
+    getBuildingContext
+} from "./core/buildingContext.js";
+
+
+
 
 
 // [3.3.3]
 // Waits until full HTML document is loaded before running application logic.
 document.addEventListener("DOMContentLoaded", async () => {
 
-    // [3.3.4]
-    // Loads scalable interactive SVG house component.
-    await loadInteractiveHouse();
 
-    // [3.3.10]
-// Activates scalable SVG interaction engine.
-initializeHouseInteractions();
 
     // [3.3.11]
     // Initializes hotspots.
@@ -112,9 +125,112 @@ if (persistedState) {
 
 updateEnergyDashboard();
 
+// =====================================================
+// [16.4.28]
+// ENERGY CALCULATOR INITIALIZATION
+// =====================================================
+
+// [16.4.29]
+// Initializes the Energy Calculator controller.
+// =====================================================
+// [17.6.5]
+// CONTEXT-FIRST CALCULATOR INITIALIZATION
+// =====================================================
+//
+// The calculator establishes the active building context.
+// The house presentation is intentionally deferred until
+// a successful assessment has been completed.
+// =====================================================
+
+let housePresentationInitialized = false;
+
+initializeEnergyCalculator(
+    async (
+        assessment,
+        buildingContext
+    ) => {
+
+        // =================================================
+        // [17.6.6]
+        // PREVENT DUPLICATE HOUSE INITIALIZATION
+        // =================================================
+
+        if (housePresentationInitialized) {
+
+            console.log(
+                "[17.6] Building presentation already initialized."
+            );
+
+            return;
+        }
+
+        // =================================================
+        // [17.6.7]
+        // CONFIRM CONTEXT-READY STATE
+        // =================================================
+
+        console.log(
+            "[17.6] Building context ready:",
+            buildingContext
+        );
+
+        console.log(
+            "[17.6] AS-IS assessment ready:",
+            assessment
+        );
+
+        // =================================================
+        // [17.6.8]
+        // LOAD CONTEXTUAL BUILDING PRESENTATION
+        // =================================================
+
+        await loadInteractiveHouse();
+
+        // =================================================
+        // [17.6.9]
+        // INITIALIZE HOUSE INTERACTION ENGINE
+        // =================================================
+
+        initializeHouseInteractions();
+
+        // =================================================
+        // [17.6.10]
+        // LOCK HOUSE PRESENTATION LIFECYCLE
+        // =================================================
+
+        housePresentationInitialized = true;
+
+        console.log(
+            "[17.6] Building presentation initialized."
+        );
+
+    }
+);
+
+// =====================================================
+// [16.11.2]
+// BUILDING CONTEXT DIAGNOSTIC
+// =====================================================
+
+// Retrieves the current building context.
+const buildingContext =
+    getBuildingContext();
+
+// Outputs the current building identity
+// for controlled development verification.
+console.log(
+    "[17.6] Initial building context:",
+    buildingContext
+);
+
 //12.6.5 Section reveal engine
 
 initializeSectionReveal();
+
+
+initializeNavbar();
+
+
 
 
     // [3.3.5]

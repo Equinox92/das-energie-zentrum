@@ -1,11 +1,4 @@
-/* [3.2.1]
-   Resets default browser spacing behavior.
-*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 /* [3.2.2]
    Defines global page styling.
@@ -22,10 +15,10 @@ body {
         sans-serif;
 
     background:
-        #ffffff;
+        var(--color-background);
 
     color:
-        #163443;
+        var(--color-text);
 
     line-height:
         1.6;
@@ -59,76 +52,10 @@ body {
    Premium Hero Section
 ===================================================== */
 
-/* =====================================================
-   [13.1.3]
-   Assessment Hero
-===================================================== */
 
-.hero-section {
 
-    background:
-        linear-gradient(
-            180deg,
-            #d9e5ea,
-            #ffffff
-        );
 
-    min-height:
-        80vh;
 
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        60px 20px;
-}
-/* [3.2.5]
-   Main heading styling.
-*/
-.hero-section h1 {
-
-    color:
-        #004f71;
-
-    font-size:
-        4rem;
-
-    font-weight:
-        700;
-
-    margin-bottom:
-        15px;
-}
-
-/* [3.2.6]
-   Subtitle styling.
-*/
-.hero-section p {
-
-    font-size:
-        1.3rem;
-
-    color:
-        #163443;
-
-    opacity:
-        .85;
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
-}
 
 /* [3.2.7]
    System status section styling.
@@ -141,7 +68,7 @@ body {
 .system-status-section {
 
     background:
-        #ffffff;
+        var(--color-background);
 
     padding:
         70px 40px;
@@ -170,7 +97,7 @@ body {
 .interactive-house-section {
 
     background:
-        #f5f7f8;
+        var(--color-surface);
 
     padding:
         70px 40px;
@@ -216,11 +143,11 @@ body {
 
     border-radius: 20px;
 
-    padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
 
     margin: 2rem auto;
 
-    max-width: 1100px;
+   max-width: min(1100px, 96vw);
 
     border: 1px solid rgba(
         0,
@@ -304,8 +231,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            #004f71,
-            #0b6b94
+            var(--color-primary),
+           var(--color-primary-light)
         );
 
     color: white;
@@ -436,7 +363,7 @@ body {
 
     margin-bottom: 15px;
 
-    color: #004f71;
+    color: var(--color-primary);
 
     font-size: 1rem;
 }
@@ -464,7 +391,7 @@ body {
 
     background: white;
 
-    color: #004f71;
+    color: var(--color-primary);
 }
 
 /* [4.13.8]
@@ -495,8 +422,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            #004f71,
-            #0b6b94
+            var(--color-primary),
+            var(--color-primary-light)
         );
 
     color: white;
@@ -590,13 +517,23 @@ body {
 */
 #interactive-house {
 
-    width: 100%;
+    width: min(92vw, 720px);
 
     max-width: 600px;
 
     height: auto;
 
+    display: block;
+
+    margin: 0 auto;
+
     cursor: pointer;
+
+    touch-action: manipulation;
+
+    user-select: none;
+
+    -webkit-user-select: none;
 
     transition:
         transform 0.35s ease,
@@ -1064,36 +1001,185 @@ body {
 /* [3.2.13]
    Tooltip interaction container styling.
 */
+/* =====================================================
+   [18.10.1]
+   Contextual Building Intelligence Tooltip
+===================================================== */
+
 #house-tooltip {
 
-    margin-top: 2rem;
+    margin-top:
+        2rem;
 
-    padding: 1.5rem;
+    padding:
+        1.5rem;
 
-    background-color: #d9e5ea;
+    background-color:
+        var(--color-secondary);
 
-    border-radius: 8px;
+    border-radius:
+        12px;
 
-    line-height: 1.6;
+    line-height:
+        1.6;
 
-    /* [3.2.17]
-       Prevents layout shifting during content updates.
-    */
-    min-height: 180px;
+    /* =====================================================
+       [18.10.2]
+       Maintains a stable visual footprint while allowing
+       contextual renovation information to expand naturally.
+    ===================================================== */
 
-    /* [3.2.18]
-       Creates smoother visual resizing behavior.
-    */
-    transition: all 0.2s ease;
+    min-height:
+        180px;
 
-    /* [3.2.19]
-       Improves text readability alignment.
-    */
-    display: flex;
+    box-sizing:
+        border-box;
 
-    flex-direction: column;
+    /* =====================================================
+       [18.10.3]
+       Preserves smooth visual transitions when contextual
+       building information changes.
+    ===================================================== */
 
-    justify-content: center;
+    transition:
+        all 0.2s ease;
+
+    /* =====================================================
+       [18.10.4]
+       Structures contextual building information vertically.
+    ===================================================== */
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    gap:
+        0.35rem;
+
+    /* =====================================================
+       [18.10.5]
+       Prevents long renovation descriptions from causing
+       horizontal overflow.
+    ===================================================== */
+
+    overflow-wrap:
+        break-word;
+
+    word-wrap:
+        break-word;
+}
+
+/* =====================================================
+   [18.10.6]
+   Contextual Tooltip Heading
+===================================================== */
+
+#house-tooltip h3 {
+
+    margin:
+        0 0 0.5rem;
+
+    color:
+        var(--color-primary);
+
+    font-size:
+        1.25rem;
+
+    line-height:
+        1.3;
+}
+
+/* =====================================================
+   [18.10.7]
+   Contextual Tooltip Description
+===================================================== */
+
+#house-tooltip p {
+
+    margin:
+        0 0 0.5rem;
+}
+
+/* =====================================================
+   [18.10.8]
+   Renovation Opportunity Heading
+===================================================== */
+
+#house-tooltip h4 {
+
+    margin:
+        0.75rem 0 0.25rem;
+
+    color:
+        var(--color-primary);
+
+    font-size:
+        1rem;
+}
+
+/* =====================================================
+   [18.10.9]
+   Renovation Opportunity List
+===================================================== */
+
+#house-tooltip ul {
+
+    margin:
+        0.25rem 0 0;
+
+    padding-left:
+        1.25rem;
+}
+
+/* =====================================================
+   [18.10.10]
+   Renovation Opportunity Items
+===================================================== */
+
+#house-tooltip li {
+
+    margin-bottom:
+        0.25rem;
+}
+
+/* =====================================================
+   [18.10.11]
+   Mobile contextual tooltip presentation
+===================================================== */
+
+@media (max-width: 768px) {
+
+    #house-tooltip {
+
+        margin-top:
+            1.25rem;
+
+        padding:
+            1.25rem;
+
+        min-height:
+            160px;
+
+        border-radius:
+            12px;
+
+        line-height:
+            1.55;
+
+    }
+
+    #house-tooltip h3 {
+
+        font-size:
+            1.15rem;
+
+    }
+
 }
 
 /* =========================================================
@@ -1162,6 +1248,98 @@ body {
     width: 100%;
 }
 
+/* =====================================================
+   [18.12.4A.1]
+   SOLAR GEOGRAPHIC SCALE LABELS
+===================================================== */
+
+.solar-geographic-scale {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    width:
+        100%;
+
+    margin-top:
+        0.5rem;
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.3;
+}
+
+
+/* =====================================================
+   [18.12.4A.2]
+   CENTERS THE CENTRAL GERMANY LABEL.
+===================================================== */
+
+.solar-geographic-scale span {
+    flex:
+        1;
+
+    text-align:
+        center;
+}
+
+
+/* =====================================================
+   [18.12.4A.3]
+   ALIGNS NORTHERN GERMANY TO THE LEFT.
+===================================================== */
+
+.solar-geographic-scale span:first-child {
+    text-align:
+        left;
+}
+
+
+/* =====================================================
+   [18.12.4A.4]
+   ALIGNS SOUTHERN GERMANY TO THE RIGHT.
+===================================================== */
+
+.solar-geographic-scale span:last-child {
+    text-align:
+        right;
+}
+
+/* =====================================================
+   [18.12.7.4]
+   SOLAR RESOURCE OUTPUT PRESENTATION
+===================================================== */
+
+.solar-resource-output {
+    display:
+        flex;
+    justify-content:
+        space-between;
+    align-items:
+        center;
+    gap:
+        1rem;
+    margin-top:
+        1rem;
+}
+
+.solar-resource-label {
+    font-weight:
+        600;
+}
+
+#solar-resource-output {
+    font-size:
+        1.1rem;
+}
+
 /* =========================================================
    [4.7.1]
    ENERGY DASHBOARD STYLING
@@ -1178,7 +1356,7 @@ body {
 .energy-dashboard-section {
 
     background:
-        #ffffff;
+        var(--color-background);
 
     padding:
         70px 40px;
@@ -1193,7 +1371,7 @@ body {
 */
 .energy-dashboard-section h2 {
 
-    color: #004f71;
+    color: var(--color-primary);
 
     margin-bottom: 15px;
 }
@@ -1207,7 +1385,7 @@ body {
 
     font-weight: bold;
 
-    color: #004f71;
+    color: var(--color-primary);
 
     margin-bottom: 25px;
 
@@ -1289,45 +1467,38 @@ body {
 #energy-recommendations li {
 
     background:
-        rgba(
-            217,
-            229,
-            234,
-            0.4
-        );
+        var(--color-background);
 
-    margin-bottom: 12px;
+    margin-bottom:
+        18px;
 
-    padding: 14px 18px;
+    padding:
+        22px;
 
-    border-radius: 12px;
+    border-radius: var(--radius-medium);
 
     border-left:
-        4px solid #004f71;
+        5px solid var(--color-primary);
+
+    box-shadow:
+        var(--shadow-small);
 
     transition:
-        transform 0.2s ease;
+        transform .35s ease,
+        box-shadow .35s ease;
+
 }
 
 /* [4.7.7]
    Recommendation hover interaction.
 */
-#energy-recommendations li:hover{
+#energy-recommendations li:hover {
 
     transform:
-
-        translateX(8px)
-
-        scale(1.015);
+        translateY(-4px);
 
     box-shadow:
-
-        0 12px 28px rgba(
-            0,
-            79,
-            113,
-            .12
-        );
+        var(--shadow-lg);
 
 }
 
@@ -1352,12 +1523,11 @@ body {
     background:
         linear-gradient(
             135deg,
-            #004f71,
-            #0b6b94
+            var(--dez-primary),
+            var(--dez-accent)
         );
 
-    border-radius: 0;
-
+    border-radius: var(--radius-medium);
     color: white;
 
     text-align: center;
@@ -1378,8 +1548,8 @@ body {
         );
 
         transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 
 }
 
@@ -1547,7 +1717,7 @@ body {
 
     background: white;
 
-    color: #004f71;
+    color: var(--color-primary);
 
     font-weight: bold;
 
@@ -1583,7 +1753,7 @@ body {
 
     background:
 
-        #ffffff;
+        var(--color-background);
 
     box-shadow:
 
@@ -1909,62 +2079,41 @@ body {
 
 }
 
-/* =========================================================
-   [13.3.2]
-   Assessment Section Rhythm
-========================================================= */
 
-.hero-section{
-
-    background:linear-gradient(
-        180deg,
-        #d9e5ea 0%,
-        #ffffff 100%
-    );
-
-    min-height:55vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
 
 .system-status-section{
 
-    background:#ffffff;
+    background:var(--color-background);
 
 }
 
 .interactive-house-section{
 
-    background:#d9e5ea;
+    background:var(--color-primary);
 
 }
 
 .environment-controls-section{
 
-    background:#ffffff;
+    background:var(--color-background);
 
 }
 
 .energy-dashboard-section{
 
-    background:#d9e5ea;
+    background:var(--color-secondary);
 
 }
 
-.consultation-cta{
+/*.consultation-cta{
 
     background:linear-gradient(
         135deg,
-        #004f71,
-        #0b6b94
+        var(--color-primary),
+            
     );
 
-}
+}*/
 
 /* =========================================================
    [13.3.3]
@@ -1996,7 +2145,7 @@ body {
 
 .building-analysis-card{
 
-    background:#ffffff;
+    background:var(--color-background);
 
     border-radius:18px;
 
@@ -2020,7 +2169,7 @@ body {
 
 h2{
 
-    color:#004f71;
+    color:var(--color-primary);
 
     margin-bottom:24px;
 
@@ -2042,6 +2191,186 @@ h2{
     padding:90px 30px;
 
 }
+/* =========================================================
+   [15.2.1]
+   Touch guidance base state.
+   
+   The guidance is hidden by default.
+   JavaScript will reveal it only for touch-capable devices.
+========================================================= */
+
+/* =========================================================
+   [15.2.1]
+   Touch guidance base state.
+   
+   Visible by default when JavaScript enables it.
+   The hidden class explicitly removes it.
+========================================================= */
+
+/* =========================================================
+   [15.2.1]
+   Touch guidance base state.
+
+   The guidance is hidden by default.
+   JavaScript reveals it for touch-capable/mobile devices.
+========================================================= */
+
+/* =========================================================
+   [15.2.1]
+   Touch guidance base state.
+
+   The guidance is visible when JavaScript enables the
+   touch-guidance component.
+
+   The .hidden class is responsible for hiding it.
+========================================================= */
+
+.touch-guidance {
+
+    position: absolute;
+
+    z-index: 20;
+
+    top: 20px;
+
+    left: 50%;
+
+    width:
+        min(90%, 520px);
+
+    max-width:
+        520px;
+
+    box-sizing:
+        border-box;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(
+            0,
+            79,
+            113,
+            0.95
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.4;
+
+    text-align:
+        center;
+
+    white-space:
+        normal;
+
+    overflow-wrap:
+        break-word;
+
+    pointer-events:
+        none;
+
+    opacity:
+        1;
+
+    box-shadow:
+        0 10px 25px rgba(
+            0,
+            79,
+            113,
+            0.25
+        );
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   [15.2.2]
+   Explicit hidden state.
+
+   JavaScript controls this class.
+   When .hidden is present, the guidance disappears.
+========================================================= */
+
+.touch-guidance.hidden {
+
+    display:
+        none;
+}
+
+
+/* =========================================================
+   [15.2.3]
+   Mobile touch-guidance presentation.
+
+   Provides a wider, readable guidance pill on smaller
+   screens while keeping it contained inside the
+   interactive building area.
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .touch-guidance {
+
+        width:
+            min(88%, 520px);
+
+        max-width:
+            calc(100% - 32px);
+
+        padding:
+            12px 20px;
+
+        font-size:
+            0.9rem;
+
+        line-height:
+            1.4;
+
+        text-align:
+            center;
+    }
+}
+
+
+/* =========================================================
+   [15.2.4]
+   Touch guidance positioning context.
+
+   The guidance is positioned relative to this wrapper.
+========================================================= */
+
+.house-interaction-wrapper {
+
+    position:
+        relative;
+}
+
+
+/* =========================================================
+   [15.2.2]
+   Explicit hidden state.
+   
+   This is the class used by houseInteractionEngine.js.
+========================================================= */
 
 /* =========================================================
    [13.3.7]
@@ -2062,38 +2391,11 @@ h2{
 
 }
 
-}
+/* =========================================================
+   [15.2.3]
+   Mobile touch-guidance presentation.
+========================================================= */
 
-.hero-logo{
-
-    width:130px;
-
-    margin-bottom:25px;
-
-}
-
-.floating-navbar{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:999;
-
-    background:#ffffff;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.08);
-
-}
-
-.hero-section{
-
-    padding-top:140px;
 
 }
 
@@ -2109,8 +2411,351 @@ h2{
 }
 
 
+/* =====================================================
+   [14.1.1]
+   HERO BADGE
+===================================================== */
+
+.hero-badge {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(0,79,113,0.08);
+
+    color: var(--dez-primary);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+/* =====================================================
+   [14.1.2]
+   HERO FEATURE LIST
+===================================================== */
+
+.hero-features {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin: 35px 0 45px;
+
+}
+
+/* =====================================================
+   [14.1.3]
+   HERO FEATURE CARD
+===================================================== */
+
+.hero-feature {
+
+    background: white;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    box-shadow: var(--dez-shadow);
+
+    font-weight: 600;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.hero-feature:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--dez-shadow-lg);
+
+}
 
 
+/* =====================================================
+   [14.1.3]
+   HERO Content Styling
+===================================================== */
+
+/* =====================================================
+   [14.2.1]
+   HERO CONTENT CARD
+===================================================== */
+
+.hero-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        20px;
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    padding:
+        60px 50px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+    border-radius:
+        24px;
+
+    box-shadow:
+        var(--dez-shadow-lg);
+
+    text-align:
+        center;
+}
+/* =====================================================
+   [14.2.1]
+   PLATFORM STATUS GRID
+===================================================== */
+
+.platform-status-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
+
+    gap:
+        25px;
+
+    margin-top:
+        40px;
+
+}
+
+/* =====================================================
+   [14.2.2]
+   PLATFORM STATUS CARD
+===================================================== */
+
+.platform-status-card {
+
+    background:
+        white;
+
+    border-radius:
+        18px;
+
+    padding:
+        30px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        var(--dez-shadow);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.platform-status-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--dez-shadow-lg);
+
+}
+
+/* =====================================================
+   [14.2.3]
+   PLATFORM STATUS TITLE
+===================================================== */
+
+.platform-status-card h3 {
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        15px;
+
+}
+
+/* =====================================================
+   [14.2.4]
+   PLATFORM STATUS VALUE
+===================================================== */
+
+.platform-status-card span {
+
+    font-size:
+        1.15rem;
+
+    font-weight:
+        700;
+
+    color:
+        #2E8B57;
+
+}
+
+/* =====================================================
+   [14.3.1]
+   BUILDING SYSTEM STATUS
+===================================================== */
+
+/* =====================================================
+   [14.3.1]
+   BUILDING SYSTEM STATUS
+===================================================== */
+
+.building-system-status {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                120px,
+                1fr
+            )
+        );
+
+    gap:
+        18px;
+
+    margin-bottom:
+        35px;
+
+}
+
+/* =====================================================
+   [14.3.2]
+   SYSTEM STATUS ITEM
+===================================================== */
+
+.system-status-item {
+
+    background:
+        var(--dez-light-gray);
+
+    border-radius:
+        14px;
+
+    padding:
+        18px;
+
+    text-align:
+        center;
+
+}
+
+.system-status-item strong {
+
+    display:
+        block;
+
+    color:
+        var(--dez-primary);
+
+    margin-bottom:
+        8px;
+
+}
+
+.system-status-item span {
+
+    font-weight:
+        700;
+
+    color:
+        #2E8B57;
+
+}
+
+/* =========================================================
+   [15.2.4]
+   Touch guidance positioning context.
+========================================================= */
+
+.house-interaction-wrapper {
+
+    position: relative;
+
+}
+
+/* [19.3.18] Building configuration selector layout. */
+.building-configuration-group {
+    margin-top: 1rem;
+}
 
 
+/* [19.3.19] Configuration selector label. */
+.building-configuration-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
 
+
+/* [19.3.20] Configuration selector control. */
+#attic-configuration-selector {
+    width: 100%;
+}
